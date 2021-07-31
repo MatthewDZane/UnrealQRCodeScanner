@@ -462,9 +462,9 @@ then saving and opening the file.
 
 ## Additional Personal Repositories
 
-Vuforia Github: https://github.com/Jasonlin1198/VuforiaUnrealUWP
-Visual Studio OpenCV-ZBar-ZXing github: https://github.com/Jasonlin1198/OpenCV-ZBar-ZXing
-Unreal on Windows OpenCV-ZBar plugin: https://github.com/Jasonlin1198/OpenCV-ZBar-Unreal-Plugin
+- Vuforia Github: https://github.com/Jasonlin1198/VuforiaUnrealUWP
+- Visual Studio OpenCV-ZBar-ZXing github: https://github.com/Jasonlin1198/OpenCV-ZBar-ZXing
+- Unreal on Windows OpenCV-ZBar plugin: https://github.com/Jasonlin1198/OpenCV-ZBar-Unreal-Plugin
 
 ## Extra Resources
 

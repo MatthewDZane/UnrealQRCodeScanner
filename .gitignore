@@ -1,0 +1,5 @@
+# Binary Files
+OpenCV/Binaries/*
+
+# Compiled source files for the engine to use
+OpenCV/Intermediate/*

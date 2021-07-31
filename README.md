@@ -1,3 +1,6 @@
+Plugin Video:
+https://www.youtube.com/watch?v=6IsPEPcwyCY
+
 # OpenCV Integration with Unreal Engine
 
 This guide will first outline the workflow to install OpenCV C++ and Zbar libraries in Visual Studio 2019 as a standalone project. Further in the guide, we will setup up an Unreal Engine project that detects QR codes for devices built on the Windows x64 platform. 

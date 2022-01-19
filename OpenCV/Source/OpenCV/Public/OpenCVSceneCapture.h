@@ -7,6 +7,7 @@
 #include "GameFramework/Actor.h"
 #include "Components/SceneCaptureComponent2D.h"
 #include "Components/SphereComponent.h"
+#include "Kismet/GameplayStatics.h"
 #include "Engine/TextureRenderTarget2D.h"
 
 // Third Party Library Headers
@@ -78,6 +79,9 @@ public:
 	// Sets default values for this actor's properties
 	AOpenCVSceneCapture();
 
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
+		class AActor* xrSimulationActor;
+
 	// Container for USceneCapture2D component
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
 		class USceneCaptureComponent2D* sceneCaptureComponent;
@@ -102,6 +106,13 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = OpenCVSceneCapture)
 		bool captureEnabled;
 
+	// Camera Material Instance
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = Camera)
+		UMaterialInstanceDynamic* Camera_Mat;
+
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = Camera)
+		UTexture2D* Camera_Texture2D;
+
 	// The current scene frame's corresponding texture
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
 		UTexture2D* SceneTexture;
@@ -113,6 +124,9 @@ public:
 	// Blueprint Event called every time the scene frame is updated
 	UFUNCTION(BlueprintImplementableEvent, Category = OpenCVSceneCapture)
 		void OnNextSceneFrame();
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = OpenCVSceneCapture)
+		UTextureRenderTarget2D* Camera_RenderTarget;
 
 protected:
 	// Called when the game starts or when spawned
@@ -129,6 +143,7 @@ private:
 	UTexture2D* convertMatToTexture(cv::Mat& inputImage, int32 imageResolutionWidth, int32 imageResolutionHeight);
 	UTexture2D* convertMatToTextureRaw(cv::Mat& inputImage, int32 imageResolutionWidth, int32 imageResolutionHeight);
 	bool convertMatToTextureBoth(cv::Mat& inputImage, int32 imageResolutionWidth, int32 imageResolutionHeight);
+	void displayScene();
 
 	// ZXing functions
 	cv::Point toOpenCvPoint(zxing::Ref<zxing::ResultPoint> resultPoint);
@@ -137,10 +152,10 @@ private:
 	// Unreal Print Helper
 	void printToScreen(FString str, FColor color, float duration = 1.0f);
 
-// ZBar support only on Win64
-#if PLATFORM_WINDOWS
+	// ZBar support only on Win64
+//#if PLATFORM_WINDOWS
 	void decode(cv::Mat& inputImage, TArray<FDecodedObject>& decodedObjects);
 	void displayBox(cv::Mat& inputImage, TArray<FDecodedObject>& decodedObjects);
-#endif
+//#endif
 
 };

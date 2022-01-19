@@ -42,20 +42,26 @@ AOpenCVSceneCapture::AOpenCVSceneCapture()
 	PrimaryActorTick.bCanEverTick = true;
 
 	// Initialize features exposed to blueprint
-	captureEnabled = false;
+	captureEnabled = true;
 
 	// Attach scenecapture camera to actor and set as root
 	sceneCaptureComponent = CreateDefaultSubobject<USceneCaptureComponent2D>(TEXT("Scene Capture"));
 	sceneCaptureComponent->bCaptureEveryFrame = false;
 	// Create Static Mesh Component and attach Cube to camera
+	/*
 	staticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh Component"));
 	UStaticMesh* cubeMesh = ConstructorHelpers::FObjectFinder<UStaticMesh>(TEXT("StaticMesh'/Engine/BasicShapes/Cube.Cube'")).Object;
 	staticMeshComponent->SetStaticMesh(cubeMesh);
 	staticMeshComponent->AttachToComponent(sceneCaptureComponent, FAttachmentTransformRules::KeepRelativeTransform);
 	staticMeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-
+	*/
 	// Set camera to as root
 	SetRootComponent(sceneCaptureComponent);
+
+	Camera_RenderTarget = ConstructorHelpers::FObjectFinder<UTextureRenderTarget2D>(TEXT("TextureRenderTarget2D'/OpenCV/OpenCVSceneCapture/OpenCVSceneCaptureRenderTarget.OpenCVSceneCaptureRenderTarget'")).Object;
+	Camera_RenderTarget->InitCustomFormat(resolutionWidth, resolutionHeight, PF_B8G8R8A8, false);
+
+	sceneCaptureComponent->TextureTarget = Camera_RenderTarget;
 }
 
 
@@ -64,12 +70,31 @@ void AOpenCVSceneCapture::BeginPlay()
 {
 	Super::BeginPlay();
 
+
 }
 
 // Called every frame
 void AOpenCVSceneCapture::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	//UGameplayStatics::GetActorByName(GetWorld(), XRSimulationActor::StaticClass)
+	/*
+	if (xrSimulationActor != nullptr) {
+		FTransform t = xrSimulationActor->GetActorTransform();
+		SetActorTransform(t);
+
+		UE_LOG(OpenCVSceneCapture, Warning, TEXT("%f %f %f"), t.GetLocation().X, t.GetLocation().Y, t.GetLocation().Z);
+	}
+	else {
+		APawn* p = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+		FTransform t = p->GetActorTransform();
+		SetActorTransform(t);
+
+		UE_LOG(OpenCVSceneCapture, Warning, TEXT("Not Set"));
+		UE_LOG(OpenCVSceneCapture, Warning, TEXT("%f %f %f"), t.GetLocation().X, t.GetLocation().Y, t.GetLocation().Z);
+		
+	}
+	*/
 
 	// Main Driver code for handling OpenCV functionality
 	if (captureEnabled) {
@@ -85,44 +110,72 @@ void AOpenCVSceneCapture::Tick(float DeltaTime)
 		UE_LOG(OpenCVSceneCapture, Warning, TEXT("Viewport X: %d"), resolutionWidth);
 		UE_LOG(OpenCVSceneCapture, Warning, TEXT("Viewport Y: %d"), resolutionHeight);
 
-#if PLATFORM_WINDOWS
+
 
 		// Capture scene view, process image, and create texture
 		cv::Mat inputImage = captureSceneToMat();
+
+		displayScene();
 
 		// Check that image has elements
 		if (!inputImage.empty()) {
 			UE_LOG(OpenCVSceneCapture, Warning, TEXT("Begin Decoding"));
 
+			//decodeZXing(inputImage);
 			// Process and decode scene frames for target platforms
-			#if defined(__aarch64__) || defined(_M_ARM64)
 
-				decodeZXing(inputImage);
+#if defined(__aarch64__) || defined(_M_ARM64)
 
-			#endif
-				
-				TArray<FDecodedObject> decodedObjects;
+			decodeZXing(inputImage);
 
-				// Find and decode barcodes and QR codes
-				decode(inputImage, decodedObjects);
+#elif PLATFORM_WINDOWS
 
-				// Display location with box
-				displayBox(inputImage, decodedObjects);
+			TArray<FDecodedObject> decodedObjects;
 
-				// Reset array
-				decodedObjects.Empty();
+			// Find and decode barcodes and QR codes
+			decode(inputImage, decodedObjects);
 
-				UE_LOG(OpenCVSceneCapture, Warning, TEXT("Converting to Texture"));
+			// Display location with box
+			displayBox(inputImage, decodedObjects);
 
-				// Display image with detected box only as blueprint property
-				SceneTexture = convertMatToTexture(inputImage, resolutionWidth, resolutionHeight);
+			TArray<FColor> pixels;
 
-				// Display raw image with detection as blueprint property
-				SceneTextureRaw = convertMatToTextureRaw(inputImage, resolutionWidth, resolutionHeight);
+			int32 imageResolutionWidth = inputImage.cols;
+			int32 imageResolutionHeight = inputImage.rows;
+
+			pixels.Init(FColor(0, 0, 0, 255), imageResolutionWidth * imageResolutionHeight);
+			UE_LOG(OpenCVSceneCapture, Warning, TEXT("%d %d"), imageResolutionWidth, imageResolutionHeight);
+
+			/*
+			// Copy Mat data to Data array
+			for (int y = 0; y < imageResolutionHeight; y++)
+			{
+				for (int x = 0; x < imageResolutionWidth; x++)
+				{
+					int i = x + (y * imageResolutionWidth);
+					pixels[i].B = inputImage.data[i * 3 + 0];
+					pixels[i].G = inputImage.data[i * 3 + 1];
+					pixels[i].R = inputImage.data[i * 3 + 2];
+				}
+			}
+			*/
+
+
+			// Reset array
+			decodedObjects.Empty();
+
+			UE_LOG(OpenCVSceneCapture, Warning, TEXT("Converting to Texture"));
+
+			// Display image with detected box only as blueprint property
+			SceneTexture = convertMatToTexture(inputImage, resolutionWidth, resolutionHeight);
+
+			// Display raw image with detection as blueprint property
+			SceneTextureRaw = convertMatToTextureRaw(inputImage, resolutionWidth, resolutionHeight);
+#endif
 
 		}
 
-#endif
+
 
 	}
 	// Clear array of decoded images when capture is ended
@@ -144,23 +197,20 @@ void AOpenCVSceneCapture::EndPlay(const EEndPlayReason::Type EndPlayReason)
 // Capture scene view from scene capture component and pass image into OpenCV processing
 cv::Mat AOpenCVSceneCapture::captureSceneToMat() {
 
-	// Create new texture target
-	UTextureRenderTarget2D* currentTarget = NewObject<UTextureRenderTarget2D>();
-	currentTarget->InitCustomFormat(resolutionWidth, resolutionHeight, PF_B8G8R8A8, false);
 
+	
 	// Assign to scene capture component
-	sceneCaptureComponent->TextureTarget = currentTarget;
+	sceneCaptureComponent->TextureTarget = Camera_RenderTarget;
 
 	// Capture scene texture
 	sceneCaptureComponent->CaptureScene();
 
 	// Create container for pixels
 	TArray<FColor> imagePixels;
-	imagePixels.Empty();
-	imagePixels.Reserve(resolutionWidth * resolutionHeight);
+	imagePixels.Init(FColor(0, 0, 0, 255), resolutionWidth * resolutionHeight);
 
 	// Get texture render target
-	FTextureRenderTargetResource* textureResource = currentTarget->GameThread_GetRenderTargetResource();
+	FTextureRenderTargetResource* textureResource = Camera_RenderTarget->GameThread_GetRenderTargetResource();
 
 	// Populate RGBA8 texture pixels into buffer
 	bool readPixelResult = textureResource->ReadPixels(imagePixels);
@@ -183,21 +233,153 @@ cv::Mat AOpenCVSceneCapture::captureSceneToMat() {
 	int32 bufferSize = imagePixels.Num() * 4;
 	pixelData.Reserve(bufferSize);
 
+	cv::Mat inputImage;
+
+#if defined(__aarch64__) || defined(_M_ARM64)
+
+	// Copy texture render pixels into array with BGR format OpenCV expects
+	for (int i = 0; i < imagePixels.Num(); i++) {
+		uint8 grayScale = (uint8)((imagePixels[i].B + imagePixels[i].G + imagePixels[i].R) / 3.0f);
+		pixelData.Add(grayScale);
+	}
+
+	// Construct OpenCV image defined by image width, height, 8-bit pixels, and pointer to data
+	// XZing needs the grayscale data
+	inputImage = cv::Mat(resolutionWidth, resolutionHeight, CV_8U, pixelData.GetData());
+
+#elif PLATFORM_WINDOWS
+
 	// Copy texture render pixels into array with BGR format OpenCV expects
 	for (int i = 0; i < imagePixels.Num(); i++) {
 		pixelData.Append({ imagePixels[i].B, imagePixels[i].G, imagePixels[i].R, 0xff });
 	}
 
-	// Get pointer to first element of array
-	void* imageData = pixelData.GetData();
-
 	// Construct OpenCv image defined by image width, height, 8-bit 4 color channel pixels, and pointer to data
-	cv::Mat inputImage = cv::Mat(resolutionWidth, resolutionHeight, CV_8UC4, imageData);
+	inputImage = cv::Mat(resolutionWidth, resolutionHeight, CV_8UC4, pixelData.GetData());
+
+
+#endif
+
+
+	UE_LOG(OpenCVSceneCapture, Warning, TEXT("%d %d"), resolutionWidth, resolutionHeight);
 
 	// Return clone to get valid Mat reference since inputImage is invalid after function return
 	return inputImage.clone();
 }
 
+void AOpenCVSceneCapture::displayScene() {
+	// Create new texture target
+	Camera_Texture2D = UTexture2D::CreateTransient(resolutionWidth, resolutionHeight, PF_B8G8R8A8);
+#if WITH_EDITORONLY_DATA
+	Camera_Texture2D->MipGenSettings = TMGS_NoMipmaps;
+#endif
+	Camera_Texture2D->SRGB = Camera_RenderTarget->SRGB;
+
+	// Read the pixels from the RenderTarget and store them in a FColor array
+	TArray<FColor> SurfData;
+	FRenderTarget* RenderTarget = sceneCaptureComponent->TextureTarget->GameThread_GetRenderTargetResource();
+	RenderTarget->ReadPixels(SurfData);
+
+	// Lock and copies the data between the textures
+	void* TextureData = Camera_Texture2D->PlatformData->Mips[0].BulkData.Lock(LOCK_READ_WRITE);
+	const int32 TextureDataSize = SurfData.Num() * 4;
+	FMemory::Memcpy(TextureData, SurfData.GetData(), TextureDataSize);
+	Camera_Texture2D->PlatformData->Mips[0].BulkData.Unlock();
+	// Apply Texture changes to GPU memory
+	Camera_Texture2D->UpdateResource();
+}
+
+#if PLATFORM_WINDOWS
+
+// Find and decode barcodes and QR codes
+void AOpenCVSceneCapture::decode(cv::Mat& inputImage, TArray<FDecodedObject>& decodedObjects)
+{
+#if PLATFORM_WINDOWS
+	UE_LOG(OpenCVSceneCapture, Warning, TEXT("Start"));
+	// Create zbar scanner
+	zbar::ImageScanner scanner;
+
+	// Configure scanner to detect image types
+	scanner.set_config(zbar::ZBAR_NONE, zbar::ZBAR_CFG_ENABLE, 1);
+
+	// Convert image to grayscale
+	cv::Mat imGray;
+	cv::cvtColor(inputImage, imGray, cv::COLOR_BGR2GRAY);
+
+	// Wrap opencv Mat image data in a zbar image
+	zbar::Image image(inputImage.cols, inputImage.rows, "Y800", (uchar*)imGray.data, inputImage.cols * inputImage.rows);
+
+	// Scan the image for barcodes and QRCodes
+	int n = scanner.scan(image);
+
+	if (n <= 0) {
+		UE_LOG(OpenCVSceneCapture, Warning, TEXT("No QR Detected"));
+		return;
+	}
+
+	// Print results
+	for (zbar::Image::SymbolIterator symbol = image.symbol_begin(); symbol != image.symbol_end(); ++symbol)
+	{
+		FDecodedObject obj;
+
+		// Print type and data
+		FString type(symbol->get_type_name().c_str());
+		FString data(symbol->get_data().c_str());
+
+		obj.type = type;
+		obj.data = data;
+
+		// Print data to Log
+		UE_LOG(OpenCVSceneCapture, Warning, TEXT("%s"), *type);
+		UE_LOG(OpenCVSceneCapture, Warning, TEXT("%s"), *data);
+
+		// Print data to screen
+		static double deltaTime = FApp::GetDeltaTime();
+		printToScreen(obj.type, FColor::Green, deltaTime);
+		printToScreen(obj.data, FColor::Blue, deltaTime);
+
+		// Obtain location
+		for (int i = 0; i < symbol->get_location_size(); i++)
+		{
+			obj.location.push_back(cv::Point(symbol->get_location_x(i), symbol->get_location_y(i)));
+		}
+
+		// Add unique detections to visible property
+		decoded.AddUnique(obj);
+
+		// Add all detections for displaying image outlines
+		decodedObjects.Add(obj);
+	}
+#endif
+}
+
+// Display barcode outline at QR code location
+void AOpenCVSceneCapture::displayBox(cv::Mat& inputImage, TArray<FDecodedObject>& decodedObjects)
+{
+	// Loop over all decoded objects
+	for (int i = 0; i < decodedObjects.Num(); i++)
+	{
+		vector<cv::Point> points = decodedObjects[i].location;
+		vector<cv::Point> hull;
+
+		// If the points do not form a quad, find convex hull
+		if (points.size() > 4) {
+			convexHull(points, hull);
+		}
+		else {
+			hull = points;
+		}
+
+		// Number of points in the convex hull
+		int n = hull.size();
+
+		for (int j = 0; j < n; j++)
+		{
+			line(inputImage, hull[j], hull[(j + 1) % n], cv::Scalar(255, 0, 0), 2);
+		}
+
+	}
+}
 
 // Convert OpenCV detection image into UE texture2D image, currently uses zbar decoding and locates blue pixels drawn from displayBox()
 UTexture2D* AOpenCVSceneCapture::convertMatToTexture(cv::Mat& inputImage, int32 imageResolutionWidth, int32 imageResolutionHeight) {
@@ -339,7 +521,7 @@ bool AOpenCVSceneCapture::convertMatToTextureBoth(cv::Mat& inputImage, int32 ima
 	return true;
 }
 
-
+#elif defined(__aarch64__) || defined(_M_ARM64)
 cv::Point AOpenCVSceneCapture::toOpenCvPoint(zxing::Ref<zxing::ResultPoint> resultPoint) {
 	return cv::Point(resultPoint->getX(), resultPoint->getY());
 }
@@ -429,95 +611,9 @@ void AOpenCVSceneCapture::decodeZXing(cv::Mat& inputImage) {
 	}
 }
 
+#endif
+
 void AOpenCVSceneCapture::printToScreen(FString str, FColor color, float duration) {
 	GEngine->AddOnScreenDebugMessage(-1, duration, color, *str);
 }
 
-#if PLATFORM_WINDOWS
-// Find and decode barcodes and QR codes
-void AOpenCVSceneCapture::decode(cv::Mat& inputImage, TArray<FDecodedObject>& decodedObjects)
-{
-	// Create zbar scanner
-	zbar::ImageScanner scanner;
-
-	// Configure scanner to detect image types
-	scanner.set_config(zbar::ZBAR_NONE, zbar::ZBAR_CFG_ENABLE, 1);
-
-	// Convert image to grayscale
-	cv::Mat imGray;
-	cv::cvtColor(inputImage, imGray, cv::COLOR_BGR2GRAY);
-
-	// Wrap opencv Mat image data in a zbar image
-	zbar::Image image(inputImage.cols, inputImage.rows, "Y800", (uchar*)imGray.data, inputImage.cols * inputImage.rows);
-
-	// Scan the image for barcodes and QRCodes
-	int n = scanner.scan(image);
-
-	if (n <= 0) {
-		UE_LOG(OpenCVSceneCapture, Warning, TEXT("No QR Detected"));
-		return;
-	}
-
-	// Print results
-	for (zbar::Image::SymbolIterator symbol = image.symbol_begin(); symbol != image.symbol_end(); ++symbol)
-	{
-		FDecodedObject obj;
-
-		// Print type and data
-		FString type(symbol->get_type_name().c_str());
-		FString data(symbol->get_data().c_str());
-
-		obj.type = type;
-		obj.data = data;
-
-		// Print data to Log
-		UE_LOG(OpenCVSceneCapture, Warning, TEXT("%s"), *type);
-		UE_LOG(OpenCVSceneCapture, Warning, TEXT("%s"), *data);
-
-		// Print data to screen
-		static double deltaTime = FApp::GetDeltaTime();
-		printToScreen(obj.type, FColor::Green, deltaTime);
-		printToScreen(obj.data, FColor::Blue, deltaTime);
-
-		// Obtain location
-		for (int i = 0; i < symbol->get_location_size(); i++)
-		{
-			obj.location.push_back(cv::Point(symbol->get_location_x(i), symbol->get_location_y(i)));
-		}
-
-		// Add unique detections to visible property
-		decoded.AddUnique(obj);
-
-		// Add all detections for displaying image outlines
-		decodedObjects.Add(obj);
-	}
-}
-
-// Display barcode outline at QR code location
-void AOpenCVSceneCapture::displayBox(cv::Mat& inputImage, TArray<FDecodedObject>& decodedObjects)
-{
-	// Loop over all decoded objects
-	for (int i = 0; i < decodedObjects.Num(); i++)
-	{
-		vector<cv::Point> points = decodedObjects[i].location;
-		vector<cv::Point> hull;
-
-		// If the points do not form a quad, find convex hull
-		if (points.size() > 4) {
-			convexHull(points, hull);
-		}
-		else {
-			hull = points;
-		}
-
-		// Number of points in the convex hull
-		int n = hull.size();
-
-		for (int j = 0; j < n; j++)
-		{
-			line(inputImage, hull[j], hull[(j + 1) % n], cv::Scalar(255, 0, 0), 2);
-		}
-
-	}
-}
-#endif

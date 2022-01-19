@@ -1,0 +1,7 @@
+D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/ZXingLibrary/Hololens/out/build/x64-Debug/CMakeFiles/libzxing.dir
+D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/ZXingLibrary/Hololens/out/build/x64-Debug/CMakeFiles/zxing.dir
+D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/ZXingLibrary/Hololens/out/build/x64-Debug/CMakeFiles/install/local.dir
+D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/ZXingLibrary/Hololens/out/build/x64-Debug/CMakeFiles/install.dir
+D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/ZXingLibrary/Hololens/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/ZXingLibrary/Hololens/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
+D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/ZXingLibrary/Hololens/out/build/x64-Debug/CMakeFiles/list_install_components.dir

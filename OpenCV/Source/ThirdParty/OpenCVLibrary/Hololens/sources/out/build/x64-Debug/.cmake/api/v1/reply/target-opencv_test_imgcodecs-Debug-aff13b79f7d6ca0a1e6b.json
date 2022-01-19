@@ -1,0 +1,761 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "bin/opencv_test_imgcodecsd.exe"
+		},
+		{
+			"path" : "bin/opencv_test_imgcodecsd.pdb"
+		}
+	],
+	"backtrace" : 3,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"ocv_add_executable",
+			"ocv_add_accuracy_tests",
+			"target_link_libraries",
+			"__ocv_push_target_link_libraries",
+			"ocv_target_link_libraries",
+			"add_dependencies",
+			"add_definitions",
+			"ocv_add_module",
+			"include",
+			"set_target_properties",
+			"ocv_append_target_property",
+			"include_directories",
+			"ocv_include_directories",
+			"target_include_directories",
+			"ocv_target_include_directories",
+			"ocv_target_include_modules"
+		],
+		"files" : 
+		[
+			"cmake/OpenCVUtils.cmake",
+			"cmake/OpenCVModule.cmake",
+			"modules/imgcodecs/CMakeLists.txt",
+			"cmake/OpenCVCompilerOptions.cmake",
+			"CMakeLists.txt",
+			"modules/CMakeLists.txt",
+			"cmake/OpenCVFindLibsPerf.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 166,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 1266,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1528,
+				"parent" : 2
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 1271,
+				"parent" : 1
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 1488,
+				"parent" : 4
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 1458,
+				"parent" : 5
+			},
+			{
+				"command" : 6,
+				"file" : 1,
+				"line" : 1275,
+				"parent" : 1
+			},
+			{
+				"command" : 7,
+				"file" : 2,
+				"line" : 72,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 2,
+				"line" : 84,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 2,
+				"line" : 80,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 2,
+				"line" : 76,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 2,
+				"line" : 27,
+				"parent" : 0
+			},
+			{
+				"command" : 8,
+				"file" : 2,
+				"line" : 2,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 1,
+				"line" : 217,
+				"parent" : 13
+			},
+			{
+				"file" : 4
+			},
+			{
+				"command" : 9,
+				"file" : 4,
+				"line" : 614,
+				"parent" : 15
+			},
+			{
+				"file" : 3,
+				"parent" : 16
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 405,
+				"parent" : 17
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 417,
+				"parent" : 17
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 1,
+				"parent" : 20
+			},
+			{
+				"command" : 11,
+				"file" : 1,
+				"line" : 1293,
+				"parent" : 1
+			},
+			{
+				"command" : 10,
+				"file" : 0,
+				"line" : 324,
+				"parent" : 22
+			},
+			{
+				"command" : 13,
+				"file" : 2,
+				"line" : 49,
+				"parent" : 0
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 315,
+				"parent" : 24
+			},
+			{
+				"command" : 13,
+				"file" : 2,
+				"line" : 44,
+				"parent" : 0
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 315,
+				"parent" : 26
+			},
+			{
+				"command" : 13,
+				"file" : 2,
+				"line" : 34,
+				"parent" : 0
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 315,
+				"parent" : 28
+			},
+			{
+				"command" : 13,
+				"file" : 2,
+				"line" : 28,
+				"parent" : 0
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 315,
+				"parent" : 30
+			},
+			{
+				"command" : 13,
+				"file" : 2,
+				"line" : 22,
+				"parent" : 0
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 315,
+				"parent" : 32
+			},
+			{
+				"command" : 13,
+				"file" : 2,
+				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 315,
+				"parent" : 34
+			},
+			{
+				"command" : 9,
+				"file" : 4,
+				"line" : 700,
+				"parent" : 15
+			},
+			{
+				"file" : 6,
+				"parent" : 36
+			},
+			{
+				"command" : 13,
+				"file" : 6,
+				"line" : 19,
+				"parent" : 37
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 315,
+				"parent" : 38
+			},
+			{
+				"command" : 13,
+				"file" : 6,
+				"line" : 16,
+				"parent" : 37
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 315,
+				"parent" : 40
+			},
+			{
+				"command" : 16,
+				"file" : 1,
+				"line" : 1267,
+				"parent" : 1
+			},
+			{
+				"command" : 15,
+				"file" : 1,
+				"line" : 675,
+				"parent" : 42
+			},
+			{
+				"command" : 14,
+				"file" : 0,
+				"line" : 378,
+				"parent" : 43
+			},
+			{
+				"command" : 15,
+				"file" : 1,
+				"line" : 675,
+				"parent" : 42
+			},
+			{
+				"command" : 14,
+				"file" : 0,
+				"line" : 378,
+				"parent" : 45
+			},
+			{
+				"command" : 15,
+				"file" : 1,
+				"line" : 675,
+				"parent" : 42
+			},
+			{
+				"command" : 14,
+				"file" : 0,
+				"line" : 378,
+				"parent" : 47
+			},
+			{
+				"command" : 15,
+				"file" : 1,
+				"line" : 675,
+				"parent" : 42
+			},
+			{
+				"command" : 14,
+				"file" : 0,
+				"line" : 378,
+				"parent" : 49
+			},
+			{
+				"command" : 15,
+				"file" : 1,
+				"line" : 675,
+				"parent" : 42
+			},
+			{
+				"command" : 14,
+				"file" : 0,
+				"line" : 378,
+				"parent" : 51
+			},
+			{
+				"command" : 15,
+				"file" : 1,
+				"line" : 675,
+				"parent" : 42
+			},
+			{
+				"command" : 14,
+				"file" : 0,
+				"line" : 378,
+				"parent" : 53
+			},
+			{
+				"command" : 12,
+				"file" : 2,
+				"line" : 62,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " /DWIN32 /D_WINDOWS /W4 /GR  /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /Gy /bigobj /Oi  /fp:precise /FS     /EHa /wd4127 /wd4251 /wd4324 /wd4275 /wd4512 /wd4589  /MDd /Zi /Ob0 /Od /RTC1 "
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 8,
+					"define" : "HAVE_IMGCODEC_HDR"
+				},
+				{
+					"backtrace" : 9,
+					"define" : "HAVE_IMGCODEC_PFM"
+				},
+				{
+					"backtrace" : 10,
+					"define" : "HAVE_IMGCODEC_PXM"
+				},
+				{
+					"backtrace" : 11,
+					"define" : "HAVE_IMGCODEC_SUNRASTER"
+				},
+				{
+					"backtrace" : 12,
+					"define" : "HAVE_WEBP"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "_USE_MATH_DEFINES"
+				},
+				{
+					"backtrace" : 18,
+					"define" : "_VARIADIC_MAX=10"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "_WIN32_WINNT=0x0601"
+				},
+				{
+					"backtrace" : 21,
+					"define" : "__OPENCV_BUILD=1"
+				},
+				{
+					"backtrace" : 23,
+					"define" : "__OPENCV_TESTS=1"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "__STDC_CONSTANT_MACROS"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "__STDC_LIMIT_MACROS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 25,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug"
+				},
+				{
+					"backtrace" : 25,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/openjpeg/openjp2"
+				},
+				{
+					"backtrace" : 25,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/openjpeg/openjp2"
+				},
+				{
+					"backtrace" : 27,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/libtiff"
+				},
+				{
+					"backtrace" : 27,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/libtiff"
+				},
+				{
+					"backtrace" : 29,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/libpng"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/libwebp/src"
+				},
+				{
+					"backtrace" : 33,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/libjpeg-turbo"
+				},
+				{
+					"backtrace" : 33,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/libjpeg-turbo/src"
+				},
+				{
+					"backtrace" : 35,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/zlib"
+				},
+				{
+					"backtrace" : 35,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/zlib"
+				},
+				{
+					"backtrace" : 39,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/ippicv/ippicv_win/icv/include"
+				},
+				{
+					"backtrace" : 41,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/ippicv/ippicv_win/iw/include"
+				},
+				{
+					"backtrace" : 44,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/ts/include"
+				},
+				{
+					"backtrace" : 46,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/imgcodecs/include"
+				},
+				{
+					"backtrace" : 48,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/include"
+				},
+				{
+					"backtrace" : 50,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/core/include"
+				},
+				{
+					"backtrace" : 52,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/imgproc/include"
+				},
+				{
+					"backtrace" : 54,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/highgui/include"
+				},
+				{
+					"backtrace" : 55,
+					"isSystem" : true,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/openexr/Half"
+				},
+				{
+					"backtrace" : 55,
+					"isSystem" : true,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/openexr/Iex"
+				},
+				{
+					"backtrace" : 55,
+					"isSystem" : true,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/openexr/IlmThread"
+				},
+				{
+					"backtrace" : 55,
+					"isSystem" : true,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/openexr/Imath"
+				},
+				{
+					"backtrace" : 55,
+					"isSystem" : true,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/openexr/IlmImf"
+				},
+				{
+					"backtrace" : 55,
+					"isSystem" : true,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/openexr"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					3
+				],
+				"standard" : "11"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 6,
+			"id" : "ippiw::@5f1c6d7264a9a7781a27"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "opencv_videoio_plugins::@c4158f3e978b3bbcbc15"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "opencv_imgproc::@46089d46ac6964f10538"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "opencv_core::@90e83aff1e86c0750a9d"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "opencv_videoio::@368e281a2b3422cd0411"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "opencv_imgcodecs::@e5f64ca75d8a3efadfa0"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "opencv_highgui::@eec24f45586c5b1a2074"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "opencv_ts::@c974cb34bd96d8662201"
+		}
+	],
+	"id" : "opencv_test_imgcodecs::@e5f64ca75d8a3efadfa0",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/DWIN32 /D_WINDOWS /W4 /GR  /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /Gy /bigobj /Oi  /fp:precise /FS     /EHa /wd4127 /wd4251 /wd4324 /wd4275 /wd4512 /wd4589  /MDd /Zi /Ob0 /Od /RTC1",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/machine:x64  /debug /INCREMENTAL  /subsystem:console",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "..\\..\\lib\\opencv_ts451d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "..\\..\\lib\\opencv_highgui451d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "..\\..\\3rdparty\\lib\\ippiwd.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "..\\..\\3rdparty\\ippicv\\ippicv_win\\icv\\lib\\intel64\\ippicvmt.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "..\\..\\lib\\opencv_videoio451d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "..\\..\\lib\\opencv_imgcodecs451d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "..\\..\\lib\\opencv_imgproc451d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "..\\..\\lib\\opencv_core451d.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "opencv_test_imgcodecs",
+	"nameOnDisk" : "opencv_test_imgcodecsd.exe",
+	"paths" : 
+	{
+		"build" : "modules/imgcodecs",
+		"source" : "modules/imgcodecs"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Src",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7
+			]
+		},
+		{
+			"name" : "Include",
+			"sourceIndexes" : 
+			[
+				8,
+				9,
+				10
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "modules/imgcodecs/test/test_common.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "modules/imgcodecs/test/test_grfmt.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "modules/imgcodecs/test/test_jpeg.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "modules/imgcodecs/test/test_main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "modules/imgcodecs/test/test_png.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "modules/imgcodecs/test/test_read_write.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "modules/imgcodecs/test/test_tiff.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "modules/imgcodecs/test/test_webp.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"path" : "modules/imgcodecs/test/test_common.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 3,
+			"path" : "modules/imgcodecs/test/test_exr.impl.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 3,
+			"path" : "modules/imgcodecs/test/test_precomp.hpp",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "EXECUTABLE"
+}

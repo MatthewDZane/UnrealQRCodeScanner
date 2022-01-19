@@ -1,0 +1,216 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/include/opencv2/videoio.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/include/opencv2/videoio/cap_ios.h",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/include/opencv2/videoio/container_avi.private.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/include/opencv2/videoio/legacy/constants_c.h",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/include/opencv2/videoio/registry.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/include/opencv2/videoio/videoio.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/include/opencv2/videoio/videoio_c.h",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/src/precomp.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/src/cap_dshow.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/src/videoio_registry.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/src/videoio_c.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/src/cap.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/src/cap_images.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/src/cap_mjpeg_encoder.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/src/cap_mjpeg_decoder.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/src/backend_plugin.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/src/backend_static.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/src/container_avi.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/src/cap_dshow.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/src/cap_msmf.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/videoio/src/cap_msmf.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_videoio",
+				"Module"
+			]
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/cvconfig.h"
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/opencv2/opencv_modules.hpp"
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/modules/videoio/vs_version.rc"
+		},
+		{
+			"file" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/modules/videoio/opencv_videoio_main.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Main",
+			"opencv_videoio",
+			"Module"
+		],
+		"name" : "opencv_videoio"
+	}
+}

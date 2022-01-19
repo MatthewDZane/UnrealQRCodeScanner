@@ -1,0 +1,2693 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "bin/opencv_dnn451d.dll"
+		},
+		{
+			"path" : "lib/opencv_dnn451d.lib"
+		},
+		{
+			"path" : "bin/opencv_dnn451d.pdb"
+		}
+	],
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"ocv_add_library",
+			"_ocv_create_module",
+			"ocv_create_module",
+			"install",
+			"ocv_install_target",
+			"target_link_libraries",
+			"__ocv_push_target_link_libraries",
+			"ocv_target_link_libraries",
+			"add_definitions",
+			"ocv_add_module",
+			"include",
+			"include_directories",
+			"ocv_include_directories",
+			"target_include_directories",
+			"_ocv_append_target_includes",
+			"set_source_files_properties",
+			"ocv_compiler_optimization_process_sources"
+		],
+		"files" : 
+		[
+			"cmake/OpenCVUtils.cmake",
+			"cmake/OpenCVModule.cmake",
+			"modules/dnn/CMakeLists.txt",
+			"cmake/OpenCVCompilerOptions.cmake",
+			"CMakeLists.txt",
+			"modules/CMakeLists.txt",
+			"cmake/OpenCVFindLibsPerf.cmake",
+			"cmake/OpenCVCompilerOptimizations.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 166,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 852,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 931,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1539,
+				"parent" : 3
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 1006,
+				"parent" : 2
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 1216,
+				"parent" : 5
+			},
+			{
+				"command" : 8,
+				"file" : 1,
+				"line" : 941,
+				"parent" : 2
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 1474,
+				"parent" : 7
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 1458,
+				"parent" : 8
+			},
+			{
+				"command" : 8,
+				"file" : 1,
+				"line" : 947,
+				"parent" : 2
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 1488,
+				"parent" : 10
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 1458,
+				"parent" : 11
+			},
+			{
+				"command" : 9,
+				"file" : 2,
+				"line" : 21,
+				"parent" : 0
+			},
+			{
+				"command" : 9,
+				"file" : 2,
+				"line" : 76,
+				"parent" : 0
+			},
+			{
+				"command" : 9,
+				"file" : 2,
+				"line" : 47,
+				"parent" : 0
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 13,
+				"parent" : 0
+			},
+			{
+				"command" : 9,
+				"file" : 1,
+				"line" : 217,
+				"parent" : 16
+			},
+			{
+				"file" : 4
+			},
+			{
+				"command" : 11,
+				"file" : 4,
+				"line" : 614,
+				"parent" : 18
+			},
+			{
+				"file" : 3,
+				"parent" : 19
+			},
+			{
+				"command" : 9,
+				"file" : 3,
+				"line" : 405,
+				"parent" : 20
+			},
+			{
+				"command" : 9,
+				"file" : 3,
+				"line" : 417,
+				"parent" : 20
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 9,
+				"file" : 5,
+				"line" : 1,
+				"parent" : 23
+			},
+			{
+				"command" : 11,
+				"file" : 4,
+				"line" : 700,
+				"parent" : 18
+			},
+			{
+				"file" : 6,
+				"parent" : 25
+			},
+			{
+				"command" : 13,
+				"file" : 6,
+				"line" : 19,
+				"parent" : 26
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 315,
+				"parent" : 27
+			},
+			{
+				"command" : 13,
+				"file" : 6,
+				"line" : 16,
+				"parent" : 26
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 315,
+				"parent" : 29
+			},
+			{
+				"command" : 13,
+				"file" : 4,
+				"line" : 579,
+				"parent" : 18
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 315,
+				"parent" : 31
+			},
+			{
+				"command" : 15,
+				"file" : 0,
+				"line" : 1570,
+				"parent" : 3
+			},
+			{
+				"command" : 14,
+				"file" : 0,
+				"line" : 1507,
+				"parent" : 33
+			},
+			{
+				"command" : 17,
+				"file" : 1,
+				"line" : 881,
+				"parent" : 2
+			},
+			{
+				"command" : 16,
+				"file" : 7,
+				"line" : 752,
+				"parent" : 35
+			},
+			{
+				"command" : 16,
+				"file" : 7,
+				"line" : 752,
+				"parent" : 35
+			},
+			{
+				"command" : 16,
+				"file" : 7,
+				"line" : 752,
+				"parent" : 35
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " /DWIN32 /D_WINDOWS /W4 /GR  /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /Gy /bigobj /Oi  /fp:precise /FS     /EHa /wd4127 /wd4251 /wd4324 /wd4275 /wd4512 /wd4589 /wd4244 /wd4267 /wd4018 /wd4355 /wd4800 /wd4251 /wd4996 /wd4146 /wd4305 /wd4127 /wd4100 /wd4512 /wd4125 /wd4389 /wd4510 /wd4610 /wd4702 /wd4456 /wd4457 /wd4065 /wd4310 /wd4661 /wd4506 /wd4125 /wd4267 /wd4127 /wd4244 /wd4512 /wd4702 /wd4456 /wd4510 /wd4610 /wd4800 /wd4701 /wd4703 /wd4505 /wd4458  /MDd /Zi /Ob0 /Od /RTC1 "
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "CVAPI_EXPORTS"
+				},
+				{
+					"backtrace" : 13,
+					"define" : "CV_OCL4DNN=1"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "HAVE_PROTOBUF=1"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "_CRT_SECURE_NO_WARNINGS=1"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "_USE_MATH_DEFINES"
+				},
+				{
+					"backtrace" : 21,
+					"define" : "_VARIADIC_MAX=10"
+				},
+				{
+					"backtrace" : 22,
+					"define" : "_WIN32_WINNT=0x0601"
+				},
+				{
+					"backtrace" : 24,
+					"define" : "__OPENCV_BUILD=1"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_CONSTANT_MACROS"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_LIMIT_MACROS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 28,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/ippicv/ippicv_win/icv/include"
+				},
+				{
+					"backtrace" : 30,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/ippicv/ippicv_win/iw/include"
+				},
+				{
+					"backtrace" : 32,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/src"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/include"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/modules/dnn"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/core/include"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/imgproc/include"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/misc/caffe"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/misc/tensorflow"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/misc/onnx"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/include/opencl/1.2"
+				},
+				{
+					"backtrace" : 12,
+					"isSystem" : true,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/protobuf/src"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					4
+				],
+				"standard" : "11"
+			},
+			"sourceIndexes" : 
+			[
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108,
+				109,
+				110,
+				111,
+				137,
+				205
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " /DWIN32 /D_WINDOWS /W4 /GR  /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /Gy /bigobj /Oi  /fp:precise /FS     /EHa /wd4127 /wd4251 /wd4324 /wd4275 /wd4512 /wd4589 /wd4244 /wd4267 /wd4018 /wd4355 /wd4800 /wd4251 /wd4996 /wd4146 /wd4305 /wd4127 /wd4100 /wd4512 /wd4125 /wd4389 /wd4510 /wd4610 /wd4702 /wd4456 /wd4457 /wd4065 /wd4310 /wd4661 /wd4506 /wd4125 /wd4267 /wd4127 /wd4244 /wd4512 /wd4702 /wd4456 /wd4510 /wd4610 /wd4800 /wd4701 /wd4703 /wd4505 /wd4458  /MDd /Zi /Ob0 /Od /RTC1 "
+				},
+				{
+					"fragment" : "     /arch:AVX"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "CVAPI_EXPORTS"
+				},
+				{
+					"backtrace" : 36,
+					"define" : "CV_CPU_COMPILE_AVX=1"
+				},
+				{
+					"backtrace" : 36,
+					"define" : "CV_CPU_COMPILE_POPCNT=1"
+				},
+				{
+					"backtrace" : 36,
+					"define" : "CV_CPU_COMPILE_SSE4_1=1"
+				},
+				{
+					"backtrace" : 36,
+					"define" : "CV_CPU_COMPILE_SSE4_2=1"
+				},
+				{
+					"backtrace" : 36,
+					"define" : "CV_CPU_COMPILE_SSSE3=1"
+				},
+				{
+					"backtrace" : 36,
+					"define" : "CV_CPU_DISPATCH_MODE=AVX"
+				},
+				{
+					"backtrace" : 13,
+					"define" : "CV_OCL4DNN=1"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "HAVE_PROTOBUF=1"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "_CRT_SECURE_NO_WARNINGS=1"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "_USE_MATH_DEFINES"
+				},
+				{
+					"backtrace" : 21,
+					"define" : "_VARIADIC_MAX=10"
+				},
+				{
+					"backtrace" : 22,
+					"define" : "_WIN32_WINNT=0x0601"
+				},
+				{
+					"backtrace" : 24,
+					"define" : "__OPENCV_BUILD=1"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_CONSTANT_MACROS"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_LIMIT_MACROS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 28,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/ippicv/ippicv_win/icv/include"
+				},
+				{
+					"backtrace" : 30,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/ippicv/ippicv_win/iw/include"
+				},
+				{
+					"backtrace" : 32,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/src"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/include"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/modules/dnn"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/core/include"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/imgproc/include"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/misc/caffe"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/misc/tensorflow"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/misc/onnx"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/include/opencl/1.2"
+				},
+				{
+					"backtrace" : 12,
+					"isSystem" : true,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/protobuf/src"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					4
+				],
+				"standard" : "11"
+			},
+			"sourceIndexes" : 
+			[
+				199
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " /DWIN32 /D_WINDOWS /W4 /GR  /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /Gy /bigobj /Oi  /fp:precise /FS     /EHa /wd4127 /wd4251 /wd4324 /wd4275 /wd4512 /wd4589 /wd4244 /wd4267 /wd4018 /wd4355 /wd4800 /wd4251 /wd4996 /wd4146 /wd4305 /wd4127 /wd4100 /wd4512 /wd4125 /wd4389 /wd4510 /wd4610 /wd4702 /wd4456 /wd4457 /wd4065 /wd4310 /wd4661 /wd4506 /wd4125 /wd4267 /wd4127 /wd4244 /wd4512 /wd4702 /wd4456 /wd4510 /wd4610 /wd4800 /wd4701 /wd4703 /wd4505 /wd4458  /MDd /Zi /Ob0 /Od /RTC1 "
+				},
+				{
+					"fragment" : "     /arch:AVX  /arch:AVX /arch:AVX2"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "CVAPI_EXPORTS"
+				},
+				{
+					"backtrace" : 37,
+					"define" : "CV_CPU_COMPILE_AVX2=1"
+				},
+				{
+					"backtrace" : 37,
+					"define" : "CV_CPU_COMPILE_AVX=1"
+				},
+				{
+					"backtrace" : 37,
+					"define" : "CV_CPU_COMPILE_FMA3=1"
+				},
+				{
+					"backtrace" : 37,
+					"define" : "CV_CPU_COMPILE_FP16=1"
+				},
+				{
+					"backtrace" : 37,
+					"define" : "CV_CPU_COMPILE_POPCNT=1"
+				},
+				{
+					"backtrace" : 37,
+					"define" : "CV_CPU_COMPILE_SSE4_1=1"
+				},
+				{
+					"backtrace" : 37,
+					"define" : "CV_CPU_COMPILE_SSE4_2=1"
+				},
+				{
+					"backtrace" : 37,
+					"define" : "CV_CPU_COMPILE_SSSE3=1"
+				},
+				{
+					"backtrace" : 37,
+					"define" : "CV_CPU_DISPATCH_MODE=AVX2"
+				},
+				{
+					"backtrace" : 13,
+					"define" : "CV_OCL4DNN=1"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "HAVE_PROTOBUF=1"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "_CRT_SECURE_NO_WARNINGS=1"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "_USE_MATH_DEFINES"
+				},
+				{
+					"backtrace" : 21,
+					"define" : "_VARIADIC_MAX=10"
+				},
+				{
+					"backtrace" : 22,
+					"define" : "_WIN32_WINNT=0x0601"
+				},
+				{
+					"backtrace" : 24,
+					"define" : "__OPENCV_BUILD=1"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_CONSTANT_MACROS"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_LIMIT_MACROS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 28,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/ippicv/ippicv_win/icv/include"
+				},
+				{
+					"backtrace" : 30,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/ippicv/ippicv_win/iw/include"
+				},
+				{
+					"backtrace" : 32,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/src"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/include"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/modules/dnn"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/core/include"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/imgproc/include"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/misc/caffe"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/misc/tensorflow"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/misc/onnx"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/include/opencl/1.2"
+				},
+				{
+					"backtrace" : 12,
+					"isSystem" : true,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/protobuf/src"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					4
+				],
+				"standard" : "11"
+			},
+			"sourceIndexes" : 
+			[
+				200
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " /DWIN32 /D_WINDOWS /W4 /GR  /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /Gy /bigobj /Oi  /fp:precise /FS     /EHa /wd4127 /wd4251 /wd4324 /wd4275 /wd4512 /wd4589 /wd4244 /wd4267 /wd4018 /wd4355 /wd4800 /wd4251 /wd4996 /wd4146 /wd4305 /wd4127 /wd4100 /wd4512 /wd4125 /wd4389 /wd4510 /wd4610 /wd4702 /wd4456 /wd4457 /wd4065 /wd4310 /wd4661 /wd4506 /wd4125 /wd4267 /wd4127 /wd4244 /wd4512 /wd4702 /wd4456 /wd4510 /wd4610 /wd4800 /wd4701 /wd4703 /wd4505 /wd4458  /MDd /Zi /Ob0 /Od /RTC1 "
+				},
+				{
+					"fragment" : "     /arch:AVX  /arch:AVX /arch:AVX2 /arch:AVX512 /arch:AVX512 /arch:AVX512"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "CVAPI_EXPORTS"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "CV_CPU_COMPILE_AVX2=1"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "CV_CPU_COMPILE_AVX512_COMMON=1"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "CV_CPU_COMPILE_AVX512_SKX=1"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "CV_CPU_COMPILE_AVX=1"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "CV_CPU_COMPILE_AVX_512F=1"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "CV_CPU_COMPILE_FMA3=1"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "CV_CPU_COMPILE_FP16=1"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "CV_CPU_COMPILE_POPCNT=1"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "CV_CPU_COMPILE_SSE4_1=1"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "CV_CPU_COMPILE_SSE4_2=1"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "CV_CPU_COMPILE_SSSE3=1"
+				},
+				{
+					"backtrace" : 38,
+					"define" : "CV_CPU_DISPATCH_MODE=AVX512_SKX"
+				},
+				{
+					"backtrace" : 13,
+					"define" : "CV_OCL4DNN=1"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "HAVE_PROTOBUF=1"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "_CRT_SECURE_NO_WARNINGS=1"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "_USE_MATH_DEFINES"
+				},
+				{
+					"backtrace" : 21,
+					"define" : "_VARIADIC_MAX=10"
+				},
+				{
+					"backtrace" : 22,
+					"define" : "_WIN32_WINNT=0x0601"
+				},
+				{
+					"backtrace" : 24,
+					"define" : "__OPENCV_BUILD=1"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_CONSTANT_MACROS"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_LIMIT_MACROS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 28,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/ippicv/ippicv_win/icv/include"
+				},
+				{
+					"backtrace" : 30,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/ippicv/ippicv_win/iw/include"
+				},
+				{
+					"backtrace" : 32,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/src"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/include"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/modules/dnn"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/core/include"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/imgproc/include"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/misc/caffe"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/misc/tensorflow"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/misc/onnx"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/include/opencl/1.2"
+				},
+				{
+					"backtrace" : 12,
+					"isSystem" : true,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/protobuf/src"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					4
+				],
+				"standard" : "11"
+			},
+			"sourceIndexes" : 
+			[
+				201
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-DWIN32 -D_DEBUG"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "CVAPI_EXPORTS"
+				},
+				{
+					"backtrace" : 13,
+					"define" : "CV_OCL4DNN=1"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "HAVE_PROTOBUF=1"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "_CRT_SECURE_NO_WARNINGS=1"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "_USE_MATH_DEFINES"
+				},
+				{
+					"backtrace" : 21,
+					"define" : "_VARIADIC_MAX=10"
+				},
+				{
+					"backtrace" : 22,
+					"define" : "_WIN32_WINNT=0x0601"
+				},
+				{
+					"backtrace" : 24,
+					"define" : "__OPENCV_BUILD=1"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_CONSTANT_MACROS"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "__STDC_LIMIT_MACROS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 28,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/ippicv/ippicv_win/icv/include"
+				},
+				{
+					"backtrace" : 30,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/3rdparty/ippicv/ippicv_win/iw/include"
+				},
+				{
+					"backtrace" : 32,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/src"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/include"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/modules/dnn"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/core/include"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/imgproc/include"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/misc/caffe"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/misc/tensorflow"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/modules/dnn/misc/onnx"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/include/opencl/1.2"
+				},
+				{
+					"backtrace" : 12,
+					"isSystem" : true,
+					"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/3rdparty/protobuf/src"
+				}
+			],
+			"language" : "RC",
+			"sourceIndexes" : 
+			[
+				204
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 12,
+			"id" : "libprotobuf::@8bb0a9a9eda9db088686"
+		},
+		{
+			"backtrace" : 12,
+			"id" : "ippiw::@5f1c6d7264a9a7781a27"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "opencv_imgproc::@46089d46ac6964f10538"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "opencv_core::@90e83aff1e86c0750a9d"
+		}
+	],
+	"id" : "opencv_dnn::@9bfb28f21a1ab2b0c462",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 6,
+				"path" : "x64/vc16/lib"
+			},
+			{
+				"backtrace" : 6,
+				"path" : "x64/vc16/bin"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/install/x64-Debug"
+		}
+	},
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/machine:x64  /debug /INCREMENTAL  /NODEFAULTLIB:libc /DEBUG",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 9,
+				"fragment" : "..\\..\\lib\\opencv_imgproc451d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 12,
+				"fragment" : "..\\..\\3rdparty\\lib\\ippiwd.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 12,
+				"fragment" : "..\\..\\3rdparty\\ippicv\\ippicv_win\\icv\\lib\\intel64\\ippicvmt.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 12,
+				"fragment" : "..\\..\\3rdparty\\lib\\libprotobufd.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 9,
+				"fragment" : "..\\..\\lib\\opencv_core451d.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "opencv_dnn",
+	"nameOnDisk" : "opencv_dnn451d.dll",
+	"paths" : 
+	{
+		"build" : "modules/dnn",
+		"source" : "modules/dnn"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Include\\opencv2",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "Include\\opencv2\\dnn",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				9
+			]
+		},
+		{
+			"name" : "Include\\opencv2\\dnn\\utils",
+			"sourceIndexes" : 
+			[
+				8
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				199,
+				200,
+				201,
+				205
+			]
+		},
+		{
+			"name" : "Src\\caffe",
+			"sourceIndexes" : 
+			[
+				20,
+				21,
+				22,
+				139,
+				140
+			]
+		},
+		{
+			"name" : "Src\\darknet",
+			"sourceIndexes" : 
+			[
+				23,
+				24,
+				155
+			]
+		},
+		{
+			"name" : "Src",
+			"sourceIndexes" : 
+			[
+				25,
+				26,
+				27,
+				28,
+				29,
+				64,
+				65,
+				75,
+				76,
+				77,
+				156,
+				157,
+				158,
+				159,
+				162,
+				168,
+				169,
+				170,
+				171,
+				172,
+				204
+			]
+		},
+		{
+			"name" : "Src\\layers",
+			"sourceIndexes" : 
+			[
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				160,
+				161
+			]
+		},
+		{
+			"name" : "Src\\ocl4dnn\\src",
+			"sourceIndexes" : 
+			[
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72
+			]
+		},
+		{
+			"name" : "Src\\onnx",
+			"sourceIndexes" : 
+			[
+				73,
+				74,
+				167
+			]
+		},
+		{
+			"name" : "Src\\tengine4dnn\\src",
+			"sourceIndexes" : 
+			[
+				78
+			]
+		},
+		{
+			"name" : "Src\\tensorflow",
+			"sourceIndexes" : 
+			[
+				79,
+				80,
+				81,
+				174,
+				175
+			]
+		},
+		{
+			"name" : "Src\\torch",
+			"sourceIndexes" : 
+			[
+				82,
+				83,
+				84,
+				85,
+				176,
+				177,
+				178,
+				179
+			]
+		},
+		{
+			"name" : "Src\\vkcom\\shader",
+			"sourceIndexes" : 
+			[
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				192
+			]
+		},
+		{
+			"name" : "Src\\vkcom\\src",
+			"sourceIndexes" : 
+			[
+				97,
+				98,
+				99,
+				100,
+				101,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108,
+				109,
+				193,
+				194,
+				195
+			]
+		},
+		{
+			"name" : "Src\\vkcom\\vulkan",
+			"sourceIndexes" : 
+			[
+				110,
+				111,
+				196,
+				197,
+				198
+			]
+		},
+		{
+			"name" : "Src\\opencl\\kernels",
+			"sourceIndexes" : 
+			[
+				112,
+				113,
+				114,
+				115,
+				116,
+				117,
+				118,
+				119,
+				120,
+				121,
+				122,
+				123,
+				124,
+				125,
+				126,
+				127,
+				128,
+				129,
+				130,
+				131,
+				132,
+				133,
+				134,
+				135,
+				136
+			]
+		},
+		{
+			"name" : "Src\\opencl\\kernels\\autogenerated",
+			"sourceIndexes" : 
+			[
+				137,
+				138
+			]
+		},
+		{
+			"name" : "Src\\cuda",
+			"sourceIndexes" : 
+			[
+				141,
+				142,
+				143,
+				144,
+				145,
+				146,
+				147,
+				148,
+				149,
+				150,
+				151,
+				152,
+				153,
+				154
+			]
+		},
+		{
+			"name" : "Src\\ocl4dnn\\include",
+			"sourceIndexes" : 
+			[
+				163,
+				164,
+				165,
+				166
+			]
+		},
+		{
+			"name" : "Src\\tengine4dnn\\include",
+			"sourceIndexes" : 
+			[
+				173
+			]
+		},
+		{
+			"name" : "Src\\vkcom\\include",
+			"sourceIndexes" : 
+			[
+				180,
+				181,
+				182,
+				183,
+				184,
+				185,
+				186,
+				187,
+				188,
+				189,
+				190,
+				191
+			]
+		},
+		{
+			"name" : "Include",
+			"sourceIndexes" : 
+			[
+				202,
+				203
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				206
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/include/opencv2/dnn.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/include/opencv2/dnn/all_layers.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/include/opencv2/dnn/dict.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/include/opencv2/dnn/dnn.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/include/opencv2/dnn/dnn.inl.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/include/opencv2/dnn/layer.details.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/include/opencv2/dnn/layer.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/include/opencv2/dnn/shape_utils.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/include/opencv2/dnn/utils/inference_engine.hpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/include/opencv2/dnn/version.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/misc/caffe/opencv-caffe.pb.cc",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/misc/onnx/opencv-onnx.pb.cc",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/misc/tensorflow/attr_value.pb.cc",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/misc/tensorflow/function.pb.cc",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/misc/tensorflow/graph.pb.cc",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/misc/tensorflow/op_def.pb.cc",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/misc/tensorflow/tensor.pb.cc",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/misc/tensorflow/tensor_shape.pb.cc",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/misc/tensorflow/types.pb.cc",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/misc/tensorflow/versions.pb.cc",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/caffe/caffe_importer.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/caffe/caffe_io.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/caffe/caffe_shrinker.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/darknet/darknet_importer.cpp",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/darknet/darknet_io.cpp",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/dnn.cpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/graph_simplifier.cpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/halide_scheduler.cpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/ie_ngraph.cpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/init.cpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/accum_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/batch_norm_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/blank_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/concat_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/const_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/convolution_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/correlation_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/crop_and_resize_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/detection_output_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/elementwise_layers.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/eltwise_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/flatten_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/flow_warp_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/fully_connected_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/layers_common.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/lrn_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/max_unpooling_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/mvn_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/normalize_bbox_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/padding_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/permute_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/pooling_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/prior_box_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/proposal_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/recurrent_layers.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/region_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/reorg_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/reshape_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/resize_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/scale_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/shuffle_channel_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/slice_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/softmax_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/layers/split_layer.cpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/model.cpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/nms.cpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/ocl4dnn/src/common.cpp",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/ocl4dnn/src/math_functions.cpp",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/ocl4dnn/src/ocl4dnn_conv_spatial.cpp",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/ocl4dnn/src/ocl4dnn_inner_product.cpp",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/ocl4dnn/src/ocl4dnn_lrn.cpp",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/ocl4dnn/src/ocl4dnn_pool.cpp",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/ocl4dnn/src/ocl4dnn_softmax.cpp",
+			"sourceGroupIndex" : 8
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/onnx/onnx_graph_simplifier.cpp",
+			"sourceGroupIndex" : 9
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/onnx/onnx_importer.cpp",
+			"sourceGroupIndex" : 9
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/op_halide.cpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/op_inf_engine.cpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/op_vkcom.cpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/tengine4dnn/src/tengine_graph_convolution.cpp",
+			"sourceGroupIndex" : 10
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/tensorflow/tf_graph_simplifier.cpp",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/tensorflow/tf_importer.cpp",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/tensorflow/tf_io.cpp",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/torch/THDiskFile.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/torch/THFile.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/torch/THGeneral.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/torch/torch_importer.cpp",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/shader/avg_pool_spv.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/shader/concat_spv.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/shader/conv48_spv.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/shader/conv_spv.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/shader/dw_conv_spv.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/shader/lrn_spv.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/shader/max_pool_spv.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/shader/permute_spv.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/shader/prior_box_spv.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/shader/relu_spv.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/shader/softmax_spv.cpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/src/buffer.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/src/context.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/src/internal.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/src/op_base.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/src/op_concat.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/src/op_conv.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/src/op_lrn.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/src/op_permute.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/src/op_pool.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/src/op_prior_box.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/src/op_relu.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/src/op_softmax.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/src/tensor.cpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/vulkan/vk_functions.cpp",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "modules/dnn/src/vkcom/vulkan/vk_loader.cpp",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/activations.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/batchnorm.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/col2im.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/concat.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/conv_layer_spatial.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/conv_spatial_helper.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/detection_output.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/dummy.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/eltwise.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/gemm_buffer.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/gemm_image.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/im2col.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/lrn.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/math.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/matvec_mul.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/mvn.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/ocl4dnn_lrn.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/ocl4dnn_pooling.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/permute.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/pooling.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/prior_box.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/region.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/slice.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/softmax.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/opencl/softmax_loss.cl",
+			"sourceGroupIndex" : 16
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "out/build/x64-Debug/modules/dnn/opencl_kernels_dnn.cpp",
+			"sourceGroupIndex" : 17
+		},
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "out/build/x64-Debug/modules/dnn/opencl_kernels_dnn.hpp",
+			"sourceGroupIndex" : 17
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/caffe/caffe_io.hpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/caffe/glog_emulator.hpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/cuda/array.hpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/cuda/atomics.hpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/cuda/bbox_utils.hpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/cuda/block_stride_range.hpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/cuda/execution.hpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/cuda/functors.hpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/cuda/grid_stride_range.hpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/cuda/index_helpers.hpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/cuda/kernel_dispatcher.hpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/cuda/limits.hpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/cuda/math.hpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/cuda/memory.hpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/cuda/types.hpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/cuda/vector_traits.hpp",
+			"sourceGroupIndex" : 18
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/darknet/darknet_io.hpp",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/dnn_common.hpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/graph_simplifier.hpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/halide_scheduler.hpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/ie_ngraph.hpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/layers/layers_common.hpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/layers/layers_common.simd.hpp",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/nms.inl.hpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/ocl4dnn/include/common.hpp",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/ocl4dnn/include/default_kernel_config.hpp",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/ocl4dnn/include/math_functions.hpp",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/ocl4dnn/include/ocl4dnn.hpp",
+			"sourceGroupIndex" : 19
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/onnx/onnx_graph_simplifier.hpp",
+			"sourceGroupIndex" : 9
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/op_cuda.hpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/op_halide.hpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/op_inf_engine.hpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/op_vkcom.hpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/precomp.hpp",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/tengine4dnn/include/tengine_graph_convolution.hpp",
+			"sourceGroupIndex" : 20
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/tensorflow/tf_graph_simplifier.hpp",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/tensorflow/tf_io.hpp",
+			"sourceGroupIndex" : 11
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/torch/THDiskFile.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/torch/THFile.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/torch/THFilePrivate.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/torch/THGeneral.h",
+			"sourceGroupIndex" : 12
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/include/buffer.hpp",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/include/op_base.hpp",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/include/op_concat.hpp",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/include/op_conv.hpp",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/include/op_lrn.hpp",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/include/op_permute.hpp",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/include/op_pool.hpp",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/include/op_prior_box.hpp",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/include/op_relu.hpp",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/include/op_softmax.hpp",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/include/tensor.hpp",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/include/vkcom.hpp",
+			"sourceGroupIndex" : 21
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/shader/spv_shader.hpp",
+			"sourceGroupIndex" : 13
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/src/common.hpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/src/context.hpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/src/internal.hpp",
+			"sourceGroupIndex" : 14
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/vulkan/function_list.inl.hpp",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/vulkan/vk_functions.hpp",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"backtrace" : 4,
+			"path" : "modules/dnn/src/vkcom/vulkan/vk_loader.hpp",
+			"sourceGroupIndex" : 15
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 1,
+			"path" : "out/build/x64-Debug/modules/dnn/layers/layers_common.avx.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 2,
+			"path" : "out/build/x64-Debug/modules/dnn/layers/layers_common.avx2.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 3,
+			"path" : "out/build/x64-Debug/modules/dnn/layers/layers_common.avx512_skx.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"path" : "out/build/x64-Debug/cvconfig.h",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"path" : "out/build/x64-Debug/opencv2/opencv_modules.hpp",
+			"sourceGroupIndex" : 22
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 4,
+			"path" : "out/build/x64-Debug/modules/dnn/vs_version.rc",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "out/build/x64-Debug/modules/dnn/opencv_dnn_main.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "out/build/x64-Debug/modules/dnn/opencl_kernels_dnn.cpp.rule",
+			"sourceGroupIndex" : 23
+		}
+	],
+	"type" : "SHARED_LIBRARY"
+}

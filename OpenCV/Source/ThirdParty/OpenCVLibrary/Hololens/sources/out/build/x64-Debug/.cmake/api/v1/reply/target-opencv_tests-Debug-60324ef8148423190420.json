@@ -1,0 +1,408 @@
+{
+	"backtrace" : 3,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"include",
+			"add_dependencies",
+			"ocv_add_accuracy_tests",
+			"ocv_define_module"
+		],
+		"files" : 
+		[
+			"cmake/OpenCVExtraTargets.cmake",
+			"CMakeLists.txt",
+			"cmake/OpenCVModule.cmake",
+			"modules/flann/CMakeLists.txt",
+			"modules/imgproc/CMakeLists.txt",
+			"modules/core/CMakeLists.txt",
+			"modules/ml/CMakeLists.txt",
+			"modules/photo/CMakeLists.txt",
+			"modules/features2d/CMakeLists.txt",
+			"modules/dnn/CMakeLists.txt",
+			"modules/imgcodecs/CMakeLists.txt",
+			"modules/videoio/CMakeLists.txt",
+			"modules/highgui/CMakeLists.txt",
+			"modules/calib3d/CMakeLists.txt",
+			"modules/objdetect/CMakeLists.txt",
+			"modules/stitching/CMakeLists.txt",
+			"modules/video/CMakeLists.txt",
+			"modules/gapi/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 870,
+				"parent" : 0
+			},
+			{
+				"file" : 0,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 33,
+				"parent" : 2
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 2,
+				"parent" : 4
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 1075,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1272,
+				"parent" : 6
+			},
+			{
+				"file" : 4
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 13,
+				"parent" : 8
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 1075,
+				"parent" : 9
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1272,
+				"parent" : 10
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 3,
+				"file" : 5,
+				"line" : 125,
+				"parent" : 12
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1272,
+				"parent" : 13
+			},
+			{
+				"file" : 6
+			},
+			{
+				"command" : 4,
+				"file" : 6,
+				"line" : 2,
+				"parent" : 15
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 1075,
+				"parent" : 16
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1272,
+				"parent" : 17
+			},
+			{
+				"file" : 7
+			},
+			{
+				"command" : 4,
+				"file" : 7,
+				"line" : 7,
+				"parent" : 19
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 1075,
+				"parent" : 20
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1272,
+				"parent" : 21
+			},
+			{
+				"file" : 8
+			},
+			{
+				"command" : 4,
+				"file" : 8,
+				"line" : 9,
+				"parent" : 23
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 1075,
+				"parent" : 24
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1272,
+				"parent" : 25
+			},
+			{
+				"file" : 9
+			},
+			{
+				"command" : 3,
+				"file" : 9,
+				"line" : 168,
+				"parent" : 27
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1272,
+				"parent" : 28
+			},
+			{
+				"file" : 10
+			},
+			{
+				"command" : 3,
+				"file" : 10,
+				"line" : 166,
+				"parent" : 30
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1272,
+				"parent" : 31
+			},
+			{
+				"file" : 11
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 208,
+				"parent" : 33
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1272,
+				"parent" : 34
+			},
+			{
+				"file" : 12
+			},
+			{
+				"command" : 3,
+				"file" : 12,
+				"line" : 165,
+				"parent" : 36
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1272,
+				"parent" : 37
+			},
+			{
+				"file" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 13,
+				"line" : 9,
+				"parent" : 39
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 1075,
+				"parent" : 40
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1272,
+				"parent" : 41
+			},
+			{
+				"file" : 14
+			},
+			{
+				"command" : 4,
+				"file" : 14,
+				"line" : 2,
+				"parent" : 43
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 1075,
+				"parent" : 44
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1272,
+				"parent" : 45
+			},
+			{
+				"file" : 15
+			},
+			{
+				"command" : 4,
+				"file" : 15,
+				"line" : 11,
+				"parent" : 47
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 1075,
+				"parent" : 48
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1272,
+				"parent" : 49
+			},
+			{
+				"file" : 16
+			},
+			{
+				"command" : 4,
+				"file" : 16,
+				"line" : 2,
+				"parent" : 51
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 1075,
+				"parent" : 52
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1272,
+				"parent" : 53
+			},
+			{
+				"file" : 17
+			},
+			{
+				"command" : 3,
+				"file" : 17,
+				"line" : 192,
+				"parent" : 55
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 1272,
+				"parent" : 56
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 7,
+			"id" : "opencv_test_flann::@b7c07563ccf30005c216"
+		},
+		{
+			"backtrace" : 11,
+			"id" : "opencv_test_imgproc::@46089d46ac6964f10538"
+		},
+		{
+			"backtrace" : 14,
+			"id" : "opencv_test_core::@90e83aff1e86c0750a9d"
+		},
+		{
+			"backtrace" : 18,
+			"id" : "opencv_test_ml::@b79385d0caec563eb03e"
+		},
+		{
+			"backtrace" : 22,
+			"id" : "opencv_test_photo::@7fc8438b288b9566f339"
+		},
+		{
+			"backtrace" : 26,
+			"id" : "opencv_test_features2d::@4f2b1ecb2cf869bde395"
+		},
+		{
+			"backtrace" : 29,
+			"id" : "opencv_test_dnn::@9bfb28f21a1ab2b0c462"
+		},
+		{
+			"backtrace" : 32,
+			"id" : "opencv_test_imgcodecs::@e5f64ca75d8a3efadfa0"
+		},
+		{
+			"backtrace" : 35,
+			"id" : "opencv_test_videoio::@368e281a2b3422cd0411"
+		},
+		{
+			"backtrace" : 38,
+			"id" : "opencv_test_highgui::@eec24f45586c5b1a2074"
+		},
+		{
+			"backtrace" : 42,
+			"id" : "opencv_test_calib3d::@e8558e004ddb3d41eff9"
+		},
+		{
+			"backtrace" : 46,
+			"id" : "opencv_test_objdetect::@7f5df5b9e7e68549eda2"
+		},
+		{
+			"backtrace" : 50,
+			"id" : "opencv_test_stitching::@c90dc6396798f553fb2f"
+		},
+		{
+			"backtrace" : 54,
+			"id" : "opencv_test_video::@08df6c0062966df3c8f9"
+		},
+		{
+			"backtrace" : 57,
+			"id" : "opencv_test_gapi::@77f52973fba75ea81765"
+		}
+	],
+	"id" : "opencv_tests::@6890427a1f51a3e7e1df",
+	"name" : "opencv_tests",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

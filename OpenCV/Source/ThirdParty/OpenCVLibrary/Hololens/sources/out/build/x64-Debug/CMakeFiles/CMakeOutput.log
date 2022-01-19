@@ -1,0 +1,474 @@
+The system is: Windows - 10.0.19043 - AMD64
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30137 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+CMakeCXXCompilerId.cpp
+Microsoft (R) Incremental Linker Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCXXCompilerId.exe 
+CMakeCXXCompilerId.obj 
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
+
+The CXX compiler identification is MSVC, found in "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/3.20.21032501-MSVC_2/CompilerIdCXX/CMakeCXXCompilerId.exe"
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30137 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+CMakeCCompilerId.c
+Microsoft (R) Incremental Linker Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCCompilerId.exe 
+CMakeCCompilerId.obj 
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
+
+The C compiler identification is MSVC, found in "D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/3.20.21032501-MSVC_2/CompilerIdC/CMakeCCompilerId.exe"
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_ada95 && [1/2] Building CXX object CMakeFiles\cmTC_ada95.dir\CMakeCXXCompilerABI.cpp.obj
+[2/2] Linking CXX executable cmTC_ada95.exe
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_f33ce && [1/2] Building C object CMakeFiles\cmTC_f33ce.dir\CMakeCCompilerABI.c.obj
+[2/2] Linking C executable cmTC_f33ce.exe
+
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_6828c && [1/2] Building C object CMakeFiles\cmTC_6828c.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_6828c.exe
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_8fc68 && [1/2] Building C object CMakeFiles\cmTC_8fc68.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_8fc68.exe
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_18869 && [1/2] Building C object CMakeFiles\cmTC_18869.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_18869.exe
+
+
+
+Determining size of size_t passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_46a18 && [1/2] Building C object CMakeFiles\cmTC_46a18.dir\SIZEOF_SIZE_T.c.obj
+[2/2] Linking C executable cmTC_46a18.exe
+
+
+
+Determining size of unsigned long passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_b496d && [1/2] Building C object CMakeFiles\cmTC_b496d.dir\SIZEOF_UNSIGNED_LONG.c.obj
+[2/2] Linking C executable cmTC_b496d.exe
+
+
+
+Determining if files intrin.h exist passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_f48d7 && [1/2] Building C object CMakeFiles\cmTC_f48d7.dir\HAVE_INTRIN_H.c.obj
+[2/2] Linking C executable cmTC_f48d7.exe
+
+
+
+Determining if the include file assert.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_12a42 && [1/2] Building C object CMakeFiles\cmTC_12a42.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_12a42.exe
+
+
+
+Determining if the include file fcntl.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_ac946 && [1/2] Building C object CMakeFiles\cmTC_ac946.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_ac946.exe
+
+
+
+Determining if the include file inttypes.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_e81b8 && [1/2] Building C object CMakeFiles\cmTC_e81b8.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_e81b8.exe
+
+
+
+Determining if the include file io.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_4463d && [1/2] Building C object CMakeFiles\cmTC_4463d.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_4463d.exe
+
+
+
+Determining if the include file limits.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_970b1 && [1/2] Building C object CMakeFiles\cmTC_970b1.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_970b1.exe
+
+
+
+Determining if the include file malloc.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_22027 && [1/2] Building C object CMakeFiles\cmTC_22027.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_22027.exe
+
+
+
+Determining if the include file memory.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_afebc && [1/2] Building C object CMakeFiles\cmTC_afebc.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_afebc.exe
+
+
+
+Determining if the include file search.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_5d4fb && [1/2] Building C object CMakeFiles\cmTC_5d4fb.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_5d4fb.exe
+
+
+
+Determining if the include file string.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_98621 && [1/2] Building C object CMakeFiles\cmTC_98621.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_98621.exe
+
+
+
+Performing C SOURCE FILE Test C_HAS_inline succeeded with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_4db9d && [1/2] Building C object CMakeFiles\cmTC_4db9d.dir\src.c.obj
+[2/2] Linking C executable cmTC_4db9d.exe
+
+
+Source file was:
+
+        typedef int foo_t;
+        static inline foo_t static_foo() {return 0;}
+        foo_t foo(){return 0;}
+        int main(int argc, char *argv[]) {return 0;}
+Determining size of signed short passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_8a037 && [1/2] Building C object CMakeFiles\cmTC_8a037.dir\SIZEOF_SIGNED_SHORT.c.obj
+[2/2] Linking C executable cmTC_8a037.exe
+
+
+
+Determining size of unsigned short passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_7b451 && [1/2] Building C object CMakeFiles\cmTC_7b451.dir\SIZEOF_UNSIGNED_SHORT.c.obj
+[2/2] Linking C executable cmTC_7b451.exe
+
+
+
+Determining size of signed int passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_c3ea2 && [1/2] Building C object CMakeFiles\cmTC_c3ea2.dir\SIZEOF_SIGNED_INT.c.obj
+[2/2] Linking C executable cmTC_c3ea2.exe
+
+
+
+Determining size of unsigned int passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_c2b19 && [1/2] Building C object CMakeFiles\cmTC_c2b19.dir\SIZEOF_UNSIGNED_INT.c.obj
+[2/2] Linking C executable cmTC_c2b19.exe
+
+
+
+Determining size of signed long passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_b24c1 && [1/2] Building C object CMakeFiles\cmTC_b24c1.dir\SIZEOF_SIGNED_LONG.c.obj
+[2/2] Linking C executable cmTC_b24c1.exe
+
+
+
+Determining size of signed long long passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_d2a00 && [1/2] Building C object CMakeFiles\cmTC_d2a00.dir\SIZEOF_SIGNED_LONG_LONG.c.obj
+[2/2] Linking C executable cmTC_d2a00.exe
+
+
+
+Determining size of unsigned long long passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_776eb && [1/2] Building C object CMakeFiles\cmTC_776eb.dir\SIZEOF_UNSIGNED_LONG_LONG.c.obj
+[2/2] Linking C executable cmTC_776eb.exe
+
+
+
+Determining size of unsigned char * passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_f1500 && [1/2] Building C object CMakeFiles\cmTC_f1500.dir\SIZEOF_UNSIGNED_CHAR_P.c.obj
+[2/2] Linking C executable cmTC_f1500.exe
+
+
+
+Determining size of ptrdiff_t passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_0f876 && [1/2] Building C object CMakeFiles\cmTC_0f876.dir\SIZEOF_PTRDIFF_T.c.obj
+[2/2] Linking C executable cmTC_0f876.exe
+
+
+
+Determining if the function setmode exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_2996c && [1/2] Building C object CMakeFiles\cmTC_2996c.dir\CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_2996c.exe
+
+
+
+Determining if the function strchr exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_8b676 && [1/2] Building C object CMakeFiles\cmTC_8b676.dir\CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_8b676.exe
+
+
+
+Determining if the function strrchr exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_6cd21 && [1/2] Building C object CMakeFiles\cmTC_6cd21.dir\CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_6cd21.exe
+
+
+
+Determining if the function strstr exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_60319 && [1/2] Building C object CMakeFiles\cmTC_60319.dir\CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_60319.exe
+
+
+
+Determining if the function strtol exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_f6733 && [1/2] Building C object CMakeFiles\cmTC_f6733.dir\CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_f6733.exe
+
+
+
+Determining if the function strtol exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_76565 && [1/2] Building C object CMakeFiles\cmTC_76565.dir\CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_76565.exe
+
+
+
+Determining if the function strtoull exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_c4f57 && [1/2] Building C object CMakeFiles\cmTC_c4f57.dir\CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_c4f57.exe
+
+
+
+Determining if the function lfind exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_44410 && [1/2] Building C object CMakeFiles\cmTC_44410.dir\CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_44410.exe
+
+
+
+Performing C SOURCE FILE Test HAVE_SNPRINTF succeeded with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_3b6ad && [1/2] Building C object CMakeFiles\cmTC_3b6ad.dir\src.c.obj
+[2/2] Linking C executable cmTC_3b6ad.exe
+
+
+Source file was:
+
+#include <stdio.h>
+int main(void) {
+  char buf[10];
+  snprintf(buf, 10, "Test %d", 1);
+  return 0;
+}
+Determining if the include file stdlib.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_591aa && [1/2] Building C object CMakeFiles\cmTC_591aa.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_591aa.exe
+
+
+
+Determining if the include file stdio.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_02ac1 && [1/2] Building C object CMakeFiles\cmTC_02ac1.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_02ac1.exe
+
+
+
+Determining if the include file math.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_4fca5 && [1/2] Building C object CMakeFiles\cmTC_4fca5.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_4fca5.exe
+
+
+
+Determining if the include file float.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_c81cc && [1/2] Building C object CMakeFiles\cmTC_c81cc.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_c81cc.exe
+
+
+
+Determining if the include file time.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_820dd && [1/2] Building C object CMakeFiles\cmTC_820dd.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_820dd.exe
+
+
+
+Determining if the include file stdarg.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_fd82c && [1/2] Building C object CMakeFiles\cmTC_fd82c.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_fd82c.exe
+
+
+
+Determining if the include file ctype.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_6be7e && [1/2] Building C object CMakeFiles\cmTC_6be7e.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_6be7e.exe
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_58faa && [1/2] Building C object CMakeFiles\cmTC_58faa.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_58faa.exe
+
+
+
+Determining if the include file inttypes.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_ad364 && [1/2] Building C object CMakeFiles\cmTC_ad364.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_ad364.exe
+
+
+
+Determining if the include file sys/stat.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_25d00 && [1/2] Building C object CMakeFiles\cmTC_25d00.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_25d00.exe
+
+
+
+Determining if files malloc.h exist passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_f7137 && [1/2] Building C object CMakeFiles\cmTC_f7137.dir\OPJ_HAVE_MALLOC_H.c.obj
+[2/2] Linking C executable cmTC_f7137.exe
+
+
+
+Determining if the _aligned_malloc exist passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_441ca && [1/2] Building C object CMakeFiles\cmTC_441ca.dir\CheckSymbolExists.c.obj
+[2/2] Linking C executable cmTC_441ca.exe
+
+
+File D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <malloc.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef _aligned_malloc
+  return ((int*)(&_aligned_malloc))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the include file mfapi.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_f97f9 && [1/2] Building C object CMakeFiles\cmTC_f97f9.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_f97f9.exe
+
+
+
+Determining if the include file d3d11_4.h exists passed with the following output:
+Change Dir: D:/OneDrive/Documents/Unreal Projects/OpenCVHololensTest/Plugins/OpenCV/Source/ThirdParty/OpenCVLibrary/Hololens/sources/out/build/x64-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_91a48 && [1/2] Building C object CMakeFiles\cmTC_91a48.dir\CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_91a48.exe
+
+
+

@@ -28,19 +28,19 @@ MatSource::MatSource(cv::Mat & _cvImage) : zxing::LuminanceSource(_cvImage.cols,
 zxing::ArrayRef<char> MatSource::getRow(int y, zxing::ArrayRef<char> row) const {
 
     // Get width
-    int width = getWidth();
+    int sourceWidth = getWidth();
 
     if (!row) {
 
         // Create row
-        row = zxing::ArrayRef<char>(width);
+        row = zxing::ArrayRef<char>(sourceWidth);
 
     }
 
     // Get pointer to row
     const char *p = cvImage.ptr<char>(y);
 
-    for(int x = 0; x < width; ++x, ++p) {
+    for(int x = 0; x < sourceWidth; ++x, ++p) {
 
         // Set row at index x
         row[x] = *p;
@@ -54,21 +54,21 @@ zxing::ArrayRef<char> MatSource::getRow(int y, zxing::ArrayRef<char> row) const 
 zxing::ArrayRef<char> MatSource::getMatrix() const {
 
     // Get width and height
-    int width = getWidth();
-    int height =  getHeight();
+    int sourceWidth = getWidth();
+    int sourceHeight =  getHeight();
 
     // Create matrix
-    zxing::ArrayRef<char> matrix = zxing::ArrayRef<char>(width * height);
+    zxing::ArrayRef<char> matrix = zxing::ArrayRef<char>(sourceWidth * sourceHeight);
 
-    for (int y = 0; y < height; ++y) {
+    for (int y = 0; y < sourceHeight; ++y) {
 
         // Get pointer to row
         const char *p = cvImage.ptr<char>(y);
 
         // Calculate y offset
-        int yoffset = y * width;
+        int yoffset = y * sourceWidth;
 
-        for(int x = 0; x < width; ++x, ++p) {
+        for(int x = 0; x < sourceWidth; ++x, ++p) {
 
             // Set row at index x with y offset
             matrix[yoffset + x] = *p;

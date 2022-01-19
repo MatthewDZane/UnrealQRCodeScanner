@@ -16,7 +16,7 @@ public class ZXingLibrary : ModuleRules
 	}
 
 	public bool LoadZXingLibrary(ReadOnlyTargetRules Target)
-    {
+	{
 		bool isLibrarySupported = false;
 
 		// Check which platform Unreal is built for
@@ -27,10 +27,10 @@ public class ZXingLibrary : ModuleRules
 			// Add the static import library 
 			PublicAdditionalLibraries.Add(Path.Combine(ModulePath, "Hololens", "lib", "libzxing.lib"));
 
-            // Add include directory path
-            PublicIncludePaths.Add(Path.Combine(ModulePath, "Hololens", "core", "src"));
-            PublicIncludePaths.Add(Path.Combine(ModulePath, "Hololens", "opencv", "src"));
-        }
+			// Add include directory path
+			PublicIncludePaths.Add(Path.Combine(ModulePath, "Hololens", "core", "src"));
+			PublicIncludePaths.Add(Path.Combine(ModulePath, "Hololens", "opencv", "src"));
+		}
 		else if (Target.Platform == UnrealTargetPlatform.Win64)
 		{
 			isLibrarySupported = true;
@@ -38,9 +38,9 @@ public class ZXingLibrary : ModuleRules
 			// Add the static import library 
 			PublicAdditionalLibraries.Add(Path.Combine(ModulePath, "Windows", "lib", "libzxing.lib"));
 
-            // Add include directory path
-            PublicIncludePaths.Add(Path.Combine(ModulePath, "Windows", "core", "src"));
-            PublicIncludePaths.Add(Path.Combine(ModulePath, "Windows", "opencv", "src"));
+			// Add include directory path
+			PublicIncludePaths.Add(Path.Combine(ModulePath, "Windows", "core", "src"));
+			PublicIncludePaths.Add(Path.Combine(ModulePath, "Windows", "opencv", "src"));
 		}
 
 		return isLibrarySupported;
@@ -54,3 +54,4 @@ public class ZXingLibrary : ModuleRules
 	}
 
 }
+

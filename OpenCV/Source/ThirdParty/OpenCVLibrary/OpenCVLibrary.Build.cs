@@ -2,6 +2,7 @@
 
 using System.IO;
 using UnrealBuildTool;
+using Tools.DotNETCommon;
 
 public class OpenCVLibrary : ModuleRules
 {
@@ -14,42 +15,46 @@ public class OpenCVLibrary : ModuleRules
 
 		LoadOpenCVLibrary(Target);
 	}
-
+	
 	public bool LoadOpenCVLibrary(ReadOnlyTargetRules Target)
 	{
         bool isLibrarySupported = false;
-
         if (Target.Platform == UnrealTargetPlatform.HoloLens)
 		{
             isLibrarySupported = true;
 
+			string relativePathToProjectBinariesDirectory = "../../../../../Binaries/HoloLens";
+			string openCVWorldDLLName = "opencv_world452.dll";
+			
+			RuntimeDependencies.Add("$(TargetOutputDir)/opencv_world452.dll", Path.Combine(PluginDirectory, "Source/ThirdParty/OpenCVLibrary/Hololens/lib/arm64/opencv_world452.dll"));
+			
+			RuntimeDependencies.Add(Path.Combine("$(BinaryOutputDir)", openCVWorldDLLName), Path.Combine(ModuleDirectory, "Hololens/lib/arm64", openCVWorldDLLName));
+			RuntimeDependencies.Add(Path.Combine(ModuleDirectory, relativePathToProjectBinariesDirectory, openCVWorldDLLName), 
+								    Path.Combine(ModuleDirectory, "Hololens/lib/arm64", openCVWorldDLLName));
+									
 			// Add the static import library 
 			PublicAdditionalLibraries.Add(Path.Combine(ModulePath, "Hololens", "lib", "arm64", "opencv_world452.lib"));
-
-            // Add include directory path
-            PublicIncludePaths.Add(Path.Combine(ModulePath, "Hololens", "include"));
-            PublicIncludePaths.Add(Path.Combine(ModulePath, "Hololens", "sources"));
-
-            PublicDelayLoadDLLs.Add("opencv_world452.dll");
-            RuntimeDependencies.Add("$(TargetOutputDir)/opencv_world452.dll", Path.Combine(PluginDirectory, "Binaries/ThirdParty/OpenCVLibrary/Win64/opencv_world452.dll"));
+			
+			// Add include directory path
+			PublicIncludePaths.Add(Path.Combine(ModulePath, "Hololens/include"));
 		}
 		else if (Target.Platform == UnrealTargetPlatform.Win64)
 		{
-            isLibrarySupported = true;
-
-            // Add the static import library 
-            PublicAdditionalLibraries.Add(Path.Combine(ModulePath, "Windows", "x64", "vc15", "lib", "opencv_world451.lib"));
+			isLibrarySupported = true;
+			
+			string relativePathToProjectBinariesDirectory = "../../../../../Binaries/Win64";
+			string openCVWorldDLLName = "opencv_world451.dll";
+			
+			RuntimeDependencies.Add(Path.Combine("$(BinaryOutputDir)", openCVWorldDLLName), Path.Combine(ModuleDirectory, "Windows/bin", openCVWorldDLLName));
+			RuntimeDependencies.Add(Path.Combine(ModuleDirectory, relativePathToProjectBinariesDirectory, openCVWorldDLLName), 
+								    Path.Combine(ModuleDirectory, "Windows/bin", openCVWorldDLLName));
+									
+			// Add the static import library 
+            PublicAdditionalLibraries.Add(Path.Combine(ModulePath, "Windows/x64/vc15/lib/opencv_world451.lib"));
 
 			// Add include directory path
-			PublicIncludePaths.Add(Path.Combine(ModulePath, "Windows", "include"));
-
-			// Delay-load the DLL, so we can load it from the right place first
-			PublicDelayLoadDLLs.Add("opencv_videoio_ffmpeg451_64.dll");
-			PublicDelayLoadDLLs.Add("opencv_world451.dll");
-
-            RuntimeDependencies.Add("$(TargetOutputDir)/opencv_world451.dll", Path.Combine(PluginDirectory, "Binaries/Win64/opencv_world451.dll"));
-            RuntimeDependencies.Add("$(TargetOutputDir)/opencv_videoio_ffmpeg451_64.dll", Path.Combine(PluginDirectory, "Binaries/Win64/opencv_videoio_ffmpeg451_64.dll"));
-        }
+			PublicIncludePaths.Add(Path.Combine(ModulePath, "Windows/include"));
+		}
 
         return isLibrarySupported;
 	}

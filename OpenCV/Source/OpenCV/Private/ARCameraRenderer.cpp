@@ -56,7 +56,7 @@ void AARCameraRenderer::BeginPlay()
 	Super::BeginPlay();
     // Create a dynamic material instance from the game's camera material.
     // Right-click on a material in the project and select "Copy Reference" to get this string.
-    FString CameraMatPath("Material'/Game/ARCameraRendererC++/M_ARCameraTextureC++.M_ARCameraTextureC++'");
+    FString CameraMatPath("Material'/OpenCV/ARCameraRendererC++/M_ARCameraTextureC++.M_ARCameraTextureC++'");
     UMaterial* BaseMaterial = (UMaterial*)StaticLoadObject(UMaterial::StaticClass(), nullptr, *CameraMatPath, nullptr, LOAD_None, nullptr);
     DynamicMaterial = UMaterialInstanceDynamic::Create(BaseMaterial, this);
 

@@ -86,49 +86,60 @@ public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
 		class USceneCaptureComponent2D* sceneCaptureComponent;
 
+
+	// Render Target Sizes for different platforms
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = OpenCVSceneCapture)
 		FVector2D Windows_Render_Target_Size = FVector2D(1024, 1024);
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = OpenCVSceneCapture)
 		FVector2D Hololens_Render_Target_Size = FVector2D(1024, 1024);
 
+
 	// Container for visible static mesh attached to actor
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
 		UStaticMeshComponent* staticMeshComponent;
+
 
 	// Image texture resolution to be captured by USceneCapture2D component
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
 		int32 resolutionWidth = 256;
 
-	// Image texture resolution to be captured by USceneCapture2D component
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
 		int32 resolutionHeight = 256;
+
 
 	// Array of decoded objects
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
 		TArray<FDecodedObject> decoded;
 
+
 	// Enable USceneCapture2D component to render texture
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = OpenCVSceneCapture)
 		bool captureEnabled;
+
 
 	// Camera Material Instance
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = Camera)
 		UMaterialInstanceDynamic* Camera_Mat;
 
+
 	// The current scene frame's corresponding texture
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
 		UTexture2D* SceneTexture;
+
 
 	// The current scene frame's corresponding texture
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
 		UTexture2D* SceneTextureRaw;
 
-	// Blueprint Event called every time the scene frame is updated
-	UFUNCTION(BlueprintImplementableEvent, Category = OpenCVSceneCapture)
-		void OnNextSceneFrame();
-
 		const bool IS_DEBUGGING = false;
+
+		bool bReadPixelsStarted = false;
+		FRenderCommandFence ReadPixelFence;
+
+		TArray<FColor> PixelColors;
+
+		TArray<uint8> pixelData;
 
 		// Variables for reading specific pixels of scene capture
 		int32 matLength;
@@ -138,6 +149,11 @@ public:
 
 		int endYMatPixel;
 		int endXMatPixel;
+
+
+		// Blueprint Event called every time the scene frame is updated
+	UFUNCTION(BlueprintImplementableEvent, Category = OpenCVSceneCapture)
+		void OnNextSceneFrame();
 
 protected:
 	// Called when the game starts or when spawned
@@ -155,20 +171,22 @@ private:
 	UTexture2D* convertMatToTextureRaw(cv::Mat& inputImage, int32 imageResolutionWidth, int32 imageResolutionHeight);
 	bool convertMatToTextureBoth(cv::Mat& inputImage, int32 imageResolutionWidth, int32 imageResolutionHeight);
 
-	// ZXing functions
-	cv::Point toOpenCvPoint(zxing::Ref<zxing::ResultPoint> resultPoint);
-	void decodeZXing(cv::Mat& inputImage);
+	void CaptureScene();
+	void ReadPixels();
 
 	// Unreal Print Helper
 	void printToScreen(FString str, FColor color, float duration = 1.0f);
 
+	
+#if PLATFORM_WINDOWS
 	// ZBar support only on Win64
-//#if PLATFORM_WINDOWS
 	void decode(cv::Mat& inputImage, TArray<FDecodedObject>& decodedObjects);
 	void displayBox(cv::Mat& inputImage, TArray<FDecodedObject>& decodedObjects);
-//#endif
+#elif defined(__aarch64__) || defined(_M_ARM64)
+	// ZXing functions
+	cv::Point toOpenCvPoint(zxing::Ref<zxing::ResultPoint> resultPoint);
+	void decodeZXing(cv::Mat& inputImage);
+#endif
 
-//public:
-	//UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
 
 };

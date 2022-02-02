@@ -67,9 +67,7 @@ void AOpenCVSceneCapture::BeginPlay()
 	endYMatPixel = startYMatPixel + matLength;
 	endXMatPixel = startXMatPixel + matLength;
 
-	UE_LOG(OpenCVSceneCapture, Warning, TEXT("Viewport X: %d"), resolutionWidth);
-	UE_LOG(OpenCVSceneCapture, Warning, TEXT("Viewport Y: %d"), resolutionHeight);
-
+	CaptureScene();
 
 	Super::BeginPlay();
 }
@@ -81,51 +79,49 @@ void AOpenCVSceneCapture::Tick(float DeltaTime)
 
 	// Main Driver code for handling OpenCV functionality
 	if (captureEnabled) {
-		//const FVector2D ViewportSize = FVector2D(GEngine->GameViewport->Viewport->GetSizeXY());
-		//resolutionWidth = ViewportSize.X;
-		//resolutionHeight = ViewportSize.Y;
-
 		if (IS_DEBUGGING) {
 			UE_LOG(OpenCVSceneCapture, Warning, TEXT("Viewport X: %d"), resolutionWidth);
 			UE_LOG(OpenCVSceneCapture, Warning, TEXT("Viewport Y: %d"), resolutionHeight);
 		}
 
-		// Capture scene view, process image, and create texture
-		cv::Mat inputImage = captureSceneToMat();
+		if (bReadPixelsStarted && ReadPixelFence.IsFenceComplete()) {
+			// Capture scene view, process image, and create texture
+			cv::Mat inputImage = captureSceneToMat();
 
-		// Check that image has elements
-		if (!inputImage.empty()) {
-			if (IS_DEBUGGING) {
-				UE_LOG(OpenCVSceneCapture, Warning, TEXT("Begin Decoding"));
-			}
-
+			// Check that image has elements
+			if (!inputImage.empty()) {
+				if (IS_DEBUGGING) {
+					UE_LOG(OpenCVSceneCapture, Warning, TEXT("Begin Decoding"));
+				}
 
 			// Process and decode scene frames for target platforms
 #if defined(__aarch64__) || defined(_M_ARM64)
-			decodeZXing(inputImage);
-
+				decodeZXing(inputImage);
 #elif PLATFORM_WINDOWS
-			TArray<FDecodedObject> decodedObjects;
+				TArray<FDecodedObject> decodedObjects;
 
-			// Find and decode barcodes and QR codes
-			decode(inputImage, decodedObjects);
+				// Find and decode barcodes and QR codes
+				decode(inputImage, decodedObjects);
 
-			// Display location with box
-			displayBox(inputImage, decodedObjects);
+				// Display location with box
+				displayBox(inputImage, decodedObjects);
 
-			// Reset array
-			decodedObjects.Empty();
+				// Reset array
+				decodedObjects.Empty();
 
-			if (IS_DEBUGGING) {
-				UE_LOG(OpenCVSceneCapture, Warning, TEXT("Converting to Texture"));
-			}
+				if (IS_DEBUGGING) {
+					UE_LOG(OpenCVSceneCapture, Warning, TEXT("Converting to Texture"));
+				}
 
-			// Display image with detected box only as blueprint property
-			SceneTexture = convertMatToTexture(inputImage, resolutionWidth, resolutionHeight);
+				// Display image with detected box only as blueprint property
+				SceneTexture = convertMatToTexture(inputImage, resolutionWidth, resolutionHeight);
 
-			// Display raw image with detection as blueprint property
-			SceneTextureRaw = convertMatToTextureRaw(inputImage, resolutionWidth, resolutionHeight);
+				// Display raw image with detection as blueprint property
+				SceneTextureRaw = convertMatToTextureRaw(inputImage, resolutionWidth, resolutionHeight);
 #endif
+			}
+		
+			CaptureScene();
 		}
 	}
 	// Clear array of decoded images when capture is ended
@@ -146,17 +142,12 @@ void AOpenCVSceneCapture::EndPlay(const EEndPlayReason::Type EndPlayReason)
 
 // Capture scene view from scene capture component and pass image into OpenCV processing
 cv::Mat AOpenCVSceneCapture::captureSceneToMat() {
-	// Capture scene texture
-	sceneCaptureComponent->CaptureScene();
-
-	// Get texture render target
-	FTextureRenderTargetResource* textureResource = sceneCaptureComponent->TextureTarget->GameThread_GetRenderTargetResource();
 
 	// Create container for pixels
-	TArray<FColor> imagePixels;
+	//TArray<FColor> imagePixels;
 
 	// Populate RGBA8 texture pixels into buffer
-	bool readPixelResult = textureResource->ReadPixels(imagePixels);
+	bool readPixelResult = PixelColors.Num() > 0;//textureResource->ReadPixels(imagePixels);
 
 	// Pixel read unsuccessful
 	if (!readPixelResult && IS_DEBUGGING) {
@@ -164,23 +155,19 @@ cv::Mat AOpenCVSceneCapture::captureSceneToMat() {
 	}
 
 	// Shink array to number of pixels read
-	imagePixels.Shrink();
+	PixelColors.Shrink();
 
-	// Create array for 8-bit int conversion
-	TArray<uint8> pixelData;
-	int32 bufferSize = imagePixels.Num() * 4;
-	pixelData.Reserve(bufferSize);
-
+	pixelData.Reset();
 	cv::Mat inputImage;
 
-
 #if defined(__aarch64__) || defined(_M_ARM64)
+	pixelData.Reserve(PixelColors.Num());
 	// Copy texture render pixels into array with BGR format OpenCV expects
 	// Copy only the section of pixels that makes a square shape in the middle of the whole capture
 	for (int i = startYMatPixel; i < endYMatPixel; i++) {
 		for (int j = startXMatPixel; j < endXMatPixel; j++) {
 			int index = i * resolutionWidth + j;
-			uint8 grayScale = (uint8)((imagePixels[index].B + imagePixels[index].G + imagePixels[index].R) / 3.0f);
+			uint8 grayScale = (uint8)((PixelColors[index].B + PixelColors[index].G + PixelColors[index].R) / 3.0f);
 			pixelData.Add(grayScale);
 		}
 	}
@@ -188,20 +175,22 @@ cv::Mat AOpenCVSceneCapture::captureSceneToMat() {
 	// Construct OpenCV image defined by image width, height, 8-bit pixels, and pointer to data
 	// XZing needs the grayscale data
 	inputImage = cv::Mat(matLength, matLength, CV_8U, pixelData.GetData());
-
 #elif PLATFORM_WINDOWS
+	pixelData.Reserve(PixelColors.Num() * 4);
 	// Copy texture render pixels into array with BGR format OpenCV expects
-	for (int i = 0; i < imagePixels.Num(); i++) {
-		pixelData.Append({ imagePixels[i].B, imagePixels[i].G, imagePixels[i].R, 0xff });
+	for (int i = 0; i < PixelColors.Num(); i++) {
+		pixelData.Append({ PixelColors[i].B, PixelColors[i].G, PixelColors[i].R, 0xff});
 	}
 
 	// Construct OpenCv image defined by image width, height, 8-bit 4 color channel pixels, and pointer to data
-	inputImage = cv::Mat(resolutionWidth, resolutionHeight, CV_8UC4, pixelData.GetData());
+	inputImage = cv::Mat(matLength, matLength, CV_8UC4, pixelData.GetData());
 #endif
 
 	// Return clone to get valid Mat reference since inputImage is invalid after function return
 	return inputImage.clone();
 }
+
+
 
 #if PLATFORM_WINDOWS
 
@@ -432,6 +421,8 @@ bool AOpenCVSceneCapture::convertMatToTextureBoth(cv::Mat& inputImage, int32 ima
 	return true;
 }
 
+
+
 #elif defined(__aarch64__) || defined(_M_ARM64)
 cv::Point AOpenCVSceneCapture::toOpenCvPoint(zxing::Ref<zxing::ResultPoint> resultPoint) {
 	return cv::Point(resultPoint->getX(), resultPoint->getY());
@@ -516,6 +507,47 @@ void AOpenCVSceneCapture::decodeZXing(cv::Mat& inputImage) {
 	}
 }
 #endif
+
+void AOpenCVSceneCapture::CaptureScene() {
+	sceneCaptureComponent->CaptureScene();
+	ReadPixels();
+	ReadPixelFence.BeginFence();
+	bReadPixelsStarted = true;
+}
+
+void AOpenCVSceneCapture::ReadPixels() {
+	//borrowed from RenderTarget::ReadPixels()
+	FTextureRenderTargetResource* RenderResource = sceneCaptureComponent->TextureTarget->GameThread_GetRenderTargetResource();
+
+	// Read the render target surface data back.	
+	struct FReadSurfaceContext
+	{
+		FRenderTarget* SrcRenderTarget;
+		TArray<FColor>* OutData;
+		FIntRect Rect;
+		FReadSurfaceDataFlags Flags;
+	};
+
+	PixelColors.Reset();
+	FReadSurfaceContext Context =
+	{
+		RenderResource,
+		& PixelColors,
+		FIntRect(0, 0, RenderResource->GetSizeXY().X, RenderResource->GetSizeXY().Y),
+		FReadSurfaceDataFlags(RCM_UNorm, CubeFace_MAX)
+	};
+
+	ENQUEUE_RENDER_COMMAND(ReadSurfaceCommand)(
+		[Context](FRHICommandListImmediate& RHICmdList)
+		{
+			RHICmdList.ReadSurfaceData(
+				Context.SrcRenderTarget->GetRenderTargetTexture(),
+				Context.Rect,
+				*Context.OutData,
+				Context.Flags
+			);
+			});
+		}
 
 void AOpenCVSceneCapture::printToScreen(FString str, FColor color, float duration) {
 	GEngine->AddOnScreenDebugMessage(1, duration, color, *str);

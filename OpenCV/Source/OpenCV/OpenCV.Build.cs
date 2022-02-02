@@ -21,6 +21,8 @@ public class OpenCV : ModuleRules
 												"Include",
 												Target.WindowsPlatform.WindowsSdkVersion,
 												"cppwinrt"));
+			
+			
 		}
 
 		PublicIncludePaths.AddRange(

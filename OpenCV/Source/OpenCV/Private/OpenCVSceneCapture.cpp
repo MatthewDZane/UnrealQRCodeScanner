@@ -67,6 +67,9 @@ void AOpenCVSceneCapture::BeginPlay()
 	endYMatPixel = startYMatPixel + matLength;
 	endXMatPixel = startXMatPixel + matLength;
 
+	//sceneCaptureComponent->TextureTarget->bHDR_DEPRECATED = true;
+	sceneCaptureComponent->TextureTarget->bGPUSharedFlag = true;
+
 	CaptureScene();
 
 	Super::BeginPlay();
@@ -86,8 +89,9 @@ void AOpenCVSceneCapture::Tick(float DeltaTime)
 
 		if (bReadPixelsStarted && ReadPixelFence.IsFenceComplete()) {
 			// Capture scene view, process image, and create texture
-			cv::Mat inputImage = captureSceneToMat();
 
+			cv::Mat inputImage = captureSceneToMat();
+			
 			// Check that image has elements
 			if (!inputImage.empty()) {
 				if (IS_DEBUGGING) {
@@ -98,14 +102,15 @@ void AOpenCVSceneCapture::Tick(float DeltaTime)
 #if defined(__aarch64__) || defined(_M_ARM64)
 				decodeZXing(inputImage);
 #elif PLATFORM_WINDOWS
+				
 				TArray<FDecodedObject> decodedObjects;
 
 				// Find and decode barcodes and QR codes
 				decode(inputImage, decodedObjects);
-
+				
 				// Display location with box
 				displayBox(inputImage, decodedObjects);
-
+				
 				// Reset array
 				decodedObjects.Empty();
 
@@ -118,9 +123,10 @@ void AOpenCVSceneCapture::Tick(float DeltaTime)
 
 				// Display raw image with detection as blueprint property
 				SceneTextureRaw = convertMatToTextureRaw(inputImage, resolutionWidth, resolutionHeight);
+				
 #endif
 			}
-		
+
 			CaptureScene();
 		}
 	}
@@ -472,7 +478,7 @@ void AOpenCVSceneCapture::decodeZXing(cv::Mat& inputImage) {
 
 			FString text(result->getText()->getText().c_str());
 
-			if (IS_DEBUGGING) {
+			if (true) {
 				UE_LOG(OpenCVSceneCapture, Warning, TEXT("QR code detected: %s"), *text);
 			}
 

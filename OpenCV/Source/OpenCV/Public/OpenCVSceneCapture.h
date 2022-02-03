@@ -150,7 +150,6 @@ public:
 		int endYMatPixel;
 		int endXMatPixel;
 
-
 		// Blueprint Event called every time the scene frame is updated
 	UFUNCTION(BlueprintImplementableEvent, Category = OpenCVSceneCapture)
 		void OnNextSceneFrame();

@@ -10,6 +10,8 @@
 #include "Kismet/GameplayStatics.h"
 #include "Engine/TextureRenderTarget2D.h"
 
+#include "SceneCaptureQRCodeWorker.h"
+
 // Third Party Library Headers
 #if PLATFORM_WINDOWS
 	#include <zbar.h>
@@ -44,40 +46,19 @@
 DECLARE_LOG_CATEGORY_EXTERN(OpenCVSceneCapture, Log, All);
 
 
-USTRUCT(BlueprintType)
-struct FDecodedObject
-{
-	GENERATED_USTRUCT_BODY()
-
-public:
-
-	// Type of qr code detected by ZBar
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = OpenCVSceneCapture)
-		FString type;
-
-	// Data decoded by qr code 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = OpenCVSceneCapture)
-		FString data;
-
-	// Pixel locations of detected image
-	std::vector <cv::Point> location;
-
-	// Equals overloader for object comparison
-	bool operator==(const FDecodedObject& obj) const
-	{
-		return type.Equals(obj.type) && data.Equals(obj.data);
-	}
-
-};
-
 UCLASS()
 class OPENCV_API AOpenCVSceneCapture : public AActor
 {
 	GENERATED_BODY()
 
+protected:
+	SceneCaptureQRCodeWorker* Worker;
+
+	bool hasValidScene = false;
+
 public:
-	// Sets default values for this actor's properties
 	AOpenCVSceneCapture();
+	~AOpenCVSceneCapture();
 
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
 		class AActor* xrSimulationActor;
@@ -108,11 +89,6 @@ public:
 		int32 resolutionHeight = 256;
 
 
-	// Array of decoded objects
-	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
-		TArray<FDecodedObject> decoded;
-
-
 	// Enable USceneCapture2D component to render texture
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = OpenCVSceneCapture)
 		bool captureEnabled;
@@ -121,16 +97,6 @@ public:
 	// Camera Material Instance
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = Camera)
 		UMaterialInstanceDynamic* Camera_Mat;
-
-
-	// The current scene frame's corresponding texture
-	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
-		UTexture2D* SceneTexture;
-
-
-	// The current scene frame's corresponding texture
-	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
-		UTexture2D* SceneTextureRaw;
 
 		const bool IS_DEBUGGING = false;
 
@@ -166,16 +132,9 @@ private:
 
 	// Scene Capture functions
 	cv::Mat captureSceneToMat();
-	UTexture2D* convertMatToTexture(cv::Mat& inputImage, int32 imageResolutionWidth, int32 imageResolutionHeight);
-	UTexture2D* convertMatToTextureRaw(cv::Mat& inputImage, int32 imageResolutionWidth, int32 imageResolutionHeight);
-	bool convertMatToTextureBoth(cv::Mat& inputImage, int32 imageResolutionWidth, int32 imageResolutionHeight);
 
 	void CaptureScene();
 	void ReadPixels();
-
-	// Unreal Print Helper
-	void printToScreen(FString str, FColor color, float duration = 1.0f);
-
 	
 #if PLATFORM_WINDOWS
 	// ZBar support only on Win64

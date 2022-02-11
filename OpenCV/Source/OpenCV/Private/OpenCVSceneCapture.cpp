@@ -11,10 +11,6 @@
 
 #include "OpenCVSceneCapture.h"
 
-#if defined(__aarch64__) || defined(_M_ARM64)
-	#include "zxing/MatSource.h"
-#endif
-
 DEFINE_LOG_CATEGORY(OpenCVSceneCapture)
 
 using namespace std;
@@ -39,6 +35,12 @@ AOpenCVSceneCapture::AOpenCVSceneCapture()
 	staticMeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	// Set camera to as root
 	SetRootComponent(sceneCaptureComponent);
+
+	Worker = new SceneCaptureQRCodeWorker();
+}
+
+AOpenCVSceneCapture::~AOpenCVSceneCapture() {
+	delete Worker;
 }
 
 
@@ -87,52 +89,20 @@ void AOpenCVSceneCapture::Tick(float DeltaTime)
 			UE_LOG(OpenCVSceneCapture, Warning, TEXT("Viewport Y: %d"), resolutionHeight);
 		}
 
-		if (bReadPixelsStarted && ReadPixelFence.IsFenceComplete()) {
-			// Capture scene view, process image, and create texture
-
-			cv::Mat inputImage = captureSceneToMat();
+		if (bReadPixelsStarted && ReadPixelFence.IsFenceComplete() && !Worker->IsInputReady()) {
 			
-			// Check that image has elements
-			if (!inputImage.empty()) {
-				if (IS_DEBUGGING) {
-					UE_LOG(OpenCVSceneCapture, Warning, TEXT("Begin Decoding"));
-				}
+			if (hasValidScene) {
+				cv::Mat inputImage = captureSceneToMat();
 
-			// Process and decode scene frames for target platforms
-#if defined(__aarch64__) || defined(_M_ARM64)
-				decodeZXing(inputImage);
-#elif PLATFORM_WINDOWS
-				
-				TArray<FDecodedObject> decodedObjects;
+				// Start Scene Capture QR Code Worker thread
+				Worker->Start(inputImage);
 
-				// Find and decode barcodes and QR codes
-				decode(inputImage, decodedObjects);
-				
-				// Display location with box
-				displayBox(inputImage, decodedObjects);
-				
-				// Reset array
-				decodedObjects.Empty();
-
-				if (IS_DEBUGGING) {
-					UE_LOG(OpenCVSceneCapture, Warning, TEXT("Converting to Texture"));
-				}
-
-				// Display image with detected box only as blueprint property
-				SceneTexture = convertMatToTexture(inputImage, resolutionWidth, resolutionHeight);
-
-				// Display raw image with detection as blueprint property
-				SceneTextureRaw = convertMatToTextureRaw(inputImage, resolutionWidth, resolutionHeight);
-				
-#endif
+				hasValidScene = false;
 			}
-
-			CaptureScene();
+			else {
+				CaptureScene();
+			}
 		}
-	}
-	// Clear array of decoded images when capture is ended
-	else {
-		decoded.Empty();
 	}
 
 	// Call custom event handler function
@@ -196,329 +166,13 @@ cv::Mat AOpenCVSceneCapture::captureSceneToMat() {
 	return inputImage.clone();
 }
 
-
-
-#if PLATFORM_WINDOWS
-
-// Find and decode barcodes and QR codes
-void AOpenCVSceneCapture::decode(cv::Mat& inputImage, TArray<FDecodedObject>& decodedObjects)
-{
-	// Create zbar scanner
-	zbar::ImageScanner scanner;
-
-	// Configure scanner to detect image types
-	scanner.set_config(zbar::ZBAR_NONE, zbar::ZBAR_CFG_ENABLE, 1);
-
-	// Convert image to grayscale
-	cv::Mat imGray;
-	cv::cvtColor(inputImage, imGray, cv::COLOR_BGR2GRAY);
-
-	// Wrap opencv Mat image data in a zbar image
-	zbar::Image image(inputImage.cols, inputImage.rows, "Y800", (uchar*)imGray.data, inputImage.cols * inputImage.rows);
-
-	// Scan the image for barcodes and QRCodes
-	int n = scanner.scan(image);
-
-	if (n <= 0 && IS_DEBUGGING) {
-		UE_LOG(OpenCVSceneCapture, Warning, TEXT("No QR Detected"));
-		return;
-	}
-
-	// Print results
-	for (zbar::Image::SymbolIterator symbol = image.symbol_begin(); symbol != image.symbol_end(); ++symbol)
-	{
-		FDecodedObject obj;
-
-		// Print type and data
-		FString type(symbol->get_type_name().c_str());
-		FString data(symbol->get_data().c_str());
-
-		obj.type = type;
-		obj.data = data;
-
-		// Print data to Log
-		if (IS_DEBUGGING) {
-			UE_LOG(OpenCVSceneCapture, Warning, TEXT("%s"), *type);
-			UE_LOG(OpenCVSceneCapture, Warning, TEXT("%s"), *data);
-		}
-
-		// Print data to screen
-		static double deltaTime = FApp::GetDeltaTime();
-		printToScreen(obj.type, FColor::Green, deltaTime);
-		printToScreen(obj.data, FColor::Blue, deltaTime);
-
-		// Obtain location
-		for (int i = 0; i < symbol->get_location_size(); i++)
-		{
-			obj.location.push_back(cv::Point(symbol->get_location_x(i), symbol->get_location_y(i)));
-		}
-
-		// Add unique detections to visible property
-		decoded.AddUnique(obj);
-
-		// Add all detections for displaying image outlines
-		decodedObjects.Add(obj);
-	}
-}
-
-// Display barcode outline at QR code location
-void AOpenCVSceneCapture::displayBox(cv::Mat& inputImage, TArray<FDecodedObject>& decodedObjects)
-{
-	// Loop over all decoded objects
-	for (int i = 0; i < decodedObjects.Num(); i++)
-	{
-		vector<cv::Point> points = decodedObjects[i].location;
-		vector<cv::Point> hull;
-
-		// If the points do not form a quad, find convex hull
-		if (points.size() > 4) {
-			convexHull(points, hull);
-		}
-		else {
-			hull = points;
-		}
-
-		// Number of points in the convex hull
-		int n = hull.size();
-
-		for (int j = 0; j < n; j++)
-		{
-			line(inputImage, hull[j], hull[(j + 1) % n], cv::Scalar(255, 0, 0), 2);
-		}
-
-	}
-}
-
-// Convert OpenCV detection image into UE texture2D image, currently uses zbar decoding and locates blue pixels drawn from displayBox()
-UTexture2D* AOpenCVSceneCapture::convertMatToTexture(cv::Mat& inputImage, int32 imageResolutionWidth, int32 imageResolutionHeight) {
-	TArray<FColor> pixels;
-
-	// Convert OpenCV Mat image into UE formatted pixel arrays
-	for (int x = 0; x < imageResolutionWidth; x++) {
-		for (int y = 0; y < imageResolutionHeight; y++) {
-			// Current Color point
-			cv::Vec4b point = inputImage.at<cv::Vec4b>(x, y);
-
-			// Append pure blue pixels, otherwise transparent
-			if (point[0] == 255 && point[1] == 0 && point[2] == 0) {
-				FColor pix(point[0], point[1], point[2], 0xff);
-				pixels.Add(pix);
-			}
-			else {
-				FColor pix(0, 0, 0, 0x00);
-				pixels.Add(pix);
-			}
-		}
-	}
-
-	// Create modified texture with RGB encoding format
-	UTexture2D* texture = UTexture2D::CreateTransient(imageResolutionWidth, imageResolutionHeight, EPixelFormat::PF_R8G8B8A8, "OpenCV Texture Output");
-
-	if (!texture && IS_DEBUGGING) {
-		UE_LOG(OpenCVSceneCapture, Error, TEXT("Failed to create output texture"));
-		return nullptr;
-	}
-
-	void* data = texture->PlatformData->Mips[0].BulkData.Lock(LOCK_READ_WRITE);
-	// Copy data of pixels with 4 channels into pointer
-	FMemory::Memcpy(data, pixels.GetData(), imageResolutionWidth * imageResolutionHeight * 4);
-	texture->PlatformData->Mips[0].BulkData.Unlock();
-	texture->UpdateResource();
-	texture->Filter = TextureFilter::TF_Nearest;
-
-	return texture;
-}
-
-// Convert OpenCV output image into UE texture2D image
-UTexture2D* AOpenCVSceneCapture::convertMatToTextureRaw(cv::Mat& inputImage, int32 imageResolutionWidth, int32 imageResolutionHeight) {
-
-	TArray<FColor> pixels;
-
-	// Convert OpenCV Mat image into UE formatted pixel arrays
-	for (int x = 0; x < imageResolutionWidth; x++) {
-		for (int y = 0; y < imageResolutionHeight; y++) {
-			// Current Color point
-			cv::Vec4b point = inputImage.at<cv::Vec4b>(x, y);
-			// Append all pixels into raw array
-			FColor pix(point[0], point[1], point[2], 0xff);
-			pixels.Add(pix);
-		}
-	}
-
-	// Create modified texture with RGB encoding format
-	UTexture2D* texture = UTexture2D::CreateTransient(imageResolutionWidth, imageResolutionHeight, EPixelFormat::PF_R8G8B8A8, "OpenCV Raw Texture Output");
-
-	if (!texture && IS_DEBUGGING) {
-		UE_LOG(OpenCVSceneCapture, Error, TEXT("Failed to create raw output texture"));
-		return nullptr;
-	}
-
-	void* data = texture->PlatformData->Mips[0].BulkData.Lock(LOCK_READ_WRITE);
-	// Copy data of pixels with 4 channels into pointer
-	FMemory::Memcpy(data, pixels.GetData(), imageResolutionWidth * imageResolutionHeight * 4);
-	texture->PlatformData->Mips[0].BulkData.Unlock();
-	texture->UpdateResource();
-	texture->Filter = TextureFilter::TF_Nearest;
-
-	return texture;
-}
-
-
-// Converts decoded border texture and OpenCV output image into UE texture2D image
-bool AOpenCVSceneCapture::convertMatToTextureBoth(cv::Mat& inputImage, int32 imageResolutionWidth, int32 imageResolutionHeight) {
-
-	TArray<FColor> pixels;
-	TArray<FColor> pixelsRaw;
-
-	// Convert OpenCV Mat image into UE formatted pixel arrays
-	for (int x = 0; x < imageResolutionWidth; x++) {
-		for (int y = 0; y < imageResolutionHeight; y++) {
-			// Current Color point
-			cv::Vec4b point = inputImage.at<cv::Vec4b>(x, y);
-
-			// Append pure blue pixels, otherwise transparent
-			if (point[0] == 255 && point[1] == 0 && point[2] == 0) {
-				FColor pix(point[0], point[1], point[2], 0xff);
-				pixels.Add(pix);
-			}
-			else {
-				FColor pix(0, 0, 0, 0x00);
-				pixels.Add(pix);
-			}
-			// Append all pixels into raw array
-			FColor pixRaw(point[0], point[1], point[2], 0xff);
-			pixelsRaw.Add(pixRaw);
-		}
-	}
-
-	// Create modified texture with RGB encoding format
-	UTexture2D* texture = UTexture2D::CreateTransient(imageResolutionWidth, imageResolutionHeight, EPixelFormat::PF_R8G8B8A8, "OpenCV Texture Output");
-
-	if (!texture && IS_DEBUGGING) {
-		UE_LOG(OpenCVSceneCapture, Error, TEXT("Failed to create output texture"));
-		return false;
-	}
-
-	void* data = texture->PlatformData->Mips[0].BulkData.Lock(LOCK_READ_WRITE);
-	FMemory::Memcpy(data, pixels.GetData(), imageResolutionWidth * imageResolutionHeight * 4);
-	texture->PlatformData->Mips[0].BulkData.Unlock();
-	texture->UpdateResource();
-	texture->Filter = TextureFilter::TF_Nearest;
-
-	SceneTexture = texture;
-
-	// Create raw output texture
-	UTexture2D* textureRaw = UTexture2D::CreateTransient(imageResolutionWidth, imageResolutionHeight, EPixelFormat::PF_R8G8B8A8, "OpenCV Texture Output Raw");
-
-	if (!textureRaw && IS_DEBUGGING) {
-		UE_LOG(OpenCVSceneCapture, Error, TEXT("Failed to create raw output texture"));
-		return false;
-	}
-
-	void* dataRaw = textureRaw->PlatformData->Mips[0].BulkData.Lock(LOCK_READ_WRITE);
-	// Copy data of pixels with 4 channels into pointer
-	FMemory::Memcpy(dataRaw, pixelsRaw.GetData(), imageResolutionWidth * imageResolutionHeight * 4);
-	textureRaw->PlatformData->Mips[0].BulkData.Unlock();
-	textureRaw->UpdateResource();
-	textureRaw->Filter = TextureFilter::TF_Nearest;
-
-	SceneTextureRaw = textureRaw;
-
-	return true;
-}
-
-
-
-#elif defined(__aarch64__) || defined(_M_ARM64)
-cv::Point AOpenCVSceneCapture::toOpenCvPoint(zxing::Ref<zxing::ResultPoint> resultPoint) {
-	return cv::Point(resultPoint->getX(), resultPoint->getY());
-}
-
-void AOpenCVSceneCapture::decodeZXing(cv::Mat& inputImage) {
-	try {
-		// Create luminance source
-		zxing::Ref<zxing::LuminanceSource> source = MatSource::create(inputImage);
-
-		// Search for QR code
-		zxing::Ref<zxing::Reader> reader;
-
-		// Create QR code reader object
-		reader.reset(new zxing::qrcode::QRCodeReader);
-
-		zxing::Ref<zxing::Binarizer> binarizer(new zxing::GlobalHistogramBinarizer(source));
-		zxing::Ref<zxing::BinaryBitmap> bitmap(new zxing::BinaryBitmap(binarizer));
-		zxing::Ref<zxing::Result> result(reader->decode(bitmap, zxing::DecodeHints(zxing::DecodeHints::QR_CODE_HINT)));
-
-		// Get result point count
-		int resultPointCount = result->getResultPoints()->size();
-
-		for (int j = 0; j < resultPointCount; j++) {
-			// Draw circle
-			cv::circle(inputImage, toOpenCvPoint(result->getResultPoints()[j]), 10, cv::Scalar(255, 0, 0), 2);
-		}
-
-		// Draw boundary on image
-		if (resultPointCount > 1) {
-
-			for (int j = 0; j < resultPointCount; j++) {
-
-				// Get start result point
-				zxing::Ref<zxing::ResultPoint> previousResultPoint = (j > 0) ? result->getResultPoints()[j - 1] : result->getResultPoints()[resultPointCount - 1];
-
-				// Draw line
-				cv::line(inputImage, toOpenCvPoint(previousResultPoint), toOpenCvPoint(result->getResultPoints()[j]), cv::Scalar(255, 0, 0), 2, 8);
-
-				// Update previous point
-				previousResultPoint = result->getResultPoints()[j];
-
-			}
-
-		}
-		if (resultPointCount > 0) {
-
-			FString text(result->getText()->getText().c_str());
-
-			if (true) {
-				UE_LOG(OpenCVSceneCapture, Warning, TEXT("QR code detected: %s"), *text);
-			}
-
-			printToScreen(FString::Printf(TEXT("------------------------------------- QR code detected: %s"), *text), FColor::Green, 2.0f);
-
-			// Draw text
-			cv::putText(inputImage, result->getText()->getText(), toOpenCvPoint(result->getResultPoints()[0]), cv::LINE_4, 1, cv::Scalar(255, 0, 0));
-
-			FDecodedObject obj;
-
-			// Print type and data
-			FString type("Qrcode");
-
-			obj.type = type;
-			obj.data = text;
-
-			// Add unique detections to visible property
-			decoded.AddUnique(obj);
-		}
-	}
-	catch (const zxing::ReaderException& e) {
-		cout << e.what() << endl;
-	}
-	catch (const zxing::IllegalArgumentException& e) {
-		cout << e.what() << endl;
-	}
-	catch (const zxing::Exception& e) {
-		cout << e.what() << endl;
-	}
-	catch (const std::exception& e) {
-		cout << e.what() << endl;
-	}
-}
-#endif
-
 void AOpenCVSceneCapture::CaptureScene() {
 	sceneCaptureComponent->CaptureScene();
 	ReadPixels();
 	ReadPixelFence.BeginFence();
 	bReadPixelsStarted = true;
+
+	hasValidScene = true;
 }
 
 void AOpenCVSceneCapture::ReadPixels() {
@@ -552,10 +206,8 @@ void AOpenCVSceneCapture::ReadPixels() {
 				*Context.OutData,
 				Context.Flags
 			);
-			});
 		}
-
-void AOpenCVSceneCapture::printToScreen(FString str, FColor color, float duration) {
-	GEngine->AddOnScreenDebugMessage(1, duration, color, *str);
+	);
 }
+
 

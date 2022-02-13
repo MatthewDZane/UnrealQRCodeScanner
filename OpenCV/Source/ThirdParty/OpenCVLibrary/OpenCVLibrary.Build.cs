@@ -44,10 +44,15 @@ public class OpenCVLibrary : ModuleRules
 			
 			string relativePathToProjectBinariesDirectory = "../../../../../Binaries/Win64";
 			string openCVWorldDLLName = "opencv_world451.dll";
+			string openCVVideoDLLName = "opencv_videoio_ffmpeg451_64.dll";
 			
 			RuntimeDependencies.Add(Path.Combine("$(BinaryOutputDir)", openCVWorldDLLName), Path.Combine(ModuleDirectory, "Windows/bin", openCVWorldDLLName));
 			RuntimeDependencies.Add(Path.Combine(ModuleDirectory, relativePathToProjectBinariesDirectory, openCVWorldDLLName), 
 								    Path.Combine(ModuleDirectory, "Windows/bin", openCVWorldDLLName));
+									
+			RuntimeDependencies.Add(Path.Combine("$(BinaryOutputDir)", openCVVideoDLLName), Path.Combine(ModuleDirectory, "Windows/bin", openCVVideoDLLName));
+			RuntimeDependencies.Add(Path.Combine(ModuleDirectory, relativePathToProjectBinariesDirectory, openCVVideoDLLName), 
+								    Path.Combine(ModuleDirectory, "Windows/bin", openCVVideoDLLName));
 									
 			// Add the static import library 
             PublicAdditionalLibraries.Add(Path.Combine(ModulePath, "Windows/x64/vc15/lib/opencv_world451.lib"));

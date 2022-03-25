@@ -4,13 +4,18 @@ This is an Unreal Engine 4 plugin for HoloLens that uses the C++ OpenCV Library 
 # Table of Contents
 - [Installation](#installation)
 - [Plugin Contents](#plugin-contents)
-- [Packaging to HoloLens 2](packaging-to-hololens-2)
+    - [AR Camera Renderer](#ar-camera-renderer)
+    - [External Camera Renderer](#external-camera-renderer)
+    - [OpenCV Scene Capture](#opencv-scene-capture)
+    - [AR Test Level](#ar-test-level)
+- [Packaging to HoloLens 2](#packaging-to-hololens-2)
 - [Extra Reading](#extra-reading)
 
 ## Installation
 1. Make sure Unreal Engine 4.27 is installed.
 2. Install the MicrosoftOpenXR Plugin from the Marketplace to the Engine.
 3. Clone this repo, which contains the custom OpenCV plugin containing OpenCV, ZXing, and ZBar third-party libraries.
+
 `git clone https://gitlab.nrp-nautilus.io/ar-noc/opencv-unrealengine-hololens2.git`
 4. Add the plugin to the project.
 - Copy the folder, "opencv-unrealengine-hololens2/OpenCV", to the project plugins folder, "{ProjectName}/Plugins". Create the Plugins folder if it does not exist yet.
@@ -23,10 +28,56 @@ This is an Unreal Engine 4 plugin for HoloLens that uses the C++ OpenCV Library 
 
 ## Plugin Contents
 
+### AR Camera Renderer
+This Unreal Engine Actor handles the C++ implementation of accessing and rendering
+the Hololens 2 Photo/Video camera through the texture of a plane. This is done by
+creating a dynamic material and fetching the AR Texture object captured by the
+detected camera device. The texture is then assigned to the dynamic material of the
+static mesh component of the actor, which is scaled to the appropriate camera intrinsic
+resolutions.
+
+Currently the C++ and Blueprints versions do not inherit from each other and the C+ version is recommended.
+
+### External Camera Renderer
+This Unreal Engine Actor handles different implementations for Windows and the Hololens.
+When run with Windows, the actor sets up video capturing through external cameras 
+using OpenCV then decodes and detects QR codes using the ZBar library. The output of the 
+camera and decoding is then converted to a UTexture2D and displayed on a mesh in game for
+feed preview. Additional blueprint implementation to display the texture is required, examples
+of which is located in the project content browser.
+
+The Blueprint version inherits from the C++ version. The Blueprint version is designed to be used in game.
+
+### OpenCV Scene Capture
+This Unreal Engine Actor handles different implementations for Windows and the Hololens.
+This Actor captures in-game scene frames, converts the frames into OpenCV Mats to be
+processed by image detection libraries. ZBar is not currently integrated with the 
+Hololens so frames are decoded with ZXing. The output decoded frames are then converted
+into UTexture2D objects for use in blueprints. Capture must be enabled either through actor
+properties in the editor or through the blueprint exposed captureEnabled flag. 
+
+In the OpenCV Scene Capture C++ version, the image capture and the QR code functions are run in a thread seperate from the game thread using the Scene Capture QR Code Worker class, which contains all the funtions related to both ZBar and ZXing. This was implemented with multithreading to maintain a good frame rate.
+
+The Blueprint version inherits from the C++ version. The Blueprint version id designed to be used in game.
+
+### AR Test Level
+This is a test level which will showcase the plugin's basic functionality. Depending on the platform, the one of the camera renderer actors is spawned along with the OpenCV Scene Capture actor. The External Camera Renderer is spawned for Windows and the AR Camera Renderer is spawned for the HoloLens. Additionally there is a plane which displays the image the OpenCV Scene Capture actor is capturing. So, the user can simply place a QR code in front of the camera, verify that it is in the view of the camera, and see a message stating that a QR code was detected and the Url of the QR code.
+
+
 ## Packaging to HoloLens 2
 One-time Setup in the Unreal Editor
-1. 
-2. Project Settings -> Platforms -> HoloLens -> Packaging -> Signing Certificate -> Generate New
+1. Project Settings -> Project -> Description, enter in the "Company Destinguish Name", "CN=YourCompanyName", replace YourCompanyName.
+2. Project Settings -> Platforms -> HoloLens -> Packaging -> Signing Certificate -> Generate New. Choose whether to make it password protected.
+
+Perform these steps everytime a new build is desired.
+3. There are two methods of packaging the project to HoloLens.
+    1. Build to the local machine.
+        - File -> Package Project -> HoloLens. Then choose a location for the packaged project.
+    2. Build to a HoloLens 2 Device.
+        - Connect a HoloLens 2 headset to the computer via USB
+        - Go to Launch -> Device Manager -> Add an Unlisted Device -> Select a Platform -> HoloLens
+        - Input the HoloLens' Windows Device Portal credentials
+        - Go to the main editor screen -> Launch -> {Name of HoloLens Device}
 
 ## Extra Reading
 This section was provided by Jason Lin. It documents how to use OpenCV, ZBar, and ZXing in both Unreal Engine and non-Unreal Engine projects.
@@ -34,13 +85,13 @@ This section was provided by Jason Lin. It documents how to use OpenCV, ZBar, an
 Plugin Video:
 https://www.youtube.com/watch?v=6IsPEPcwyCY
 
-# OpenCV Integration with Unreal Engine
+### OpenCV Integration with Unreal Engine
 
 This guide will first outline the workflow to install OpenCV C++ and Zbar libraries in Visual Studio 2019 as a standalone project. Further in the guide, we will setup up an Unreal Engine project that detects QR codes for devices built on the Windows x64 platform. 
 
 If you would like to build this project on x86 or ARM, you will need to download or cross-compile the OpenCV and Zbar libraries to match the desired platform. 
 
-## Prerequisites
+### Prerequisites
 
 `Note` : You may want to build the OpenCV and ZBar libraries yourself to work for different targeted architectures such as `ARM`, and `ARM64`. OpenCV comes compiled in `x64` while ZBar 0.10 is compiled in `x86`. Below we use a `x64` ported version of ZBar and the pre-built OpenCV library files for simplicity of installation. 
 
@@ -61,7 +112,7 @@ Resources on ZBar and Source Code:
 - [ZBar Source Forge (version 0.1)](http://zbar.sourceforge.net/)  
 - [ZBar Repository (version 0.20+)](https://git.linuxtv.org/zbar.git)
 - [ZBar API documentation](http://zbar.sourceforge.net/api/annotated.html)
-## Add OpenCV and ZBar to your `PATH` enviornment variable. 
+### Add OpenCV and ZBar to your `PATH` enviornment variable. 
 
 We do this by going to:  
 `Control Panel -> System Properties -> Advanced -> Enviornment Variables` and adding a new entry to the `Path` variable. 
@@ -78,7 +129,7 @@ Your system path variable should look something like the below:
 If you have Visual Studio open already, you may need to restart the IDE for the environment variable changes to take effect.
 
 
-## Visual Studio
+### Visual Studio
 
 Open Visual Studio and create a new Empty C++ Project. 
 
@@ -121,7 +172,7 @@ You are now done setting up OpenCV and ZBar and can begin using these libraries 
 Check out the [complete sample project](https://github.com/Jasonlin1198/OpenCV-ZBar-ZXing) that uses OpenCV with ZBar and ZXing recognition libraries. 
 
 
-## Errors and Issues
+### Errors and Issues
 
 If you get an error about std::iterator being depreciated, suppress the warning by navigating to `Project->Properties->C/C++->Command Line` and under Additional Options add:  
 
@@ -132,7 +183,7 @@ Information on C++17 depreciated features and how to modify the code can be foun
 ![Error1](Images/Error1.png)
 
 
-## Checking library binary architecture
+### Checking library binary architecture
 
 In a UNIX command line, run:
 
@@ -140,7 +191,7 @@ In a UNIX command line, run:
 
 Check the output for the `architecture` descriptor and ensure the binary's architecture is as desired for the target platform running the project. 
 
-## Additional Resources
+### Additional Resources
 
 https://learnopencv.com/barcode-and-qr-code-scanner-using-zbar-and-opencv/
 
@@ -178,16 +229,16 @@ https://unreal.blog/how-to-include-any-third-party-library
 
 
 
-## Windows on ARM and UWP
+### Windows on ARM and UWP
 
 Windows 10 on ARM runs all x86, ARM32, and ARM64 UWP apps from the Microsoft Store. ARM32 and ARM64 apps run natively without any emulation, while x86 apps run under emulation. 
 
 For developing and porting Windows apps on Windows 10 ARM, check out the documentation for [porting.](https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm)
 
 
-## Useful Tools for installing libraries and compilation
+### Useful Tools for installing libraries and compilation
 
-### Vcpkg
+#### Vcpkg
 
 Vcpkg is a package manager for C/C++ libraries and is a easy to use tool for obtaining common libraries compiled to multiple architectures. 
 
@@ -229,7 +280,7 @@ git clone https://github.com/Microsoft/vcpkg.git
 
 For more detailed usage of Vcpkg and to install globally for the user to use in Visual Studio, follow the documentation provided in the Github. 
 
-### CMake
+#### CMake
 
 CMake is a useful tool for generating build files across various platforms. It is able to cross-compile libraries using specified toolchains for usage on target environments that differ than the host environment. 
 
@@ -238,7 +289,7 @@ Install latest release of CMake:
 Used Windows x64 Installer: https://cmake.org/download/
 
 
-## Getting Started in Unreal Engine 4.26.2
+### Getting Started in Unreal Engine 4.26.2
 1. Download the Plugin repository locally through a `.zip` file or using `git clone https://github.com/Jasonlin1198/OpenCV-ZBar-Unreal-Plugin.git`.
 
 2. Install OpenCV from the official website [here.](https://opencv.org/releases/) The version that will be used is `OpenCV – 4.5.1`. Download the `opencv-4.5.1-vc14_vc15.exe` Windows executable and run to extract to a desired file path.
@@ -267,7 +318,7 @@ The Plugin directory should now look something like this:
 
 Copy the modified plugin into the `Plugins/` directory of an Unreal Engine game. You are now ready to begin modifying the plugin's source code and utilize the created blueprints!
 
-## Blueprint
+### Blueprint
 
 Below we will go over how to use the implmentation of OpenCV and ZBar in an Unreal Engine project through Blueprints. The example uses the plugin's Scene Capture Component 2D to capture a scene view, processes the image to detect QR codes, and renders the output texture as an overlay on a player's HUD.
 
@@ -311,7 +362,7 @@ Run the game and you should see OpenCV's output texture superimposed onto the pl
 ![Final Result](Images/FinalResult.png)
 
 
-## Complete ARNOC Unreal Engine + Hololens Development 
+### Complete ARNOC Unreal Engine + Hololens Development 
 
 The objective of the project is to detect QR codes through the Hololens cameras in order to pull data from the codes and be able to locate them in a 3D space to use as a trackable object. The first attempt made was to utilize the [OpenXR for Mixed Reality plugin](https://github.com/microsoft/Microsoft-OpenXR-Unreal) that provides an API in Unreal that allows access to the Photo/Video camera.
 
@@ -323,7 +374,7 @@ For issues of QR detection not working, ensure that the RHI (Render Hardware Int
 
 Several alternative approaches using third party libraries were taken to improve this detection. 
 
-## Vuforia SDK
+### Vuforia SDK
 
 The first of which was to implement the Vuforia 9.8.8 SDK for UWP as a third party library plugin in Unreal Engine. 
 
@@ -352,7 +403,7 @@ Development Resources:
 - [C++ API Reference](https://library.vuforia.com/sites/default/files/references/cpp/index.html)
 - [Vuforia Unreal Engine Plugin for Android](https://github.com/codefluegel/vuforia4unreal)
 
-## OpenCV
+### OpenCV
 
 [OpenCV Installation Overview](https://docs.opencv.org/master/d0/d3d/tutorial_general_install.html)
 
@@ -375,7 +426,7 @@ This is possibly due to some OpenCV modules included by vcpkg installations do n
 Link to the how to cross-compile OpenCV using CMake is described here: https://stackoverflow.com/questions/49350733/compile-opencv-3-for-windows-10-iot-core-arm-raspberry-pi
 
 
-## Research Mode API
+### Research Mode API
 
 Microsoft Documentation: https://docs.microsoft.com/en-us/windows/mixed-reality/develop/platform-capabilities-and-apis/research-mode
 
@@ -390,7 +441,7 @@ Examples of UWP projects are located in the repository [Hololens2forCV.](https:/
 
 The minimimum requirement to use the research mode api in Unreal is download and add the `ResearchModeApi.h` file from the Hololens2ForCV repository into the project. Include the header file and begin implementing functionality. 
 
-## ZBar
+### ZBar
 
 ZBar is a QR/barcode reader library written in the C language. 
 
@@ -401,7 +452,7 @@ ZBar is a QR/barcode reader library written in the C language.
 - [ZBar Windows x64 Port](https://github.com/dani4/ZBarWin64)
 
 
-## ZXing
+### ZXing
 
 ZXing is a QR/barcode processing library that was originally written in Java, but has been ported to C++ in multiple repositories. ZXing-cpp build files are availble through vcpkg and compilation of source files with CMake.
 
@@ -412,7 +463,7 @@ Important repositories to look into:
 
 Guide to using CMake with ZXing for ARM64 and x64 compilation: https://dreamgardendiary.wordpress.com/2018/12/09/zxing-c-and-opencv-as-qrcode-scanner-using-visual-studio-2017/
 
-## Attempts to access Hololens PV camera frames
+### Attempts to access Hololens PV camera frames
 
 1. Accessing PV camera feed texture in C++ 
 
@@ -450,7 +501,7 @@ Guide to using CMake with ZXing for ARM64 and x64 compilation: https://dreamgard
 `.build.cs` file for each library. 
 
 
-## Hololens 2 Development Resources
+### Hololens 2 Development Resources
 
 For projects targeted for the Hololens, ensure that all DLL dependencies and plugins are built with ARM64. This is noted in the documentation for [porting apps from the HL1 to HL2.](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/porting-apps/porting-hl1-hl2)
 
@@ -491,13 +542,13 @@ After running the game in the Hololens, view the log file by going to the Window
 then saving and opening the file. 
 
 
-## Additional Personal Repositories
+### Additional Personal Repositories
 
 - Vuforia Github: https://github.com/Jasonlin1198/VuforiaUnrealUWP
 - Visual Studio OpenCV-ZBar-ZXing github: https://github.com/Jasonlin1198/OpenCV-ZBar-ZXing
 - Unreal on Windows OpenCV-ZBar plugin: https://github.com/Jasonlin1198/OpenCV-ZBar-Unreal-Plugin
 
-## Extra Resources
+### Extra Resources
 
 
 Unity Microsoft.MixedReality.QR Nuget Package Sample:  

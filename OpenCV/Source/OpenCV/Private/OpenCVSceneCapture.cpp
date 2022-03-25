@@ -143,7 +143,9 @@ cv::Mat AOpenCVSceneCapture::captureSceneToMat() {
 	for (int i = startYMatPixel; i < endYMatPixel; i++) {
 		for (int j = startXMatPixel; j < endXMatPixel; j++) {
 			int index = i * resolutionWidth + j;
-			uint8 grayScale = (uint8)((PixelColors[index].B + PixelColors[index].G + PixelColors[index].R) / 3.0f);
+			uint8 grayScale = (uint8)(0.114f * PixelColors[index].B + 
+									   0.587f * PixelColors[index].G + 
+									   0.299f * PixelColors[index].R);
 			pixelData.Add(grayScale);
 		}
 	}

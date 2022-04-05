@@ -10,8 +10,6 @@
 #include "Kismet/GameplayStatics.h"
 #include "Engine/TextureRenderTarget2D.h"
 
-#include "SceneCaptureQRCodeWorker.h"
-
 // Third Party Library Headers
 #if PLATFORM_WINDOWS
 	#include <zbar.h>
@@ -45,6 +43,25 @@
 
 DECLARE_LOG_CATEGORY_EXTERN(OpenCVSceneCapture, Log, All);
 
+struct FDecodedObject
+{
+
+public:
+	// Type of qr code detected by ZBar
+	FString type;
+
+	// Data decoded by qr code 
+	FString data;
+
+	// Pixel locations of detected image
+	std::vector <cv::Point> location;
+
+	// Equals overloader for object comparison
+	bool operator==(const FDecodedObject& obj) const
+	{
+		return type.Equals(obj.type) && data.Equals(obj.data);
+	}
+};
 
 UCLASS()
 class OPENCV_API AOpenCVSceneCapture : public AActor
@@ -52,9 +69,12 @@ class OPENCV_API AOpenCVSceneCapture : public AActor
 	GENERATED_BODY()
 
 protected:
-	SceneCaptureQRCodeWorker* Worker;
+	bool bSceneCaptured = false;
+	bool bSceneScanned = true;
+	
+	cv::Mat Image;
 
-	bool hasValidScene = false;
+	TArray<FDecodedObject> Decoded;
 
 public:
 	AOpenCVSceneCapture();
@@ -98,7 +118,7 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = Camera)
 		UMaterialInstanceDynamic* Camera_Mat;
 
-		const bool IS_DEBUGGING = false;
+		const bool IS_DEBUGGING = true;
 
 		bool bReadPixelsStarted = false;
 		FRenderCommandFence ReadPixelFence;
@@ -134,16 +154,19 @@ private:
 	cv::Mat captureSceneToMat();
 
 	void CaptureScene();
+	void ScanScene();
 	void ReadPixels();
+
+	void printToScreen(FString str, FColor color, float duration = 1.0f);
 	
 #if PLATFORM_WINDOWS
-	// ZBar support only on Win64
-	void decode(cv::Mat& inputImage, TArray<FDecodedObject>& decodedObjects);
-	void displayBox(cv::Mat& inputImage, TArray<FDecodedObject>& decodedObjects);
+	// ZBar functions
+	void decode(TArray<FDecodedObject>& decodedObjects);
+	void displayBox(TArray<FDecodedObject>& decodedObjects);
 #elif defined(__aarch64__) || defined(_M_ARM64)
 	// ZXing functions
+	void decodeZXing();
 	cv::Point toOpenCvPoint(zxing::Ref<zxing::ResultPoint> resultPoint);
-	void decodeZXing(cv::Mat& inputImage);
 #endif
 
 

@@ -11,6 +11,10 @@
 
 #include "OpenCVSceneCapture.h"
 
+#include "Components/SceneCaptureComponent2D.h"
+#include "Components/SphereComponent.h"
+#include "Engine/TextureRenderTarget2D.h"
+
 DEFINE_LOG_CATEGORY(OpenCVSceneCapture)
 
 using namespace std;
@@ -27,12 +31,14 @@ AOpenCVSceneCapture::AOpenCVSceneCapture()
 	// Attach scenecapture camera to actor and set as root
 	sceneCaptureComponent = CreateDefaultSubobject<USceneCaptureComponent2D>(TEXT("Scene Capture"));
 	sceneCaptureComponent->bCaptureEveryFrame = false;
+	
 	// Create Static Mesh Component and attach Cube to camera
 	staticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh Component"));
 	UStaticMesh* cubeMesh = ConstructorHelpers::FObjectFinder<UStaticMesh>(TEXT("StaticMesh'/Engine/BasicShapes/Cube.Cube'")).Object;
 	staticMeshComponent->SetStaticMesh(cubeMesh);
 	staticMeshComponent->AttachToComponent(sceneCaptureComponent, FAttachmentTransformRules::KeepRelativeTransform);
 	staticMeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
 	// Set camera to as root
 	SetRootComponent(sceneCaptureComponent);
 }
@@ -40,7 +46,6 @@ AOpenCVSceneCapture::AOpenCVSceneCapture()
 AOpenCVSceneCapture::~AOpenCVSceneCapture() {
 
 }
-
 
 // Called when the game starts or when spawned
 void AOpenCVSceneCapture::BeginPlay()
@@ -95,6 +100,7 @@ void AOpenCVSceneCapture::Tick(float DeltaTime)
 				CaptureScene();
 			}
 		}
+
 	}
 
 	// Call custom event handler function
@@ -170,11 +176,11 @@ void AOpenCVSceneCapture::CaptureScene() {
 }
 
 void AOpenCVSceneCapture::ScanScene() {
+	bSceneScanned = false;
 	AsyncTask(ENamedThreads::AnyBackgroundHiPriTask, [this] ()
 	{
-		cv::Mat inputImage = captureSceneToMat();
-
-		bSceneScanned = false;
+		Image = captureSceneToMat();
+		
 		// Check that image has elements
 		if (!Image.empty()) {
 			if (IS_DEBUGGING) {
@@ -195,8 +201,8 @@ void AOpenCVSceneCapture::ScanScene() {
 #endif
 		}
 
-		bSceneScanned = true;
 		bSceneCaptured = false;
+		bSceneScanned = true;
 	});
 }
 

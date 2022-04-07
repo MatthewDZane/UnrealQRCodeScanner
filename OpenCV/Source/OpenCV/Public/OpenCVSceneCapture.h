@@ -5,10 +5,8 @@
 // Unreal Engine Headers
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Components/SceneCaptureComponent2D.h"
-#include "Components/SphereComponent.h"
 #include "Kismet/GameplayStatics.h"
-#include "Engine/TextureRenderTarget2D.h"
+
 
 // Third Party Library Headers
 #if PLATFORM_WINDOWS
@@ -118,7 +116,7 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = Camera)
 		UMaterialInstanceDynamic* Camera_Mat;
 
-		const bool IS_DEBUGGING = true;
+		const bool IS_DEBUGGING = false;
 
 		bool bReadPixelsStarted = false;
 		FRenderCommandFence ReadPixelFence;

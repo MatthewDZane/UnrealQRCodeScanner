@@ -13,7 +13,7 @@ This is an Unreal Engine 4 plugin for HoloLens that uses the C++ OpenCV Library 
 
 ## Installation
 1. Make sure Unreal Engine 4.27 is installed.
-2. Install the Mixed Reality Tookkit Hub, the Mixed Reality UX Tools, and the Microsoft Mixed Reality Plugin from the Marketplace to the Engine.
+2. Install the HoloLens, Mixed Reality Toolkit Hub, Mixed Reality UX Tools, the Microsoft Mixed Reality Plugin from the Marketplace to the Engine.
 3. Clone this repo, which contains the custom OpenCV plugin containing OpenCV, ZXing, and ZBar third-party libraries.
 
 `git clone https://gitlab.nrp-nautilus.io/ar-noc/opencv-unrealengine-hololens2.git`

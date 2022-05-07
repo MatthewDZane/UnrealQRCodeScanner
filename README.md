@@ -13,8 +13,10 @@ This is an Unreal Engine 4 plugin for HoloLens that uses the C++ OpenCV Library 
 
 ## Installation
 1. Make sure Unreal Engine 4.27 is installed.
-2. Install the HoloLens, Mixed Reality Toolkit Hub, Mixed Reality UX Tools, the Microsoft Mixed Reality Plugin from the Marketplace to the Engine.
-3. Clone this repo, which contains the custom OpenCV plugin containing OpenCV, ZXing, and ZBar third-party libraries.
+2. Install the HoloLens, Mixed Reality Toolkit Hub, Mixed Reality UX Tools, the Microsoft Mixed Reality Plugin from the Marketplace to the Engine and enable them in the Plugins tab.
+3. Go to Project Settings -> Project -> Description -> Settings -> Check "Start in VR"
+4. Go to Project Settings -> Platforms -> HoloLens -> Capabilities -> Check "Webcam"
+4. Clone this repo, which contains the custom OpenCV plugin containing OpenCV, ZXing, and ZBar third-party libraries.
 
 `git clone https://gitlab.nrp-nautilus.io/ar-noc/opencv-unrealengine-hololens2.git`
 4. Add the plugin to the project.

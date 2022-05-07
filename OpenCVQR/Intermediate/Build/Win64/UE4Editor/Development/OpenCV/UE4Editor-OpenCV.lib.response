@@ -1,0 +1,21 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-OpenCV.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Unreal Projects\OpenCVHoloLensTest\Intermediate\Build\Win64\OpenCVHoloLensTestEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.Cpp17.h.obj"
+"C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\Win64\UE4Editor\Development\OpenCV\ARCameraRenderer.cpp.obj"
+"C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\Win64\UE4Editor\Development\OpenCV\ExternalCameraRenderer.cpp.obj"
+"C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\Win64\UE4Editor\Development\OpenCV\OpenCV.cpp.obj"
+"C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\Win64\UE4Editor\Development\OpenCV\OpenCVSceneCapture.cpp.obj"
+"C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\Win64\UE4Editor\Development\OpenCV\ResearchModeBase.cpp.obj"
+"C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\Win64\UE4Editor\Development\OpenCV\ARCameraRenderer.gen.cpp.obj"
+"C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\Win64\UE4Editor\Development\OpenCV\ExternalCameraRenderer.gen.cpp.obj"
+"C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\Win64\UE4Editor\Development\OpenCV\OpenCV.init.gen.cpp.obj"
+"C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\Win64\UE4Editor\Development\OpenCV\OpenCVSceneCapture.gen.cpp.obj"
+"C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\Win64\UE4Editor\Development\OpenCV\ResearchModeBase.gen.cpp.obj"
+"C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\Win64\UE4Editor\Development\OpenCV\Default.rc2.res"
+/OUT:"C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\Win64\UE4Editor\Development\OpenCV\UE4Editor-OpenCV.lib"

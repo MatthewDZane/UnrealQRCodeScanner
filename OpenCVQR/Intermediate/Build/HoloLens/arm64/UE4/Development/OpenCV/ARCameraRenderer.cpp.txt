@@ -1,0 +1,35 @@
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\HoloLens\arm64\UE4\Development\OpenCV\Definitions.OpenCV.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\OpenCV\Public\ARCameraRenderer.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\AugmentedReality\Public\ARBlueprintLibrary.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/BlueprintAsyncActionBase.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\HoloLens\arm64\UE4\Inc\Engine\BlueprintAsyncActionBase.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\AugmentedReality\Public\ARTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\HoloLens\arm64\UE4\Inc\AugmentedReality\ARTypes.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\AugmentedReality\Public\ARSystem.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\HeadMountedDisplay\Public\XRTrackingSystemBase.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\HeadMountedDisplay\Public\IXRTrackingSystem.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\HeadMountedDisplay\Public\HeadMountedDisplayTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\HeadMountedDisplay\Public\IMotionController.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\HoloLens\arm64\UE4\Inc\HeadMountedDisplay\HeadMountedDisplayTypes.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\HeadMountedDisplay\Public\IIdentifiableXRDevice.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\HoloLens\arm64\UE4\Inc\HeadMountedDisplay\IIdentifiableXRDevice.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\HeadMountedDisplay\Public\IXRInput.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\HeadMountedDisplay\Public\XRGestureConfig.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\HoloLens\arm64\UE4\Inc\HeadMountedDisplay\XRGestureConfig.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\HeadMountedDisplay\Public\IXRCamera.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\AugmentedReality\Public\ARSupportInterface.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\AugmentedReality\Public\ARSessionConfig.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\AugmentedReality\Public\ARTrackable.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\AugmentedReality\Public\ARComponent.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\MRMesh\Public\MRMeshBufferDefines.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\HoloLens\arm64\UE4\Inc\AugmentedReality\ARComponent.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\HoloLens\arm64\UE4\Inc\AugmentedReality\ARTrackable.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\HoloLens\arm64\UE4\Inc\AugmentedReality\ARSessionConfig.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\AugmentedReality\Public\ARTextures.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/TextureCube.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\HoloLens\arm64\UE4\Inc\Engine\TextureCube.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\HoloLens\arm64\UE4\Inc\AugmentedReality\ARTextures.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\AugmentedReality\Public\ARTraceResult.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\HoloLens\arm64\UE4\Inc\AugmentedReality\ARTraceResult.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\HoloLens\arm64\UE4\Inc\AugmentedReality\ARBlueprintLibrary.generated.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\HoloLens\arm64\UE4\Inc\OpenCV\ARCameraRenderer.generated.h

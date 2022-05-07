@@ -1,0 +1,314 @@
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\HoloLens\arm64\UE4\Development\OpenCV\Definitions.OpenCV.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\OpenCV\Public\ExternalCameraRenderer.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\OpenCV\Public\ResearchModeApi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\windows.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\sdkddkver.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\excpt.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\windef.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winnt.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\kernelspecs.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\basetsd.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\guiddef.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack4.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack4.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack4.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack2.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack2.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack2.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack8.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack1.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack1.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\apiset.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ktmtypes.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winbase.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\apisetcconv.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\minwinbase.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\apiquery2.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\processenv.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\fileapifromapp.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\fileapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\debugapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\utilapiset.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\handleapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\errhandlingapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\fibersapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\namedpipeapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\profileapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\heapapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\ioapiset.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\synchapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\interlockedapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\processthreadsapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\sysinfoapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\memoryapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\enclaveapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\threadpoollegacyapiset.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\threadpoolapiset.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\jobapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\jobapi2.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\wow64apiset.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\libloaderapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\securitybaseapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\namespaceapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\systemtopologyapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\processtopologyapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\securityappcontainer.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\realtimeapiset.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\winerror.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\timezoneapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\wingdi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack1.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack2.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack2.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack4.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack4.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winuser.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack2.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\tvout.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winnls.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\datetimeapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\stringapiset.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winnls.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\wincon.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\wincontypes.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\consoleapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\consoleapi2.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\consoleapi3.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winver.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\verrsrc.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winreg.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winnetwk.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\cderr.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\dde.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\ddeml.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\dlgs.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\lzexpand.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\mmsystem.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\mmsyscom.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack1.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack1.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\nb30.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\rpc.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack8.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\rpcdce.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\rpcdcep.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\rpcnsi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\rpcnterr.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\rpcasync.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\shellapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winperf.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\wincrypt.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\ncrypt.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\bcrypt.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winefs.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winscard.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\wtypes.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\rpcndr.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack8.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\rpcnsip.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\rpcsal.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\wtypesbase.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\guiddef.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winioctl.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack1.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\winsmcrd.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winspool.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\prsht.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack8.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\ole2.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack8.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\objbase.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack8.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\combaseapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack8.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\unknwnbase.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\objidlbase.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\guiddef.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\cguid.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\coml2api.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\objidl.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\unknwn.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\propidlbase.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\oaidl.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\urlmon.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\oleidl.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\msxml.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\propidl.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\oleauto.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\pshpack8.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\commdlg.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\prsht.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\stralign.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsvc.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\mcx.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\imm.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\ime_cmodes.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\initguid.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\guiddef.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\comdef.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\comutil.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\winrt\roerrorapi.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\winrt\hstring.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\restrictedErrorInfo.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\new.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\crtdefs.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\vector
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\xpolymorphic_allocator.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\string
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\xstring
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\cctype
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\DirectXMath.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\math.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\assert.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\DirectXMathConvert.inl
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\DirectXMathVector.inl
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\DirectXMathMatrix.inl
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\DirectXMathMisc.inl
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/mat.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/matx.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/cvdef.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/version.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/hal/interface.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2\core\cv_cpu_dispatch.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\array
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/base.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/opencv_modules.hpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\algorithm
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/cvstd.hpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\cmath
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2\core\cvstd_wrapper.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/neon_utils.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/vsx_utils.hpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\assert.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/check.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/base.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/traits.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/saturate.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/fast_math.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/types.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/bufferpool.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/mat.inl.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/core.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/persistence.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/operations.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/cvstd.inl.hpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\complex
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\sstream
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\istream
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\ostream
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\ios
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\xlocnum
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\iterator
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\streambuf
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\xiosbase
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\share.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\system_error
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\__msvc_system_error_abi.hpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\cerrno
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\stdexcept
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\xcall_once.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\xerrc.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\xlocale
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\xfacet
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\xlocinfo
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\xlocinfo.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\clocale
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\locale.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\ymath.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/utility.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core.hpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\functional
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\unordered_map
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\xhash
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\list
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\xbit_ops.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\xnode_handle.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\mutex
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\chrono
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\ratio
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\thread
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\process.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_startup.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\math.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\vcruntime_startup.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/optim.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/ovx.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/imgcodecs.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/imgproc.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2\./imgproc/segmentation.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/imgproc.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/objdetect.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/objdetect/detection_based_tracker.hpp
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/common/Counted.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\iostream
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/Binarizer.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/LuminanceSource.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/common/Array.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/common/BitArray.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/ZXing.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/common/IllegalArgumentException.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/Exception.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/common/BitMatrix.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/MultiFormatReader.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/Reader.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/BinaryBitmap.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/Result.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/common/Str.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/ResultPoint.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/BarcodeFormat.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/DecodeHints.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/ResultPointCallback.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/ReaderException.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/common/GlobalHistogramBinarizer.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/qrcode/QRCodeReader.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/qrcode/decoder/Decoder.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/common/reedsolomon/ReedSolomonDecoder.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/common/reedsolomon/GenericGFPoly.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/common/reedsolomon/GenericGF.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\core\src\zxing/common/DecoderResult.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\opencv\src\zxing/MatSource.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\OpenCVLibrary\Hololens\include\opencv2/core/core.hpp
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\MediaAssets\Public\MediaTexture.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\MediaUtils\Public\MediaSampleQueue.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Media\Public\IMediaSamples.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Media\Public\IMediaTimeSource.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\MediaUtils\Public\MediaSampleSink.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\MediaUtils\Public\MediaSampleSource.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Media\Public\IMediaTextureSample.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\HoloLens\arm64\UE4\Inc\MediaAssets\MediaTexture.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/TextureRenderTarget2D.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/TextureRenderTarget.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\HoloLens\arm64\UE4\Inc\Engine\TextureRenderTarget.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\HoloLens\arm64\UE4\Inc\Engine\TextureRenderTarget2D.generated.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\HoloLens\arm64\UE4\Inc\OpenCV\ExternalCameraRenderer.generated.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\ThirdParty\ZXingLibrary\Hololens\opencv\src\zxing/MatSource.cpp

@@ -1,0 +1,5 @@
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\Win64\UE4Editor\Development\OpenCV\Definitions.OpenCV.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Source\OpenCV/Public/ResearchModeBase.h
+C:\Unreal Projects\OpenCVHoloLensTest\Plugins\OpenCV\Intermediate\Build\Win64\UE4Editor\Inc\OpenCV\ResearchModeBase.generated.h

@@ -80,7 +80,7 @@ void AOpenCVSceneCapture::BeginPlay()
 	Camera_Texture2D->MipGenSettings = TMGS_NoMipmaps;
 #endif
 	Camera_Texture2D->SRGB = sceneCaptureComponent->TextureTarget->SRGB;
-	
+
 	CaptureScene();
 	
 	Super::BeginPlay();
@@ -91,28 +91,26 @@ void AOpenCVSceneCapture::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	
-	// Main Driver code for handling OpenCV functionality
-	if (captureEnabled) {
-		if (IS_DEBUGGING) {
-			UE_LOG(OpenCVSceneCapture, Warning, TEXT("Viewport X: %d"), resolutionWidth);
-			UE_LOG(OpenCVSceneCapture, Warning, TEXT("Viewport Y: %d"), resolutionHeight);
-		}
-
-		if (bReadPixelsStarted && ReadPixelFence.IsFenceComplete() && bSceneScanned) {
-			if (bSceneCaptured) {
-				ScanScene();
+		// Main Driver code for handling OpenCV functionality
+		if (captureEnabled) {
+			if (IS_DEBUGGING) {
+				UE_LOG(OpenCVSceneCapture, Warning, TEXT("Viewport X: %d"), resolutionWidth);
+				UE_LOG(OpenCVSceneCapture, Warning, TEXT("Viewport Y: %d"), resolutionHeight);
 			}
-			else {
-				CaptureScene();
+		
+			if (bReadPixelsStarted && ReadPixelFence.IsFenceComplete() && bSceneScanned) {
+				if (bSceneCaptured) {
+					ScanScene();
+				}
+				else {
+					CaptureScene();
+				}
 			}
 		}
-
-	}
 
 		// Call custom event handler function
 		OnNextSceneFrame();
 }
-
 
 void AOpenCVSceneCapture::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
@@ -172,19 +170,25 @@ void AOpenCVSceneCapture::captureSceneToMat() {
 	}
 
 	// Construct OpenCv image defined by image width, height, 8-bit 4 color channel pixels, and pointer to data
-	Image = cv::Mat(matLength, matLength, CV_8UC4, PixelData.GetData()).clone();
+	ColorImage = cv::Mat(matLength, matLength, CV_8UC4, PixelData.GetData()).clone();
 #endif
-
-
 }
 
-void AOpenCVSceneCapture::CaptureScene() {
+void AOpenCVSceneCapture::CaptureScene()
+{
 	sceneCaptureComponent->CaptureScene();
-	ReadPixels();
-	ReadPixelFence.BeginFence();
-	bReadPixelsStarted = true;
+	
+	FTextureRenderTargetResource* RenderResource = sceneCaptureComponent->TextureTarget->GameThread_GetRenderTargetResource();
+		
+	AsyncTask(ENamedThreads::AnyBackgroundHiPriTask, [this, RenderResource] ()
+	{
+		ReadPixels(RenderResource);
+		ReadPixelFence.BeginFence();
+		bReadPixelsStarted = true;
 
-	bSceneCaptured = true;
+		//bSceneScanned = false;
+		bSceneCaptured = true;
+	});
 }
 
 void AOpenCVSceneCapture::ScanScene() {
@@ -196,38 +200,68 @@ void AOpenCVSceneCapture::ScanScene() {
 		// Process and decode scene frames for target platforms
 #if defined(__aarch64__) || defined(_M_ARM64)
 		// Check that image has elements
-	if (!ColorImage.empty() && !GreyImage.empty())
-	{
-		if (IS_DEBUGGING) {
-			UE_LOG(LogTemp, Warning, TEXT("Begin Decoding"));
+		if (!ColorImage.empty() && !GreyImage.empty())
+		{
+			if (IS_DEBUGGING) {
+				UE_LOG(LogTemp, Warning, TEXT("Begin Decoding"));
+			}
+				decodeZXing();
 		}
-			decodeZXing();
-	}
 #elif PLATFORM_WINDOWS
-	// Check that image has elements
-	if (!Image.empty())
-	{
-		if (IS_DEBUGGING) {
-			UE_LOG(LogTemp, Warning, TEXT("Begin Decoding"));
-		}
+		// Check that image has elements
+		if (!ColorImage.empty())
+		{
+			if (IS_DEBUGGING) {
+				UE_LOG(LogTemp, Warning, TEXT("Begin Decoding"));
+			}
+			
 			decode();
 
 			displayBox();
 
 			Decoded.Empty();
-	}
+		}
 #endif
 
-		bSceneCaptured = false;
-		bSceneScanned = true;
+		TArray<FColor> pixels;
+
+		int32 imageResolutionWidth = ColorImage.cols;
+		int32 imageResolutionHeight = ColorImage.rows;
+
+		pixels.Init(FColor(0, 0, 0, 255), imageResolutionWidth * imageResolutionHeight);
+
+		// Copy Mat data to Data array
+		for (int y = 0; y < imageResolutionHeight; y++)
+		{
+			for (int x = 0; x < imageResolutionWidth; x++)
+			{
+				int i = x + y * imageResolutionWidth;
+				pixels[i].B = ColorImage.data[i * 4 + 0];
+				pixels[i].G = ColorImage.data[i * 4 + 1];
+				pixels[i].R = ColorImage.data[i * 4 + 2];
+			}
+		}
+
+		AsyncTask(ENamedThreads::GameThread, [this, pixels] ()
+		{
+			// Lock the texture so we can read / write to it
+			void* TextureData = Camera_Texture2D->GetPlatformData()->Mips[0].BulkData.Lock(LOCK_READ_WRITE);
+			const int32 TextureDataSize = pixels.Num() * 4;
+			// set the texture data
+			FMemory::Memcpy(TextureData, pixels.GetData(), TextureDataSize);
+			// Unlock the texture
+			Camera_Texture2D->GetPlatformData()->Mips[0].BulkData.Unlock();
+			// Apply Texture changes to GPU memory
+			Camera_Texture2D->UpdateResource();
+		
+			bSceneCaptured = false;
+			bSceneScanned = true;
+		});
 	});
 }
 
-void AOpenCVSceneCapture::ReadPixels() {
+void AOpenCVSceneCapture::ReadPixels(FTextureRenderTargetResource* RenderResource) {
 	//borrowed from RenderTarget::ReadPixels()
-	FTextureRenderTargetResource* RenderResource = sceneCaptureComponent->TextureTarget->GameThread_GetRenderTargetResource();
-
-	// Read the render target surface data back.	
 	struct FReadSurfaceContext
 	{
 		FRenderTarget* SrcRenderTarget;
@@ -270,10 +304,10 @@ void AOpenCVSceneCapture::decode()
 
 	// Convert image to grayscale
 	cv::Mat imGray;
-	cv::cvtColor(Image, imGray, cv::COLOR_BGR2GRAY);
+	cv::cvtColor(ColorImage, imGray, cv::COLOR_BGR2GRAY);
 
 	// Wrap opencv Mat image data in a zbar image
-	zbar::Image image(Image.cols, Image.rows, "Y800", (uchar*)imGray.data, Image.cols * Image.rows);
+	zbar::Image image(ColorImage.cols, ColorImage.rows, "Y800", (uchar*)imGray.data, ColorImage.cols * ColorImage.rows);
 
 	// Scan the image for barcodes and QRCodes
 	int n = scanner.scan(image);
@@ -339,39 +373,11 @@ void AOpenCVSceneCapture::displayBox()
 
 		for (int j = 0; j < n; j++)
 		{
-			line(Image, hull[j], hull[(j + 1) % n], cv::Scalar(255, 0, 0), 2);
+			line(ColorImage, hull[j], hull[(j + 1) % n], cv::Scalar(255, 0, 0), 2);
 		}
 
 	}
 
-	TArray<FColor> pixels;
-
-	int32 imageResolutionWidth = Image.cols;
-	int32 imageResolutionHeight = Image.rows;
-
-	pixels.Init(FColor(0, 0, 0, 255), imageResolutionWidth * imageResolutionHeight);
-
-	// Copy Mat data to Data array
-	for (int y = 0; y < imageResolutionHeight; y++)
-	{
-		for (int x = 0; x < imageResolutionWidth; x++)
-		{
-			int i = x + (y * imageResolutionWidth);
-			pixels[i].B = Image.data[i * 4 + 0];
-			pixels[i].G = Image.data[i * 4 + 1];
-			pixels[i].R = Image.data[i * 4 + 2];
-		}
-	}
-
-	// Lock the texture so we can read / write to it
-	void* TextureData = Camera_Texture2D->GetPlatformData()->Mips[0].BulkData.Lock(LOCK_READ_WRITE);
-	const int32 TextureDataSize = pixels.Num() * 4;
-	// set the texture data
-	FMemory::Memcpy(TextureData, pixels.GetData(), TextureDataSize);
-	// Unlock the texture
-	Camera_Texture2D->GetPlatformData()->Mips[0].BulkData.Unlock();
-	// Apply Texture changes to GPU memory
-	Camera_Texture2D->UpdateResource();
 }
 
 #elif defined(__aarch64__) || defined(_M_ARM64)
@@ -419,6 +425,7 @@ void AOpenCVSceneCapture::decodeZXing() {
 			}
 
 		}
+		
 		if (resultPointCount > 0) {
 
 			FString text(result->getText()->getText().c_str());
@@ -456,7 +463,7 @@ void AOpenCVSceneCapture::decodeZXing() {
 	catch (const std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
-
+/*
 	TArray<FColor> pixels;
 
 	int32 imageResolutionWidth = ColorImage.cols;
@@ -472,10 +479,10 @@ void AOpenCVSceneCapture::decodeZXing() {
 			int i = x + (y * imageResolutionWidth);
 			pixels[i].B = ColorImage.data[i * 4 + 0];
 			pixels[i].G = ColorImage.data[i * 4 + 1];
-			pixels[i].R = ColorImage.data[i * 4 + 2];
+			pixels[i].R = ColorImage.data[i + 2];
 		}
 	}
-
+	
 	// Lock the texture so we can read / write to it
 	void* TextureData = Camera_Texture2D->GetPlatformData()->Mips[0].BulkData.Lock(LOCK_READ_WRITE);
 	const int32 TextureDataSize = pixels.Num() * 4;
@@ -484,7 +491,7 @@ void AOpenCVSceneCapture::decodeZXing() {
 	// Unlock the texture
 	Camera_Texture2D->GetPlatformData()->Mips[0].BulkData.Unlock();
 	// Apply Texture changes to GPU memory
-	Camera_Texture2D->UpdateResource();
+	Camera_Texture2D->UpdateResource();*/
 	
 }
 #endif

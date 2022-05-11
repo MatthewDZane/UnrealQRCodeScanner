@@ -81,16 +81,25 @@ void AExternalCameraRenderer::EndPlay(const EEndPlayReason::Type EndPlayReason)
 }
 
 
-void AExternalCameraRenderer::Tick(float DeltaTime) {
+void AExternalCameraRenderer::Tick(float DeltaTime)
+{
 	Super::Tick(DeltaTime);
 
-	RefreshTimer += DeltaTime;
-	if (isStreamOpen && RefreshTimer >= 1.0f / RefreshRate) {
-		RefreshTimer -= 1.0f / RefreshRate;
-		ReadFrame();
-		OnNextVideoFrame();
-	}
+	if (bNextFrameReady)
+	{
+		bNextFrameReady = false;
+		AsyncTask(ENamedThreads::AnyBackgroundHiPriTask, [this,DeltaTime] ()
+		{
+			RefreshTimer += DeltaTime;
+			if (isStreamOpen && RefreshTimer >= 1.0f / RefreshRate) {
+				RefreshTimer -= 1.0f / RefreshRate;
+				ReadFrame();
+				OnNextVideoFrame();
+			}
 
+			bNextFrameReady = true;
+		});
+	}
 }
 
 void AExternalCameraRenderer::ReadFrame() {
@@ -130,16 +139,19 @@ void AExternalCameraRenderer::ReadFrame() {
 			pixels[i].R = inputImage.data[i * 3 + 2];
 		}
 	}
-
-	// Lock the texture so we can read / write to it
-	void* TextureData = Camera_Texture2D->GetPlatformData()->Mips[0].BulkData.Lock(LOCK_READ_WRITE);
-	const int32 TextureDataSize = pixels.Num() * 4;
-	// set the texture data
-	FMemory::Memcpy(TextureData, pixels.GetData(), TextureDataSize);
-	// Unlock the texture
-	Camera_Texture2D->GetPlatformData()->Mips[0].BulkData.Unlock();
-	// Apply Texture changes to GPU memory
-	Camera_Texture2D->UpdateResource();
+	
+	AsyncTask(ENamedThreads::GameThread, [this, pixels] ()
+	{
+		// Lock the texture so we can read / write to it
+		void* TextureData = Camera_Texture2D->GetPlatformData()->Mips[0].BulkData.Lock(LOCK_READ_WRITE);
+		const int32 TextureDataSize = pixels.Num() * 4;
+		// set the texture data
+		FMemory::Memcpy(TextureData, pixels.GetData(), TextureDataSize);
+		// Unlock the texture
+		Camera_Texture2D->GetPlatformData()->Mips[0].BulkData.Unlock();
+		// Apply Texture changes to GPU memory
+		Camera_Texture2D->UpdateResource();
+	});
 
 }
 

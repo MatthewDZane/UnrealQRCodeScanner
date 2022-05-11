@@ -32,4 +32,6 @@ private:
 	UStaticMeshComponent* StaticMeshComponent;
 	UMaterialInstanceDynamic* DynamicMaterial;
 	bool IsTextureParamSet = false;
+
+	bool bNextSceneReady = true;
 };

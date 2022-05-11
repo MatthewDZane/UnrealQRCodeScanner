@@ -7,7 +7,6 @@
 #include "GameFramework/Actor.h"
 #include "Kismet/GameplayStatics.h"
 
-
 // Third Party Library Headers
 #if PLATFORM_WINDOWS
 	#include <zbar.h>
@@ -70,12 +69,27 @@ protected:
 	bool bSceneCaptured = false;
 	bool bSceneScanned = true;
 
-	int counter = 0;
+	const bool IS_DEBUGGING = false;
 
-#if PLATFORM_WINDOWS
-	cv::Mat Image;
-#elif defined(__aarch64__) || defined(_M_ARM64)
+	bool bReadPixelsStarted = false;
+	FRenderCommandFence ReadPixelFence;
+
+	TArray<FColor> PixelColors;
+
+	// Variables for reading specific pixels of scene capture
+	int32 matLength;
+
+	int startYMatPixel;
+	int startXMatPixel;
+
+	int endYMatPixel;
+	int endXMatPixel;
+	
 	cv::Mat ColorImage;
+
+int count = 0;
+
+#if defined(__aarch64__) || defined(_M_ARM64)
 	cv::Mat GreyImage;
 #endif
 
@@ -107,10 +121,10 @@ public:
 
 
 	// Image texture resolution to be captured by USceneCapture2D component
-	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = Camera)
 		int32 resolutionWidth = 256;
 
-	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = OpenCVSceneCapture)
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = Camera)
 		int32 resolutionHeight = 256;
 
 
@@ -118,29 +132,15 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = OpenCVSceneCapture)
 		bool captureEnabled;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = OpenCVSceneCapture)
+		bool displayEnabled;
+
 
 	// Camera Material Instance
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = Camera)
 		UMaterialInstanceDynamic* Camera_Mat;
 
-
-		const bool IS_DEBUGGING = false;
-
-		bool bReadPixelsStarted = false;
-		FRenderCommandFence ReadPixelFence;
-
-		TArray<FColor> PixelColors;
-
-		// Variables for reading specific pixels of scene capture
-		int32 matLength;
-
-		int startYMatPixel;
-		int startXMatPixel;
-
-		int endYMatPixel;
-		int endXMatPixel;
-
-		// Blueprint Event called every time the scene frame is updated
+	// Blueprint Event called every time the scene frame is updated
 	UFUNCTION(BlueprintImplementableEvent, Category = OpenCVSceneCapture)
 		void OnNextSceneFrame();
 
@@ -165,19 +165,19 @@ private:
 
 	void CaptureScene();
 	void ScanScene();
-	void ReadPixels();
+	void ReadPixels(FTextureRenderTargetResource* RenderResource);
 
 	void printToScreen(FString str, FColor color, float duration = 1.0f);
 	
 #if PLATFORM_WINDOWS
 	// ZBar functions
 	void decode();
-	void displayBox();
+
 #elif defined(__aarch64__) || defined(_M_ARM64)
 	// ZXing functions
 	void decodeZXing();
 	cv::Point toOpenCvPoint(zxing::Ref<zxing::ResultPoint> resultPoint);
 #endif
 
-
+	void displayBox();
 };

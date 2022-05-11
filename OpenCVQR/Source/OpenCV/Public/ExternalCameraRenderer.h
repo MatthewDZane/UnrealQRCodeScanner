@@ -30,7 +30,7 @@ USTRUCT(BlueprintType)
 struct FDecodedObject2
 {
 	GENERATED_USTRUCT_BODY()
-
+	
 public:
 
 	// Type of qr code detected by ZBar
@@ -116,6 +116,9 @@ public:
 	//OpenCV
 	cv::Size cvSize;
 	cv::Mat cvMat;
+
+protected:
+	bool bNextFrameReady = true;
 
 #if PLATFORM_WINDOWS
 	cv::VideoCapture cvVideoCapture;

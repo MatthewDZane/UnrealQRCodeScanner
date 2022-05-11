@@ -72,160 +72,166 @@ void AARCameraRenderer::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    // Dynamic material instance only needs to be set once.
-    if (IsTextureParamSet)
+    if (bNextSceneReady)
     {
-        return;
-    }
+        bNextSceneReady = false;
+
+            // Dynamic material instance only needs to be set once.
+            if (IsTextureParamSet)
+            {
+                return;
+            }
     
-    // Get the texture from the camera.
-    UARTexture* ARTexture = UARBlueprintLibrary::GetARTexture(EARTextureType::CameraImage);
-    if (ARTexture != nullptr)
-    {
+            // Get the texture from the camera.
+            UARTexture* ARTexture = UARBlueprintLibrary::GetARTexture(EARTextureType::CameraImage);
+            if (ARTexture != nullptr)
+            {
 
-        //UTexture* parent = ARTexture;
+                //UTexture* parent = ARTexture;
 
-        //FTexturePlatformData** platData = ARTexture->GetRunningPlatformData();
-        //if (platData == nullptr)
-        //    UE_LOG(LogTemp, Warning, TEXT("FTexturePlatformData Null"));
+                //FTexturePlatformData** platData = ARTexture->GetRunningPlatformData();
+                //if (platData == nullptr)
+                //    UE_LOG(LogTemp, Warning, TEXT("FTexturePlatformData Null"));
 
-        //FTexturePlatformData** platDataParent = parent->GetRunningPlatformData();
-        //if (platDataParent == nullptr)
-        //    UE_LOG(LogTemp, Warning, TEXT("FTexturePlatformData Casted Null"));
+                //FTexturePlatformData** platDataParent = parent->GetRunningPlatformData();
+                //if (platDataParent == nullptr)
+                //    UE_LOG(LogTemp, Warning, TEXT("FTexturePlatformData Casted Null"));
 
-        //FString name = ARTexture->GetName();
-        //UE_LOG(LogTemp, Warning, TEXT("Texture name is : %s"), *name); //OpenXRCameraImageTexture_2147482531
+                //FString name = ARTexture->GetName();
+                //UE_LOG(LogTemp, Warning, TEXT("Texture name is : %s"), *name); //OpenXRCameraImageTexture_2147482531
 
-        // Set the shader's texture parameter (named "Param") to the camera image.
-        DynamicMaterial->SetTextureParameterValue("Param", ARTexture);
-        IsTextureParamSet = true;
+                // Set the shader's texture parameter (named "Param") to the camera image.
+                DynamicMaterial->SetTextureParameterValue("Param", ARTexture);
+                IsTextureParamSet = true;
 
-        // Get the camera instrincs
-        FARCameraIntrinsics Intrinsics;
-        UARBlueprintLibrary::GetCameraIntrinsics(Intrinsics);
+                // Get the camera instrincs
+                FARCameraIntrinsics Intrinsics;
+                UARBlueprintLibrary::GetCameraIntrinsics(Intrinsics);
 
-        // Scale the camera mesh by the aspect ratio.
-        float R = (float)Intrinsics.ImageResolution.X / (float)Intrinsics.ImageResolution.Y;
-        StaticMeshComponent->SetWorldScale3D(FVector(0.1f, R, 1));
-
-
-
-        //UE_LOG(LogTemp, Warning, TEXT("Attempt to access UARTexture Resource"));
-        //FTextureResource* Resource = ARTexture->Resource;
-        //if (Resource == nullptr) {
-            //UE_LOG(LogTemp, Warning, TEXT("Resource Null"));
-        //}
-
-
-        //FRHITexture2D* rhi = Resource->GetTexture2DRHI();
-        //if (rhi == nullptr) {
-        //    UE_LOG(LogTemp, Warning, TEXT("FRHITexture2D Null"));
-        //}
-        //else {
-
-        //    UE_LOG(LogTemp, Warning, TEXT("AFTER RHI"));
-
-        //    uint32 x = rhi->GetSizeX();
-        //    uint32 y = rhi->GetSizeY();
-        //    UE_LOG(LogTemp, Warning, TEXT("GetSizeX : %d"), x); //1504
-        //    UE_LOG(LogTemp, Warning, TEXT("GetSizeY : %d"), y); //806
-
-        //    FRHITexture2D* rhicasted = rhi->GetTexture2D();
-        //    if (rhicasted == nullptr) {
-        //        UE_LOG(LogTemp, Warning, TEXT("Failed GetTexture2D"));
-        //    }
-        //    else {
-        //        UE_LOG(LogTemp, Warning, TEXT("Success GetTexture2D"));
-        //    }
-
-        //    void* data = rhi->GetNativeResource();
-        //    if (data == nullptr) {
-        //        UE_LOG(LogTemp, Warning, TEXT("Failed GetNativeResource()"));
-        //    }
-        //    else {
-        //        UE_LOG(LogTemp, Warning, TEXT("Success GetNativeResource()"));
-        //        ID3D11Texture2D* Texture = static_cast<ID3D11Texture2D*>(data);
-        //        if (Texture == nullptr) {
-        //            UE_LOG(LogTemp, Warning, TEXT("Failed D3D11Texture2D"));
-        //        }
-        //        else {
-        //            UE_LOG(LogTemp, Warning, TEXT("Success D3D11Texture2D"));
-
-        //            // https://github.com/Microsoft/graphics-driver-samples/blob/master/render-only-sample/rostest/util.cpp#L244
-        //            // First verify that we can map the texture
-        //            D3D11_TEXTURE2D_DESC desc;
-        //            Texture->GetDesc(&desc);
-        //            UE_LOG(LogTemp, Warning, TEXT("DESCRIPTION Width %d  value"), desc.Width); //1504
-        //            UE_LOG(LogTemp, Warning, TEXT("DESCRIPTION Height %d value"), desc.Height); //846
-        //            UE_LOG(LogTemp, Warning, TEXT("DESCRIPTION CPU %d value"), desc.CPUAccessFlags); //0
-
-        //            // Get the device context
-        //            ID3D11Device* d3dDevice;
-        //            Texture->GetDevice(&d3dDevice);
-        //            ID3D11DeviceContext* d3dContext;
-        //            d3dDevice->GetImmediateContext(&d3dContext);
-
-        //            // map the texture
-        //            //ID3D11Texture2D* mappedTexture;
-        //            D3D11_MAPPED_SUBRESOURCE mapInfo;
-        //            mapInfo.RowPitch;
-        //            HRESULT hr = d3dContext->Map(Texture,0, D3D11_MAP_READ_WRITE,0, &mapInfo);
-
-        //            if (SUCCEEDED(hr)) {
-        //                UE_LOG(LogTemp, Warning, TEXT("Success Mapping"));
-        //            }
-        //            else {
-        //                UE_LOG(LogTemp, Warning, TEXT("Failed MAPPINGS"));
-        //            }
-        //            if (mapInfo.pData == nullptr) {
-        //                UE_LOG(LogTemp, Warning, TEXT("Null data pointer"));
-        //            }
-        //            else {
-        //                UE_LOG(LogTemp, Warning, TEXT("Non-null data pointer"));
-        //            }
+                // Scale the camera mesh by the aspect ratio.
+                float R = (float)Intrinsics.ImageResolution.X / (float)Intrinsics.ImageResolution.Y;
+                StaticMeshComponent->SetWorldScale3D(FVector(0.1f, R, 1));
 
 
 
-        //            ////Variable Declaration
-        //            //ID3D11Texture2D* lDestImage = static_cast<ID3D11Texture2D*>(data);
-        //            //ID3D11DeviceContext* lImmediateContext;
-        //
-        //            //ID3D11Device* d3dDevice;
-        //            //Texture->GetDevice(&d3dDevice);
-        //            //d3dDevice->GetImmediateContext(&lImmediateContext);
-        //
-        //            //// Copy image into GDI drawing texture
-        //            //lImmediateContext->CopyResource(lDestImage, Texture);
-        //            //Texture->Release();
-        //
-        //            //// Copy GPU Resource to CPU
-        //            //D3D11_TEXTURE2D_DESC description;
-        //            //lDestImage->GetDesc(&description);
-        //            //D3D11_MAPPED_SUBRESOURCE resource;
-        //            //UINT subresource = D3D11CalcSubresource(0, 0, 0);
-        //            //HRESULT hr = lImmediateContext->Map(lDestImage, subresource, D3D11_MAP_READ_WRITE, 0, &resource);
-        //
-        //            //std::unique_ptr<BYTE> pBuf(new BYTE[resource.RowPitch * description.Height]);
-        //        }
-        //    }
-        //}
+                //UE_LOG(LogTemp, Warning, TEXT("Attempt to access UARTexture Resource"));
+                //FTextureResource* Resource = ARTexture->Resource;
+                //if (Resource == nullptr) {
+                //UE_LOG(LogTemp, Warning, TEXT("Resource Null"));
+                //}
 
 
-        //FTexture2DMipMap mip = data->Mips[0];
-        //FByteBulkData RawImageData = mip.BulkData;
-        //const FColor* FormatedImageData = reinterpret_cast<const FColor*>(RawImageData.Lock(LOCK_READ_ONLY));
+                //FRHITexture2D* rhi = Resource->GetTexture2DRHI();
+                //if (rhi == nullptr) {
+                //    UE_LOG(LogTemp, Warning, TEXT("FRHITexture2D Null"));
+                //}
+                //else {
 
-        //int X = 0;
-        //int Y = 0;
+                //    UE_LOG(LogTemp, Warning, TEXT("AFTER RHI"));
 
-        //if (FormatedImageData == nullptr) {
-        //    UE_LOG(LogTemp, Warning, TEXT("Failed FCOLOR"));
-        //}
-        //else {
-        //    UE_LOG(LogTemp, Warning, TEXT("Success FCOLOR"));
-        //}
-        //FColor c = FormatedImageData[Y * width + X]
+                //    uint32 x = rhi->GetSizeX();
+                //    uint32 y = rhi->GetSizeY();
+                //    UE_LOG(LogTemp, Warning, TEXT("GetSizeX : %d"), x); //1504
+                //    UE_LOG(LogTemp, Warning, TEXT("GetSizeY : %d"), y); //806
 
+                //    FRHITexture2D* rhicasted = rhi->GetTexture2D();
+                //    if (rhicasted == nullptr) {
+                //        UE_LOG(LogTemp, Warning, TEXT("Failed GetTexture2D"));
+                //    }
+                //    else {
+                //        UE_LOG(LogTemp, Warning, TEXT("Success GetTexture2D"));
+                //    }
+
+                //    void* data = rhi->GetNativeResource();
+                //    if (data == nullptr) {
+                //        UE_LOG(LogTemp, Warning, TEXT("Failed GetNativeResource()"));
+                //    }
+                //    else {
+                //        UE_LOG(LogTemp, Warning, TEXT("Success GetNativeResource()"));
+                //        ID3D11Texture2D* Texture = static_cast<ID3D11Texture2D*>(data);
+                //        if (Texture == nullptr) {
+                //            UE_LOG(LogTemp, Warning, TEXT("Failed D3D11Texture2D"));
+                //        }
+                //        else {
+                //            UE_LOG(LogTemp, Warning, TEXT("Success D3D11Texture2D"));
+
+                //            // https://github.com/Microsoft/graphics-driver-samples/blob/master/render-only-sample/rostest/util.cpp#L244
+                //            // First verify that we can map the texture
+                //            D3D11_TEXTURE2D_DESC desc;
+                //            Texture->GetDesc(&desc);
+                //            UE_LOG(LogTemp, Warning, TEXT("DESCRIPTION Width %d  value"), desc.Width); //1504
+                //            UE_LOG(LogTemp, Warning, TEXT("DESCRIPTION Height %d value"), desc.Height); //846
+                //            UE_LOG(LogTemp, Warning, TEXT("DESCRIPTION CPU %d value"), desc.CPUAccessFlags); //0
+
+                //            // Get the device context
+                //            ID3D11Device* d3dDevice;
+                //            Texture->GetDevice(&d3dDevice);
+                //            ID3D11DeviceContext* d3dContext;
+                //            d3dDevice->GetImmediateContext(&d3dContext);
+
+                //            // map the texture
+                //            //ID3D11Texture2D* mappedTexture;
+                //            D3D11_MAPPED_SUBRESOURCE mapInfo;
+                //            mapInfo.RowPitch;
+                //            HRESULT hr = d3dContext->Map(Texture,0, D3D11_MAP_READ_WRITE,0, &mapInfo);
+
+                //            if (SUCCEEDED(hr)) {
+                //                UE_LOG(LogTemp, Warning, TEXT("Success Mapping"));
+                //            }
+                //            else {
+                //                UE_LOG(LogTemp, Warning, TEXT("Failed MAPPINGS"));
+                //            }
+                //            if (mapInfo.pData == nullptr) {
+                //                UE_LOG(LogTemp, Warning, TEXT("Null data pointer"));
+                //            }
+                //            else {
+                //                UE_LOG(LogTemp, Warning, TEXT("Non-null data pointer"));
+                //            }
+
+
+
+                //            ////Variable Declaration
+                //            //ID3D11Texture2D* lDestImage = static_cast<ID3D11Texture2D*>(data);
+                //            //ID3D11DeviceContext* lImmediateContext;
+                //
+                //            //ID3D11Device* d3dDevice;
+                //            //Texture->GetDevice(&d3dDevice);
+                //            //d3dDevice->GetImmediateContext(&lImmediateContext);
+                //
+                //            //// Copy image into GDI drawing texture
+                //            //lImmediateContext->CopyResource(lDestImage, Texture);
+                //            //Texture->Release();
+                //
+                //            //// Copy GPU Resource to CPU
+                //            //D3D11_TEXTURE2D_DESC description;
+                //            //lDestImage->GetDesc(&description);
+                //            //D3D11_MAPPED_SUBRESOURCE resource;
+                //            //UINT subresource = D3D11CalcSubresource(0, 0, 0);
+                //            //HRESULT hr = lImmediateContext->Map(lDestImage, subresource, D3D11_MAP_READ_WRITE, 0, &resource);
+                //
+                //            //std::unique_ptr<BYTE> pBuf(new BYTE[resource.RowPitch * description.Height]);
+                //        }
+                //    }
+                //}
+
+
+                //FTexture2DMipMap mip = data->Mips[0];
+                //FByteBulkData RawImageData = mip.BulkData;
+                //const FColor* FormatedImageData = reinterpret_cast<const FColor*>(RawImageData.Lock(LOCK_READ_ONLY));
+
+                //int X = 0;
+                //int Y = 0;
+
+                //if (FormatedImageData == nullptr) {
+                //    UE_LOG(LogTemp, Warning, TEXT("Failed FCOLOR"));
+                //}
+                //else {
+                //    UE_LOG(LogTemp, Warning, TEXT("Success FCOLOR"));
+                //}
+                //FColor c = FormatedImageData[Y * width + X]
+            }
+            
+            bNextSceneReady = true;
     }
 }
 

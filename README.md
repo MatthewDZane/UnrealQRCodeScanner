@@ -1,5 +1,5 @@
 # OpenCV Unreal Engine 4 HoloLens 2 Plugin
-This is an Unreal Engine 4 plugin for HoloLens that uses the C++ OpenCV Library and other third party libraries to act as a QR Code Scanner. Much of this plugin was created by Jasin Lin (jasonlin1198@gmail.com), but has been modified and is now being maintained by Matthew Zane (matthewdzane@gmail.com).
+This is an Unreal Engine 5 plugin for HoloLens that uses the Unreal Engine built-in OpenCV Library and other third party libraries to act as a QR Code Scanner. Much of this plugin was created by Jasin Lin (jasonlin1198@gmail.com), but has been modified and is now being maintained by Matthew Zane (matthewdzane@gmail.com).
 
 # Table of Contents
 - [Installation](#installation)
@@ -12,15 +12,15 @@ This is an Unreal Engine 4 plugin for HoloLens that uses the C++ OpenCV Library 
 - [Extra Reading](#extra-reading)
 
 ## Installation
-1. Make sure Unreal Engine 4.27 is installed.
-2. Install the HoloLens, Mixed Reality Toolkit Hub, Mixed Reality UX Tools, the Microsoft Mixed Reality Plugin from the Marketplace to the Engine and enable them in the Plugins tab.
+1. Make sure Unreal Engine 5 is installed.
+2. Install the OpenCV plugin.
 3. Go to Project Settings -> Project -> Description -> Settings -> Check "Start in VR"
 4. Go to Project Settings -> Platforms -> HoloLens -> Capabilities -> Check "Webcam"
 5. Clone this repo, which contains the custom OpenCV plugin containing OpenCV, ZXing, and ZBar third-party libraries.
 
 `git clone https://gitlab.nrp-nautilus.io/ar-noc/opencv-unrealengine-hololens2.git`
 6. Add the plugin to the project.
-- Copy the folder, "opencv-unrealengine-hololens2/OpenCV", to the project plugins folder, "{ProjectName}/Plugins". Create the Plugins folder if it does not exist yet.
+- Copy the folder, "opencv-unrealengine-hololens2/OpenCVQR", to the project plugins folder, "{ProjectName}/Plugins". Create the Plugins folder if it does not exist yet.
 7. Create the Visual Studio Solution.
 - Right-click the {ProjectName}.uproject file and select the "Generate Visual Studio project files" option.
 8. Compile the Unreal Project Editor (Make sure that there is already C++ Source code in the project).
@@ -60,6 +60,8 @@ properties in the editor or through the blueprint exposed captureEnabled flag.
 
 In the OpenCV Scene Capture C++ version, the image capture and the QR code functions are run in a thread seperate from the game thread using the Scene Capture QR Code Worker class, which contains all the funtions related to both ZBar and ZXing. This was implemented with multithreading to maintain a good frame rate.
 
+This actor also will also draw a box around the scanned QR codes and display them in the game space.
+
 The Blueprint version inherits from the C++ version. The Blueprint version id designed to be used in game.
 
 ### AR Test Level
@@ -72,14 +74,7 @@ One-time Setup in the Unreal Editor
 2. Project Settings -> Platforms -> HoloLens -> Packaging -> Signing Certificate -> Generate New. Choose whether to make it password protected.
 
 Perform these steps everytime a new build is desired.
-3. There are two methods of packaging the project to HoloLens.
-    1. Build to the local machine.
-        - File -> Package Project -> HoloLens. Then choose a location for the packaged project.
-    2. Build to a HoloLens 2 Device.
-        - Connect a HoloLens 2 headset to the computer via USB
-        - Go to Launch -> Device Manager -> Add an Unlisted Device -> Select a Platform -> HoloLens
-        - Input the HoloLens' Windows Device Portal credentials
-        - Go to the main editor screen -> Launch -> {Name of HoloLens Device}
+3. To Build to the local machine, follow the instructions here: https://docs.unrealengine.com/4.27/en-US/SharingAndReleasing/XRDevelopment/AR/ARPlatforms/HoloLens/QuickStartDevice/
 
 ## Extra Reading
 This section was provided by Jason Lin. It documents how to use OpenCV, ZBar, and ZXing in both Unreal Engine and non-Unreal Engine projects.

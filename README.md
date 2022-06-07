@@ -1,5 +1,5 @@
-# OpenCV Unreal Engine 4 HoloLens 2 Plugin
-This is an Unreal Engine 5 plugin for HoloLens that uses the Unreal Engine built-in OpenCV Library and other third party libraries to act as a QR Code Scanner. Much of this plugin was created by Jasin Lin (jasonlin1198@gmail.com), but has been modified and is now being maintained by Matthew Zane (matthewdzane@gmail.com).
+# Unreal QR Code Scanner Plugin
+This is an Unreal Engine 5 plugin for HoloLens that uses the Unreal Engine built-in OpenCV Library and other third party libraries to act as a QR Code Scanner. The base of this plugin was created by Jasin Lin (jasonlin1198@gmail.com), but has been modified and is now being maintained by Matthew Zane (matthewdzane@gmail.com).
 
 # Table of Contents
 - [Installation](#installation)
@@ -14,13 +14,13 @@ This is an Unreal Engine 5 plugin for HoloLens that uses the Unreal Engine built
 ## Installation
 1. Make sure Unreal Engine 5 is installed.
 2. Install the OpenCV plugin.
-3. Go to Project Settings -> Project -> Description -> Settings -> Check "Start in VR"
-4. Go to Project Settings -> Platforms -> HoloLens -> Capabilities -> Check "Webcam"
-5. Clone this repo, which contains the custom OpenCV plugin containing OpenCV, ZXing, and ZBar third-party libraries.
+3. Go to Project Settings -> Project -> Description -> Settings -> Check "Start in VR".
+4. Go to Project Settings -> Platforms -> HoloLens -> Capabilities -> Check "Webcam".
+5. Clone this repo.
 
-`git clone https://gitlab.nrp-nautilus.io/ar-noc/opencv-unrealengine-hololens2.git`
+`git clone https://gitlab.nrp-nautilus.io/ar-noc/UnrealQRCodeScanner.git`
 6. Add the plugin to the project.
-- Copy the folder, "opencv-unrealengine-hololens2/OpenCVQR", to the project plugins folder, "{ProjectName}/Plugins". Create the Plugins folder if it does not exist yet.
+- Copy the folder, "UnrealQRCodeScanner", to the project plugins folder, "{ProjectName}/Plugins". Create the Plugins folder if it does not exist yet.
 7. Create the Visual Studio Solution.
 - Right-click the {ProjectName}.uproject file and select the "Generate Visual Studio project files" option.
 8. Compile the Unreal Project Editor (Make sure that there is already C++ Source code in the project).

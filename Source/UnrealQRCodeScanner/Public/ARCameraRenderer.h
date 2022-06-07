@@ -11,7 +11,7 @@
 DECLARE_LOG_CATEGORY_EXTERN(ARCameraRenderer, Log, All);
 
 UCLASS()
-class OPENCVQR_API AARCameraRenderer : public AActor
+class UNREALQRCODESCANNER_API AARCameraRenderer : public AActor
 {
 	GENERATED_BODY()
 	

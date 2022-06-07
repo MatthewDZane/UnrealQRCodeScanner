@@ -12,7 +12,7 @@
 DECLARE_LOG_CATEGORY_EXTERN(ResearchModeBase, Log, All);
 
 UCLASS()
-class OPENCVQR_API AResearchModeBase : public AActor
+class UNREALQRCODESCANNER_API AResearchModeBase : public AActor
 {
 	GENERATED_BODY()
 	

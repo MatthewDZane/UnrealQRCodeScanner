@@ -53,7 +53,7 @@ public:
 };
 
 UCLASS()
-class OPENCVQR_API AExternalCameraRenderer : public AActor
+class UNREALQRCODESCANNER_API AExternalCameraRenderer : public AActor
 {
 	GENERATED_BODY()
 	

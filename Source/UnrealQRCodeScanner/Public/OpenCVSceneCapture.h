@@ -61,7 +61,7 @@ public:
 };
 
 UCLASS()
-class OPENCVQR_API AOpenCVSceneCapture : public AActor
+class UNREALQRCODESCANNER_API AOpenCVSceneCapture : public AActor
 {
 	GENERATED_BODY()
 

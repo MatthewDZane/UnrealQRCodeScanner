@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "UnrealQRCodeScanner",
+	"Description": "This project is an Unreal Engine 5 plugin, that provides QR Code recognition abilities, using OpenCV, for Windows and HoloLens.",
+	"Category": "Other",
+	"CreatedBy": "Matthew Zane",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "UnrealQRCodeScanner",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

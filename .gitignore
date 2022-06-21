@@ -1,5 +1,5 @@
 # Binary Files
-OpenCVQR/Binaries/*
+Binaries/*
 
 # Compiled source files for the engine to use
-OpenCVQR/Intermediate/*
+Intermediate/*

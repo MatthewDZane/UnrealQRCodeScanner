@@ -20,10 +20,12 @@ This is an Unreal Engine 5 plugin for HoloLens that uses the Unreal Engine built
 
 `git clone https://gitlab.nrp-nautilus.io/ar-noc/UnrealQRCodeScanner.git`
 6. Add the plugin to the project.
-- Copy the folder, "UnrealQRCodeScanner", to the project plugins folder, "{ProjectName}/Plugins". Create the Plugins folder if it does not exist yet.
-7. Create the Visual Studio Solution.
+- Copy the folder, "UnrealQRCodeScanner", to the project plugins folder, "{ProjectName}/Plugins/". Create the Plugins folder if it does not exist yet.
+7. The ThirdParty Binary files are too big to upload to Github, so they have been uploaded to Google Drive in a Zip folder. Download the Zip folder from [here](https://drive.google.com/drive/folders/1j6ZMa296Os6sf859eDN3yJQvVti9VFxR?usp=sharing).
+8. Unzip the "ThirdParty" folder and move it to "{ProjectName}/Plugins/UnrealQRScanner/Source/" directory.
+9. Create the Visual Studio Solution.
 - Right-click the {ProjectName}.uproject file and select the "Generate Visual Studio project files" option.
-8. Compile the Unreal Project Editor (Make sure that there is already C++ Source code in the project).
+10. Compile the Unreal Project Editor (Make sure that there is already C++ Source code in the project).
 - Open the {ProjectName}.sln in Visual Studio.
 - Set the Solution Configurations to "Development Editor" and "Win64".
 - Under the "Solution Explorer" panel, right-click the project solution and select "Build".
